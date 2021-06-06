@@ -820,8 +820,6 @@ Breadth uses a [Queue](#Queue), where the search starts from the unearthed node 
 
 <br>
 
-
-
 ## Minimum spanning tree algorithms
 Algorithms to find
 a subset of edges in a graph, which connect all nodes with the minimum weighted distance.
@@ -833,7 +831,6 @@ https://www.youtube.com/watch?v=cplfcGZmX7I
 **Kruskal's Algorithm**
 From a minimum weighed edge, while not all nodes have been joined, pick the smallest weighted connection that connects to one or two new nodes.
 https://www.youtube.com/watch?v=71UQH7Pr9kU&list=PL9xmBV_5YoZObEi3Hf6lmyW-CBfs7nkOV&index=2
-
 
 <br>
 
@@ -1045,7 +1042,6 @@ In a flat array of numbers, you can either store the elements, or the prefix sum
 
 <br>
 
-
 ## Array
 [Implicit data structure](#Implicit-data-structure) <br>
 Sequential elements in memory with a single data type and which can represent multidimensional data by storing extra data on the shape of the array.
@@ -1095,7 +1091,6 @@ Closed addressing
 
 	Linked list collisions > If there is a collision, then the array index will be set as the first link in a linked list.
 
-
 <br>
 
 ## Prefix sum
@@ -1113,18 +1108,13 @@ In a flat array of numbers, you can either store the elements, or the prefix sum
 Also called a Binary indexed Tree
 
 https://en.wikipedia.org/wiki/Fenwick_tree
-It allows both updating and prefix sums in O( log n ) time by using representing combinations of binary numbers.
-
-It is an Implicit data structure as a List
-Implemented as a binary [heap](#heap)
-
-13 = 2^3 + 2^2 + 2^0
-SUM_TO(13) = SUM_RANGE(1,8) + SUM_RANGE(9,12) + SUM_RANGE(13,13)
-Now simply precompute SUM_RANGE for all possible binary representations 
-
 https://www.youtube.com/watch?v=v_wj_mOAlig
 
-https://github.com/jakobkogler/Algorithm-DataStructures/blob/master/RangeQuery/BinaryIndexedTree.py
+It allows both updating and prefix sums in O( log n ) time.
+
+13 = 2^3 + 2^2 + 2^0 <br>
+SUM_TO(13) = SUM_RANGE(1,8) + SUM_RANGE(9,12) + SUM_RANGE(13,13)
+
 
 <br><br>
 
@@ -1171,6 +1161,13 @@ Describing the steps
 
 ## Procedural programming
 Steps, one after the other in logical order.
+
+## Logic
+TODO
+Prolog <br>
+https://en.wikipedia.org /wiki/Prolog
+https://www.youtube.com/watch?v=xP0q3WOBRks
+
 
 <br><br>
 
@@ -1439,6 +1436,33 @@ This avoids duplicates of data that can change, like for example, a customers ad
 
 ## Foreign keys
 A primary key in a foreign table, to create linked data
+
+<br><br>
+
+## **AI / ML**
+
+## RNN
+Recurrent neural network
+
+## LSTM
+
+## GRU
+
+## Transformer
+
+## CNN
+Convolution neural network
+
+
+## Auto encoder
+
+## Hopfield net
+
+## Perceptron
+
+## Boltzmann machine
+
+## Syn flow
 
 <br><br>
 
