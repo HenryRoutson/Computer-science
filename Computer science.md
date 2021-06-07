@@ -739,11 +739,6 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 
 <br>
 
-
-## **Algorithm analysis**
-
-<br>
-
 ## Complexity
 
 A function describing algorithm resource use dependent on the number of inputs, with a specific input.
@@ -789,9 +784,9 @@ Any complexity graph has lower, exact and upper bounding functions, and in asymp
 
 Depending on the inputs to a function, the complexity of an algorithm can change, such as when a sorting algorithm has to sort an already sorted list.
 
-<br><br>
+<br>
 
-## **Algorithms**
+## Algorithms
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
 
 <br>
@@ -880,11 +875,6 @@ Creates a max or min [heap](#heap) and extracts values
 **Quick Sort**
 https://www.youtube.com/watch?v=Hoixgm4-P4M <br>
 Like binary search, this algorithm splits everything up
-
-
-<br><br>
-
-## **Data structures and types**
 
 <br>
 
@@ -1115,15 +1105,16 @@ It allows both updating and prefix sums in O( log n ) time.
 13 = 2^3 + 2^2 + 2^0 <br>
 SUM_TO(13) = SUM_RANGE(1,8) + SUM_RANGE(9,12) + SUM_RANGE(13,13)
 
+<br>
 
-<br><br>
-
-## **Paradigms**
-https://www.youtube.com/watch?v=aoE-92Ac4zE
+## Paradigm
+A style of programming
 
 <br>
 
-## Object Oriented Programming
+## Object Oriented Programming 
+[Paradigm](#Paradigms) <br>
+
 OOP is writing code around the idea of object properties and actions.
 
 Encapsulation > Creating a sealed class which controls reading and writing variables and calling functions for intended use
@@ -1142,36 +1133,40 @@ Abstract class > A class only used for child classes to inherit from, and which 
 
 <br>
 
-## Functional
+## Functional programming 
+[Paradigm](#Paradigms) <br>
 Create Pure functions where the output should only depend on its inputs and not effect outside variables. This allows for parallelization, as functions can run at the same time without affecting each other.
+
 
 https://www.youtube.com/watch?v=dAPL7MQGjyM
 
 <br>
 
-## Declarative
+## Declarative programming 
+[Paradigm](#Paradigms) <br>
 Code which focuses on the end product rather than how it is created. A description rather than a recipe.
 
 <br>
 
 ## Imperative
+[Paradigm](#Paradigms) <br>
 Describing the steps
 
 <br>
 
 ## Procedural programming
+[Paradigm](#Paradigms) <br>
 Steps, one after the other in logical order.
 
-## Logic
-TODO
-Prolog <br>
-https://en.wikipedia.org /wiki/Prolog
-https://www.youtube.com/watch?v=xP0q3WOBRks
+<br>
 
+## Logic programming
+[Paradigm](#Paradigms) <br>
+Programming based on formal logic, languages include Prolog,
 
-<br><br>
+<br>
 
-## **Programming language**
+## Programming language
 A human readable syntax used to write code which is converted to machine readable code to run.
 
 <br>
@@ -1256,11 +1251,6 @@ Primitives data types are built into the language, and are not imported or added
 https://en.wikipedia.org/wiki/Operator_(computer_programming) <br>
 Operators inbuilt constructs which behave like functions, but differ syntactically ( add(x,y) and x+y ) or semantically 
 
-
-<br><br>
-
-## **High level**
-
 <br>
 
 ## Application
@@ -1299,11 +1289,6 @@ Bare metal (Type 1) hypervisors operate to emulate bare metal hardware for optio
 
 Hosted (Type 2) hypervisors create an OS inside of another OS as an application, commonly called a virtual machine
 
-
-<br><br>
-
-## **Cryptography**
-
 <br>
 
 ## Hashing 
@@ -1340,10 +1325,6 @@ Messages encrypted with your private key can be decrypted by anyone, but only se
 
 Messages can be encrypted multiple times, and so use both of these properties to secure a message and verify a sender.
 
-<br><br>
-
-## **Blockchain**
-
 <br>
 
 ## proof of work
@@ -1372,11 +1353,6 @@ https://www.youtube.com/watch?v=bBC-nXj3Ng4
 
 ## Proof of stake and deposits
 Chooses a user based on their balance, to create a security deposit sum greater than the total sum exchanged in the block. The block is then forged with the users signature and the user receives fees and a reward. The user risks losing their deposit and future rights to forge blocks if the block is found to be fraudulent.
-
-
-<br><br>
-
-## **Devops**
 
 <br>
 
@@ -1413,11 +1389,6 @@ STEPS
 - Whole application is built / compiled and tested
 - Continuous delivery stops here and would wait for human action, while continuous deployment would deploy now
 
-
-<br><br>
-
-## **Databases**
-
 <br>
 
 ## Primary keys
@@ -1437,36 +1408,92 @@ This avoids duplicates of data that can change, like for example, a customers ad
 ## Foreign keys
 A primary key in a foreign table, to create linked data
 
-<br><br>
+<br>
 
-## **AI / ML**
+## AI / ML
+Artificial intelligence or Machine learning is mimicking the ability of biological brains to learn.
+
+<br>
+
+## Neural network
+A network of real or digital neurons which learn to respond to stimuli or data.
+
+<br>
+
+## Moravec's paradox 
+Moravec's paradox is the observation by artificial intelligence and robotics researchers that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor skills require enormous computational resources
+
+<br>
+
+## Backpropagation
+A process of changing weights in a [Neural network](#Neural-network) based on how much each contributed to a wrong answer, which is calculated using derivatives.
+
+<br>
+
+## Vanishing and Exploding gradient problem
+The product of many numbers less than one approaches 0. <br>
+The product of many numbers more than one approaches infinity. <br>
+As earlier weights in the network have a number of derivatives that are multiplied together to determine how the weight should be updated, the value of these weights can limit or overshoot the optimal value.
+
+<br>
+
+## Perceptron
+Essentially a better version of y = m x + b for splitting data
+https://www.desmos.com/calculator/ya2muxcbq3
+
+<br>
 
 ## RNN
-Recurrent neural network
+A Recurrent neural network is a [Neural network](#Neural-network) whose outputs feed into future inputs, and which so are able to process variable size time series data.
+
+<br>
 
 ## LSTM
+A long / short term memory neural network is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
+An LSTM has a continuous memory which is processed by the 'forget' multiplication and 'remember' addition operations. This memory always continues to the next time step, but is also duplicated to and processed by a 'relevant' multiplication operation to be added to only the next time step. Each of these operation is decided by trained neural networks and some parts of the network are normalized.
+
+<br>
 
 ## GRU
+A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
+Similar to an [LSTM](#LSTM), only without the hidden state, making them simpler and faster to train, although they are both suited to different cases.
+
+<br>
 
 ## Transformer
 
-## CNN
-Convolution neural network
+<br>
 
+## CNN
+
+Convolutional [neural network](#Neural-network) <br>
+To convolute is to blur, which is intuitively is mapping a number of values to less. Doing this repeatedly, with trained feature detectors, will allow machine to complete tasks including image content identification or depth perception.
+
+<br>
 
 ## Auto encoder
+Unsupervised <br>
+An autoencoder is an architecture to train one [neural network](#Neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data. 
+
+<br>
+
+## GAN
+Unsupervised <br>
+Generative Adversarial network <br>
+Consists of a Generative network, which creates model data from random or relevant inputs, and a Adversarial model to determine if the data which it is fed is real or generated. The Generative network is trained to minimize the certainty which the Adversarial model thinks it's data is modeled, and the Adversarial model is trained to distinguish this. This allows realistic modeled data to be created for things such as photos. A naive approach would directly train the network to model data, which would result in the average and not a realistic case.
+
+<br>
 
 ## Hopfield net
 
-## Perceptron
+<br>
 
 ## Boltzmann machine
 
-## Syn flow
+<br>
 
-<br><br>
 
-## **Misc**
+## Deep belief network
 
 <br>
 
@@ -1523,3 +1550,6 @@ Something that doesn't vary and which is always true.
 
 ## Loop Invariant 
 A loop invariant is a statement about program variables that is true before and after each iteration of a loop.
+
+## Function overloading
+A function is defined multiple times with different input types.
