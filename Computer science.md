@@ -1462,6 +1462,8 @@ Similar to an [LSTM](#LSTM), only without the hidden state, making them simpler 
 
 ## Transformer
 
+A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem) and memory loss through weighted focused as introduced in the 'Attention is all you need' paper.
+
 <br>
 
 ## CNN
@@ -1479,21 +1481,14 @@ An autoencoder is an architecture to train one [neural network](#Neural-network)
 
 ## GAN
 Unsupervised <br>
-Generative Adversarial network <br>
+Generative Adversarial Network <br>
 Consists of a Generative network, which creates model data from random or relevant inputs, and a Adversarial model to determine if the data which it is fed is real or generated. The Generative network is trained to minimize the certainty which the Adversarial model thinks it's data is modeled, and the Adversarial model is trained to distinguish this. This allows realistic modeled data to be created for things such as photos. A naive approach would directly train the network to model data, which would result in the average and not a realistic case.
 
 <br>
 
 ## Hopfield net
-
-<br>
-
-## Boltzmann machine
-
-<br>
-
-
-## Deep belief network
+[neural network](#Neural-network) <br>
+A neural network which retrieves data with part of that data fed into the network.
 
 <br>
 
