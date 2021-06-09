@@ -635,7 +635,6 @@ git push -f origin main
 # Math
 
 .
-
 **Sum of Integers**
 https://youtu.be/6kvfvpatnn8?t=271
 
@@ -661,7 +660,6 @@ Therefore
 	i=1
 
 .
-
 **Sum of squares**
 https://www.youtube.com/watch?v=aXbT37IlyZQ
 
@@ -670,7 +668,6 @@ https://www.youtube.com/watch?v=aXbT37IlyZQ
 	i=1
 
 .
-
 **Sum of cubes**
 https://www.youtube.com/watch?v=X_6LLmj4_5I 
 
@@ -681,7 +678,6 @@ https://www.youtube.com/watch?v=X_6LLmj4_5I
 
 
 .
-
 **Sum of odd numbers**
 https://www.youtube.com/watch?v=IJ0EQCkJCTc
 
@@ -690,7 +686,6 @@ https://www.youtube.com/watch?v=IJ0EQCkJCTc
 	i=1
 
 .
-
 **Lagrange's four square theorem** 
 
 https://leetcode.com/problems/perfect-squares/discuss/622567/Python-sol-by-math.-90%2B-w-Comment
@@ -700,30 +695,27 @@ Any natural number can be represented as the sum of four integer squares.
 	n = a^2 + b^2 + c^2 + d^2
 
 .
-
 **Lagrange's three square theorem** 
 
 https://leetcode.com/problems/perfect-squares/discuss/765682/Python3-math-and-dp
 
 Any natural number can be represented as the sum of three integer squares, if n is not of the form 4^k(8m+7) for integers k and m
 
-IE 
+IE
 
-    if n / ( 4**int(math.log(n,4)) ) % 8 == 7
+	if n / ( 4**int(math.log(n,4)) ) % 8 == 7
 		n = a^2 + b^2 + c^2
 
 remember not to disqualify multiples of only one factor  
 And for factors to a power, that there could be any number
 
 .
-
 **Two square theorem** 
 
 An integer greater than one can be written as a sum of two squares, if and only if,
 its prime decomposition contains no prime congruent to 3 modulo 4 raised to an odd power. ( Just use brute force checking for this at O( √n ) rather than the theorem )
 
 .
-
 **Sum of a geometric sequence**
 
 	 n
@@ -742,10 +734,9 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 <br>
 <br>
 
-# Computer science (CS)
+# CS concepts
 
 .
-
 ## Complexity
 
 A function describing algorithm resource use dependent on the number of inputs, with a specific input.
@@ -756,7 +747,7 @@ This measure is better than running tests, because
 - it creates a continuous comparable functions, rather than error prone data points
 - it can compare run times with inputs numbers that might not be feasible to test 
 
-Depending on specific inputs to the algorithm this complexity can be best or worst case, AVERAGE CASE
+Depending on specific inputs to the algorithm this complexity can change.
 
 .
 ## Asymptotic analysis
@@ -767,14 +758,14 @@ An analysis of [Complexity](#**complexity**) graphs and what functions can be as
 
 The most common functions, in higher order, are
 
- 1 <
-   log(n) <
-  sqrt(n) <
- n <
- n log(n) <
- n^x <
- x^n <
- n! 
+	1 <
+	  log(n) <
+	 sqrt(n) <
+	n <
+	n log(n) <
+	n^x <
+	x^n <
+	n! 
 
 (Remember that n is an integer, so n^2 is never smaller than n as it would be on a continuous graph)
 
@@ -806,7 +797,7 @@ Searching one after another until an match is found
 A recurrent search algorithm that works on sorted sets by halving sorted elements with  < >  comparison operators. Implemented with a [Binary search tree](#Binary-search-tree).
 
 .
-# Depth & Breadth first search
+## Depth & Breadth first search
 Depth uses a [Stack](#Stack), where the search starts from the newest node, and so goes deep.
 Breadth uses a [Queue](#Queue), where the search starts from the unearthed node found first, and so goes broad, one link away from the origin at a time.
 
@@ -1069,7 +1060,7 @@ A style of programming
 
 .
 ## Object Oriented Programming 
-[Paradigm](#Paradigms)
+[Paradigm](#Paradigm)
 
 OOP is writing code around the idea of object properties and actions.
 
@@ -1089,27 +1080,27 @@ Abstract class > A class only used for child classes to inherit from, and which 
 
 .
 ## Functional programming 
-[Paradigm](#Paradigms)  
+[Paradigm](#Paradigm)  
 Create Pure functions where the output should only depend on its inputs and not effect outside variables. This allows for parallelization, as functions can run at the same time without affecting each other.  
 
 .
 ## Declarative programming 
-[Paradigm](#Paradigms)  
+[Paradigm](#Paradigm)  
 Code which focuses on the end product rather than how it is created. A description rather than a recipe.
 
 .
 ## Imperative
-[Paradigm](#Paradigms)  
+[Paradigm](#Paradigm)  
 Describing the steps
 
 .
 ## Procedural programming
-[Paradigm](#Paradigms)  
+[Paradigm](#Paradigm)  
 Steps, one after the other in logical order.
 
 .
 ## Logic programming
-[Paradigm](#Paradigms)  
+[Paradigm](#Paradigm)  
 Programming based on formal logic, including languages such as Prolog.
 
 .
@@ -1219,7 +1210,7 @@ Bare metal (Type 1) hypervisors operate to emulate bare metal hardware for optio
 Hosted (Type 2) hypervisors create an OS inside of another OS as an application, commonly called a virtual machine
 
 .
-## Hashing 
+## Hash 
 A hash maps any input of varied size to an, ideally always, unique value.
 
 A hash function such as SHA256 will take a key and output a hash code.
@@ -1410,9 +1401,9 @@ A function calling itself
 
 .
 ## Dynamic programming
-- 1 Recursion
+- 1 [Recursion](#Recursion)
 - 2 Memoize (store computed values)
-- 3 Top down Bottom up
+- 3 Top down or Bottom up
 
 **Bottom up**  Base case and work up  
 **Top Down** Memoization and Recursion to work down
