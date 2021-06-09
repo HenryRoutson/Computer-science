@@ -1,6 +1,6 @@
-<br>
 
-Useful but forgettable 
+
+*Useful but forgettable* 
 
 <br>
 
@@ -592,7 +592,8 @@ git push -f origin main
 		n dd  —> delete n lines
         D -> delete to end of line
 		diw —> delete inner word
-		:dt —> delete until the character next typed is found
+		dt —> delete until the character next typed is found
+		x -> delete cursor character
 
 		UNDO REDO
 
@@ -633,7 +634,7 @@ git push -f origin main
 
 # Math
 
-<br>
+.
 
 **Sum of Integers**
 https://youtu.be/6kvfvpatnn8?t=271
@@ -659,7 +660,7 @@ Therefore
 	 Σ i = n(n+1)/2
 	i=1
 
-<br>
+.
 
 **Sum of squares**
 https://www.youtube.com/watch?v=aXbT37IlyZQ
@@ -668,7 +669,7 @@ https://www.youtube.com/watch?v=aXbT37IlyZQ
 	 Σ i^2 = n(n+1)(2n+1)/6
 	i=1
 
-<br>
+.
 
 **Sum of cubes**
 https://www.youtube.com/watch?v=X_6LLmj4_5I 
@@ -679,7 +680,7 @@ https://www.youtube.com/watch?v=X_6LLmj4_5I
 ( Sum of integers squared )
 
 
-<br>
+.
 
 **Sum of odd numbers**
 https://www.youtube.com/watch?v=IJ0EQCkJCTc
@@ -688,7 +689,7 @@ https://www.youtube.com/watch?v=IJ0EQCkJCTc
 	 Σ 2i-1 = n^2
 	i=1
 
-<br>
+.
 
 **Lagrange's four square theorem** 
 
@@ -709,7 +710,7 @@ IE
     if n / ( 4**int(math.log(n,4)) ) % 8 == 7
 		n = a^2 + b^2 + c^2
 
-remember not to disqualify multiples of only one factor <br>
+remember not to disqualify multiples of only one factor  
 And for factors to a power, that there could be any number
 
 **Two square theorem** 
@@ -737,7 +738,7 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 
 # Computer science (CS)
 
-<br>
+.
 
 ## Complexity
 
@@ -751,7 +752,7 @@ This measure is better than running tests, because
 
 Depending on specific inputs to the algorithm this complexity can be best or worst case, AVERAGE CASE
 
-<br>
+.
 
 ## Asymptotic analysis
 
@@ -778,42 +779,42 @@ Any complexity graph has lower, exact and upper bounding functions, and in asymp
 - Θ exists if the same function with different constants can be the lower and upper bound
 - Ω is the lower bounding function  
 
-<br>
+.
 
 ## Best, worst and average case
 
 Depending on the inputs to a function, the complexity of an algorithm can change, such as when a sorting algorithm has to sort an already sorted list.
 
-<br>
+.
 
 ## Algorithms
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
 
-<br>
+.
 
 ## Greedy algorithm
 Algorithms which always take the best short term solution, which in many cases will still results in the global minimum
 
-<br>
+.
 
 ## Linear search
 
 Searching one after another until an match is found
 
-<br>
+.
 
 ## Binary search
 
 A recurrent search algorithm that works on sorted sets by halving sorted elements with  < >  comparison operators. Implemented with a [Binary search tree](#Binary-search-tree).
 
-<br>
+.
 
 # Depth & Breadth first search
 
 Depth uses a [Stack](#Stack), where the search starts from the newest node, and so goes deep.
 Breadth uses a [Queue](#Queue), where the search starts from the unearthed node found first, and so goes broad, one link away from the origin at a time.
 
-<br>
+.
 
 ## Minimum spanning tree algorithms
 Algorithms to find
@@ -827,11 +828,10 @@ https://www.youtube.com/watch?v=cplfcGZmX7I
 From a minimum weighed edge, while not all nodes have been joined, pick the smallest weighted connection that connects to one or two new nodes.
 https://www.youtube.com/watch?v=71UQH7Pr9kU&list=PL9xmBV_5YoZObEi3Hf6lmyW-CBfs7nkOV&index=2
 
-<br>
+.
 
 ## Dijkstra's algorithm
-
-Finds the shortest path between two vertices in a graph
+Finds the shortest path between two vertices in a graph  
 
 - The start vertex takes 0 time and you start by assuming every other vertex takes infinite time to get to it ( This is the same as saying you don't know how long it will take, but this is easier when updating to the shortest time )
 
@@ -841,16 +841,14 @@ Finds the shortest path between two vertices in a graph
 
 The path can be kept track of by having an arrow pointing to the where the shortest path is from
 
-<br>
+.
 
 ## A* graph search
-
-An improvement of [Dijkstra's algorithm](#Dijkstra's-algorithm) which takes into account general direction by taking into account the distance to the end node, alongside to the start node
-Usually used on grids rather than the traditional graph
-
+An improvement of [Dijkstra's algorithm](#Dijkstra's-algorithm) which takes into account general direction by taking into account the distance to the end node, alongside to the start node.
+Usually used on grids rather than the traditional graph.  
 https://www.youtube.com/watch?v=-L-WgKMFuhE
 
-<br>
+.
 
 ## Sort
 
@@ -863,60 +861,62 @@ Smallest items sink to the bottom
 Inserts each element into a sorted area in the list, in the right position
 
 **Merge sort**
-https://www.youtube.com/watch?v=4VqmGXwpLqc <br>
+https://www.youtube.com/watch?v=4VqmGXwpLqc  
 Divides and merges sorted lists
 
 
 **Heap sort**
-https://www.youtube.com/watch?v=k72DtCnY4MU <br>
+https://www.youtube.com/watch?v=k72DtCnY4MU  
 Creates a max or min [heap](#heap) and extracts values
 
 
 **Quick Sort**
-https://www.youtube.com/watch?v=Hoixgm4-P4M <br>
+https://www.youtube.com/watch?v=Hoixgm4-P4M  
 Like binary search, this algorithm splits everything up
 
-<br>
+.
 
 ## Ordered and unordered 
 Ordered means the data is sorted in some way, including by placement.
 
-<br>
+.
 
 ## Immutable	
 Cannot be changed
 
-<br>
+.
 
 ## 	Data structure
 A data structure is a particular way of organizing data in a computer so that it can be used effectively.
 
-<br>
+.
 
 ## Implicit data structure
 A [Data structure](#Data-structure) which uses positioning as a way to carry information about a values position in the underlying representation. 
 Formally, an implicit data structure is one with constant O(1) space overhead 
 An example is a list representing a binary tree.
 
-<br>
+.
 
 ## Data type
 An attribute of data which tells a compiler how to interpret and process it.
+
+.
 
 ## 	Abstract Data type
 A data model which provides only a limited interface to the underlying implemented [Data structure](#Data-structure).
 https://en.wikipedia.org/wiki/Abstract_data_type
 
-<br>
+.
 
 ## List
-[Abstract data type](#Abstract-data-type) <br>
+[Abstract data type](#Abstract-data-type)  
 Sequential elements represented by sequential memory addresses
 
-<br>
+.
 
 ## Graph
-[Abstract data type](#Abstract-data-type) <br>
+[Abstract data type](#Abstract-data-type)  
 A set of nodes possibly joined with edges
 
 Represented in memory with...
@@ -935,26 +935,25 @@ Properties ...
 
 - **Cyclic** > Contains Graph cycles
 
-<br>
+.
 
 ## Tree
 An acyclic [Graph](#graph) where all nodes are connected to a root leading out to leaf nodes.
 
-<br>
+.
 
 ## Binary Tree
-A [Tree](#tree) with at most two edges connected to each node. <br>
+A [Tree](#tree) with at most two edges connected to each node.  
+Full > Each node has 2 or no children.  
+Complete > Nodes are filled in top to bottom, left to right.  
+Perfect > Full and complete.
 
-Full > Each node has 2 or no children. <br>
-Complete > Nodes are filled in top to bottom, left to right. <br>
-Perfect > Full and complete.  <br>
-
-<br>
+.
 
 ## Binary Search Tree 
 A BST is a [Binary Tree](#Binary-Tree) where each node is greater than its left child and less then its right.
 
-https://www.youtube.com/watch?v=LU4fGD-fgJQ <br>
+https://www.youtube.com/watch?v=LU4fGD-fgJQ  
 A tree is balanced if the maximum difference between the number of subtree child nodes is 1 or 0. 
 
 
@@ -964,46 +963,45 @@ A tree is balanced if the maximum difference between the number of subtree child
 | Write  | O(1)           | O(n)         | O(1)        | O(log n)     |
 | Remove | O(n)           | O(n)         | O(n)        | O(log n)     |
 
-<br>
+.
 
 ## Red black Tree
-https://www.youtube.com/watch?v=qvZGUFHWChY <br>
-A balanced [Binary search tree](#Binary-search-tree) with a guaranteed height of O ( log n ) for n nodes.
-
+https://www.youtube.com/watch?v=qvZGUFHWChY  
+A balanced [Binary search tree](#Binary-search-tree) with a guaranteed height of O ( log n ) for n nodes.  
 - A node is either red or black
 - The root node is black 
 - Nil nodes are black 
 -  If a node is red, its children are black
 -  All paths from Root to Nil contain the same number of black nodes 
 
-<br>
+.
 
 ## Stack
-[Abstract data type](#Abstract-data-type) <br>
-Last in First out <br>
+[Abstract data type](#Abstract-data-type)  
+Last in First out  
 Implemented include using a [Linked list](#linked-list). )
 
-<br>
+.
 
 ## Queue
-[Abstract Data Types](#Abstract-Data-Types) <br>
-First in First out. <br>
+[Abstract Data Types](#Abstract-Data-Types)  
+First in First out.  
 Implemented include using a [Linked list](#linked-list). 
 
-<br>
+.
 
 ## Priority queue
-[Abstract data type](#Abstract-data-type) <br>
-important first out <br>
+[Abstract data type](#Abstract-data-type)  
+important first out  
 Implemented include using a [heap](#heap)
 
-<br>
+.
 
 ## Double ended queue
-[Abstract data type](#Abstract-data-type) <br>
+[Abstract data type](#Abstract-data-type)  
 Either last or first in can be first out
 
-<br>
+.
 
 ## Segment Tree 
 A [Binary Tree](#binary-tree) for finding the minimum or maximum values in a range. A max tree is below and shows each node represents the maximum for its children.
@@ -1015,12 +1013,12 @@ A [Binary Tree](#binary-tree) for finding the minimum or maximum values in a ran
 	 / |  | \
 	3  8  9  0
 
-<br>
+.
 
 ## Trie 
 Strings stored as [Tree](#**tree**) character paths
 
-<br>
+.
 
 ## Prefix sum
 A running sum [Arrays](#Array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
@@ -1030,17 +1028,17 @@ O(N) to update
 https://en.wikipedia.org/wiki/Prefix_sum
 In a flat array of numbers, you can either store the elements, or the prefix sums. In the first case, computing prefix sums requires linear time; in the second case, updating the array elements requires linear time (in both cases, the other operation can be performed in constant time).
 
-<br>
+.
 
 ## Array
-[Implicit data structure](#Implicit-data-structure) <br>
+[Implicit data structure](#Implicit-data-structure).   
 Sequential elements in memory with a single data type and which can represent multidimensional data by storing extra data on the shape of the array.
 
-<br>
+.
 
 ## Linked List
-[Data structure](#Data-structure) <br>
-Sequential elements represented by value pointer pairs, where pointers point to the next value in the list 
+[Data structure](#Data-structure)  
+Sequential elements represented by value pointer pairs, where pointers point to the next value in the list.  
 
 Variations
 - singly linked lists have one way directed pointers
@@ -1049,31 +1047,32 @@ Variations
 - Skip list, multiple links to allow for O(log n) read
 
 
-<br>
+.
 
 ## Heap 
-[Data structure](#Data-structure) <br>
-https://www.youtube.com/watch?v=AE5I0xACpZs <br>
-A complete [Binary Tree](#Binary-Tree) stored as an array where for max heaps, no child is greater than its parent.
+[Data structure](#Data-structure)  
+https://www.youtube.com/watch?v=AE5I0xACpZs  
 
-For Insertion new nodes are placed in the next available position, and then swapped with their parents until they are less in value than them, retaining the node value requirement
+A complete [Binary Tree](#Binary-Tree) stored as an array where for max heaps, no child is greater than its parent.  
+
+For Insertion new nodes are placed in the next available position, and then swapped with their parents until they are less in value than them, retaining the node value requirement.
 
 For deletion you delete the root, 
 and move it down by swapping it with the greatest child element greater than itself.
 
 A min heap is the reverse of this
 
-<br>
+.
 
 ## Dictionary
-[Hash](#Hash) <br>
-Also called hash tables. <br>
+[Hash](#Hash)  
+Also called hash tables.  
 A key is hashed and the using modulus the remainder of the a division by the length of the array becomes an array index where the value is stored.
 Allows for O( 1 ) retrieval time.
 
 Some of the ways of addressing collisions include
 
-Open addressing > placing an item at a position different than the hash <br>
+Open addressing > placing an item at a position different than the hash
 
 	Linear probing > The value goes to the next available position in the set length array
 
@@ -1081,7 +1080,7 @@ Closed addressing
 
 	Linked list collisions > If there is a collision, then the array index will be set as the first link in a linked list.
 
-<br>
+.
 
 ## Prefix sum
 A running sum [Arrays](#Array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
@@ -1091,10 +1090,10 @@ O(N) to update
 https://en.wikipedia.org/wiki/Prefix_sum
 In a flat array of numbers, you can either store the elements, or the prefix sums. In the first case, computing prefix sums requires linear time; in the second case, updating the array elements requires linear time (in both cases, the other operation can be performed in constant time).
 
-<br>
+,
 
 ## Fenwick tree
-[Binary tree](#Binary-tree) <br>
+[Binary tree](#Binary-tree)  
 Also called a Binary indexed Tree
 
 https://en.wikipedia.org/wiki/Fenwick_tree
@@ -1102,18 +1101,18 @@ https://www.youtube.com/watch?v=v_wj_mOAlig
 
 It allows both updating and prefix sums in O( log n ) time.
 
-13 = 2^3 + 2^2 + 2^0 <br>
+13 = 2^3 + 2^2 + 2^0  
 SUM_TO(13) = SUM_RANGE(1,8) + SUM_RANGE(9,12) + SUM_RANGE(13,13)
 
-<br>
+.
 
 ## Paradigm
 A style of programming
 
-<br>
+.
 
 ## Object Oriented Programming 
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)
 
 OOP is writing code around the idea of object properties and actions.
 
@@ -1131,140 +1130,140 @@ Class methods > Operate on every instance of a class
 
 Abstract class > A class only used for child classes to inherit from, and which is not instantiated.
 
-<br>
+.
 
 ## Functional programming 
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)  
 Create Pure functions where the output should only depend on its inputs and not effect outside variables. This allows for parallelization, as functions can run at the same time without affecting each other.
 
 
 https://www.youtube.com/watch?v=dAPL7MQGjyM
 
-<br>
+.
 
 ## Declarative programming 
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)  
 Code which focuses on the end product rather than how it is created. A description rather than a recipe.
 
-<br>
+.
 
 ## Imperative
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)  
 Describing the steps
 
-<br>
+.
 
 ## Procedural programming
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)  
 Steps, one after the other in logical order.
 
-<br>
+.
 
 ## Logic programming
-[Paradigm](#Paradigms) <br>
+[Paradigm](#Paradigms)  
 Programming based on formal logic, languages include Prolog,
 
-<br>
+.
 
 ## Programming language
 A human readable syntax used to write code which is converted to machine readable code to run.
 
-<br>
+.
 
 ## Source code
 Human readable which represents machine code
 
-<br>
+.
 
 ## Byte code
 Compressed [Source code](#Source-code) which can be optimized for a specific machine before being executed
 
-<br>
+.
 
 ## Machine Code
 Binary that can execute on a computer’s physical processor without further translation.
 
-<br>
+.
 
 ## Interpreter
 Interpreting a [Programming language](#Programming-language) is executed code with each line.
 
-<br>
+.
 
 ## Compiler
 A Compiler converts the [Programming language](#Programming-language)  Human to OS machine code as a whole and  then executed
 
-<br>
+.
 
 ## AOT
-[Compiler](#Compiler) <br>
+[Compiler](#Compiler)  
 Ahead Of Time compilers convert from human to machine readable before run time are the most common and intuitive compiler implementation.
 
-<br>
+.
 
 ## JIT
 A Just in time [Compiler](#Compiler) converts from human readable code to byte code for distribution, and then is converted to machine code with each computer for better optimization.
 
-<br>
+.
 
 ## Explicit conversion
 When a type is converted explicitly in code.
-<br>
 
 	int( "1234" )
 
+.
+
 ## Implicit conversion
 When a type is converted by the compiler without explicit instruction in code. This conversion retains information and so the new type takes more memory than the previous type. 
-<br>
 
 	2+"3" = "23"
 
-<br>
+.
 
 ## Strong or Weak typing
 A continuous spectrum that compares how flexible (weak) or rigid (strong) programming languages are using implicit conversion.
 
-<br>
+.
 
 ## Dynamic / Static typed languages
 Dynamic typed programming languages check for types during run time, "on the fly". Static languages check for types when they compile, and so are faster in run time.
 
-<br>
+.
 
 ## Call stack 
-https://en.wikipedia.org/wiki/Call_stack <br>
+https://en.wikipedia.org/wiki/Call_stack  
 A [Stack](#Stack) implemented to store values in the order a program will use them.
 
-<br>
+.
 
 ## Literal
 A fixed value which is assigned to variables or printed, and whose type is defined in syntax.
 
-<br>
+.
 
 ## Primitive data types
 Primitives data types are built into the language, and are not imported or added on
 
-<br>
+.
 
 ## Operator
-https://en.wikipedia.org/wiki/Operator_(computer_programming) <br>
+https://en.wikipedia.org/wiki/Operator_(computer_programming)  
 Operators inbuilt constructs which behave like functions, but differ syntactically ( add(x,y) and x+y ) or semantically 
 
-<br>
+.
 
 ## Application
 Code directly applicable to the user.
 
-<br>
+.
 
 ## OS 
-Operating System <br>
+Operating System  
 Code to run other 1st or 3rd party applications. 
 With multiple applications it consequentially needs the ability to switch between them, and manage shared resource use if they run at the same time. 
 With 3rd party applications it likely enforces proper hardware use and provide common services to 3rd party developers.
 
-<br>
+.
 
 ## Kernel
 Software that interfaces directly with hardware
@@ -1278,7 +1277,7 @@ User Mode software has limited hardware access, so an application can't just use
 
 **Monolithic kernels** run everything at the kernel level and have improved performance by nearly a power of magnitude, as they avoid context switching and message calls
 
-<br>
+.
 
 ## Virtual machines
 Software that emulates dedicated hardware. 
@@ -1289,7 +1288,7 @@ Bare metal (Type 1) hypervisors operate to emulate bare metal hardware for optio
 
 Hosted (Type 2) hypervisors create an OS inside of another OS as an application, commonly called a virtual machine
 
-<br>
+.
 
 ## Hashing 
 A hash maps any input of varied size to an, ideally always, unique value.
@@ -1297,25 +1296,25 @@ A hash maps any input of varied size to an, ideally always, unique value.
 A hash function such as SHA256 will take a key and output a hash code.
 Over the range of possible hash codes, hash functions are designed to spread these out to avoid collisions, but at the same time the function is not random and the same key will always result in the same hash code being deterministic.
 
-<br>
+.
 
 ## Encryption
-https://www.youtube.com/watch?v=GSIDS_lvRv4 <br>
-https://www.youtube.com/watch?v=vsXMMT2CqqE <br>
+https://www.youtube.com/watch?v=GSIDS_lvRv4  
+https://www.youtube.com/watch?v=vsXMMT2CqqE  
 A process that converts text into nonsensical cipher-text, which can only be decrypted by people with a numerical key, for use in sending information when communications can be intercepted.
 
-<br>
+.
 
 ## Symmetric Encryption
 Where the message is encrypted and decrypted with the same key, and so needs to be transferred between parties. The key needs to be securely shared, but this method is faster than [Asymmetric Encryption](#Asymmetric-Encryption)
 
-<br>
+.
 
 ## Asymmetric Encryption
 Also called Public key Encryption 
 
-https://www.youtube.com/watch?v=AQDCe585Lnc <br>
-https://www.youtube.com/watch?v=vsXMMT2CqqE <br>
+https://www.youtube.com/watch?v=AQDCe585Lnc  
+https://www.youtube.com/watch?v=vsXMMT2CqqE  
 
 Everybody has a public and private key.
 
@@ -1325,7 +1324,7 @@ Messages encrypted with your private key can be decrypted by anyone, but only se
 
 Messages can be encrypted multiple times, and so use both of these properties to secure a message and verify a sender.
 
-<br>
+.
 
 ## proof of work
 Trust which ledger has the most computational work, which is the ledger with the most blocks verified with a rare hash property that needs to be found with trial and error search by adding numbers to a block to change the hash.
@@ -1333,7 +1332,7 @@ The blocks are also linked by placing the hash of the previous block at the top 
 
 A 51% attack is when a majority of computational power is being used to verify the fraudulent fork of the ledger blocks.
 
-<br>
+.
 
 ## Cryptocurrency
 
@@ -1349,12 +1348,12 @@ But there can be willful ignorance of payments, that can divide the ledger, so w
 
 https://www.youtube.com/watch?v=bBC-nXj3Ng4 
 
-<br>
+.
 
 ## Proof of stake and deposits
 Chooses a user based on their balance, to create a security deposit sum greater than the total sum exchanged in the block. The block is then forged with the users signature and the user receives fees and a reward. The user risks losing their deposit and future rights to forge blocks if the block is found to be fraudulent.
 
-<br>
+.
 
 ## Containers
 A container is a software package that consists of all the dependencies required to run an application 
@@ -1363,18 +1362,18 @@ Docker is software for distributing software in the same environment it was made
 
 https://stackoverflow.com/questions/30632386/is-docker-a-solution-for-making-application-cross-platform
 
-<br>
+.
 
 ## Container orchestration
 A way to scale and maintain [Containers](#Containers) automatically
 
-<br>
+.
 
 ## Microservices
 Splitting up cloud services between [Containers](#Containers) to them scale for their different workloads
 This also isolates one service from crashing others
 
-<br>
+.
 
 ## CI CD
 Continuous Integration and Deployment or Delivery
@@ -1389,12 +1388,12 @@ STEPS
 - Whole application is built / compiled and tested
 - Continuous delivery stops here and would wait for human action, while continuous deployment would deploy now
 
-<br>
+.
 
 ## Primary keys
 The index of a unique rows in a database to describe an entry
 
-<br>
+.
 
 ## Relation databases
 A database design to to avoid redundant and old data
@@ -1403,94 +1402,93 @@ IE A customer ID in a sales table describes the location in another table of up 
 
 This avoids duplicates of data that can change, like for example, a customers address which could change between sales
 
-<br>
+.
 
 ## Foreign keys
 A primary key in a foreign table, to create linked data
 
-<br>
+.
 
 ## AI / ML
 Artificial intelligence or Machine learning is mimicking the ability of biological brains to learn.
 
-<br>
+.
 
 ## Neural network
 A network of real or digital neurons which learn to respond to stimuli or data.
 
-<br>
+.
 
 ## Moravec's paradox 
 Moravec's paradox is the observation by artificial intelligence and robotics researchers that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor skills require enormous computational resources
 
-<br>
+.
 
 ## Backpropagation
 A process of changing weights in a [Neural network](#Neural-network) based on how much each contributed to a wrong answer, which is calculated using derivatives.
 
-<br>
+.
 
 ## Vanishing and Exploding gradient problem
-The product of many numbers less than one approaches 0. <br>
-The product of many numbers more than one approaches infinity. <br>
+The product of many numbers less than one approaches 0.  
+The product of many numbers more than one approaches infinity.  
 As earlier weights in the network have a number of derivatives that are multiplied together to determine how the weight should be updated, the value of these weights can limit or overshoot the optimal value.
 
-<br>
+.
 
 ## Perceptron
 Essentially a better version of y = m x + b for splitting data
 https://www.desmos.com/calculator/ya2muxcbq3
 
-<br>
+.
 
 ## RNN
 A Recurrent neural network is a [Neural network](#Neural-network) whose outputs feed into future inputs, and which so are able to process variable size time series data.
 
-<br>
+.
 
 ## LSTM
 A long / short term memory neural network is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
 An LSTM has a continuous memory which is processed by the 'forget' multiplication and 'remember' addition operations. This memory always continues to the next time step, but is also duplicated to and processed by a 'relevant' multiplication operation to be added to only the next time step. Each of these operation is decided by trained neural networks and some parts of the network are normalized.
 
-<br>
+.
 
 ## GRU
 A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
 Similar to an [LSTM](#LSTM), only without the hidden state, making them simpler and faster to train, although they are both suited to different cases.
 
-<br>
+.
 
 ## Transformer
 
 A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem) and memory loss through weighted focused as introduced in the 'Attention is all you need' paper.
 
-<br>
+.
 
 ## CNN
 
-Convolutional [neural network](#Neural-network) <br>
+Convolutional [neural network](#Neural-network)  
 To convolute is to blur, which is intuitively is mapping a number of values to less. Doing this repeatedly, with trained feature detectors, will allow machine to complete tasks including image content identification or depth perception.
 
-<br>
+.
 
 ## Auto encoder
-Unsupervised <br>
+Unsupervised  
 An autoencoder is an architecture to train one [neural network](#Neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data. 
 
-<br>
+.
 
 ## GAN
-Unsupervised <br>
-Generative Adversarial Network <br>
+Generative Adversarial Network  
 Consists of a Generative network, which creates model data from random or relevant inputs, and a Adversarial model to determine if the data which it is fed is real or generated. The Generative network is trained to minimize the certainty which the Adversarial model thinks it's data is modeled, and the Adversarial model is trained to distinguish this. This allows realistic modeled data to be created for things such as photos. A naive approach would directly train the network to model data, which would result in the average and not a realistic case.
 
-<br>
+.
 
 ## Hopfield net
-[neural network](#Neural-network) <br>
+[neural network](#Neural-network)  
 A neural network which retrieves data with part of that data fed into the network.
 
-<br>
+.
 
 ## Halting problem
 
@@ -1507,31 +1505,27 @@ https://youtu.be/macM_MtS_w4?t=274
 So if the machine halts, the yes output causes it to not halt, and if it doesn't halt the no output halts.
 This means the modified and hence base computer which solves the halting problem cannot exist.
 
-<br>
+.
 
 ## recursion
 A function calling itself
 
-<br>
+.
 
 ## Dynamic programming
 - 1 Recursion
-- 2 Memoize (not memorize)
-
-	Store what values you have already computed
-
+- 2 Memoize (store computed values)
 - 3 Top down Bottom up
-	
-**Bottom up**  Base case and work up
 
+**Bottom up**  Base case and work up  
 **Top Down** Memoization and Recursion to work down
 
-<br>
+.
 
 ## P vs NP
 https://www.youtube.com/watch?v=u2DLlNQiPB4
 
-<br>
+.
 
 ## Premature optimization
 Optimizing that delays finishing a working product, as when the optimization... 
@@ -1540,11 +1534,20 @@ Optimizing that delays finishing a working product, as when the optimization...
 - won't be a bottleneck to needed performance, and will go unnoticed by the user
 - makes it slower to write more code, and will be a hindrance to development
 
+.
+
 ## Invariant 
 Something that doesn't vary and which is always true.
+
+.
 
 ## Loop Invariant 
 A loop invariant is a statement about program variables that is true before and after each iteration of a loop.
 
+.
+
 ## Function overloading
 A function is defined multiple times with different input types.
+
+.
+
