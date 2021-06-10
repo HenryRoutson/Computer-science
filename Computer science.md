@@ -568,12 +568,15 @@ git push -f origin main
 
 **Vim**
 
-	i —> insert mode
+	i —> insert mode to the left of cursor
+	a -> (append) insert mode the right of the cursor
 
 	esc key -> command mode
 
 		MOVE
 
+		b -> back one word
+		w -> forward one word
 		n —> do next command n times
 		H —> top of screen
 		M —> middle of screen
@@ -585,12 +588,12 @@ git push -f origin main
 		A —> start insert mode at end of line
 		I -> start insert mode at end of line
 		n { }  —>  up and down blocks 
-		f *character* —> skips to next character
+		f <character> —> skips to next character
 
 		DELETE
 
-		n dd  —> delete n lines
-        D -> delete to end of line
+		n dd  —> cut n lines
+       		D -> delete to end of line
 		diw —> delete inner word
 		dt —> delete until the character next typed is found
 		x -> delete cursor character
@@ -609,8 +612,11 @@ git push -f origin main
 
 		SEARCH AND REPLACE
 
+		r<char> -> replace cursor character with new character
+		/<chars> -> find characters
 		/ term —> highlights terms 
-		:%s/toReplace/replaceWith/g —> replace globally
+		:s/ <replaced> / <replace with> -> substitute 1 word on a line 
+		:%s/<init>/<fin>/gc —> substitute all (%) words globally (g) with confirmation (c)
 		
 		MISC
 
