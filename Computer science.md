@@ -575,6 +575,7 @@ git push -f origin main
 
 		MOVE
 
+		e -> end of a word
 		b -> back one word
 		w -> forward one word
 		n —> do next command n times
