@@ -270,8 +270,118 @@ In = input("optional message")
 <br>
 <br>
 
+**C**
+```c
+// Hello world
+#include <stdio.h>
+int main() {
+	printf("Hello World!");
+	return 0;
+}
+/*	
+    - stdio is short for standard input output 
+    - the type before the name of the function is the returned type
+    - int main() returning 0 signals no errors, 
+    - newer compiler return 0 implicitly
+*/
 
-**c++**
+// PRINT VARIABLES
+#include <stdio.h>
+int main() {
+	char Planet[] = "Mars";
+	printf( "Hello %s!", Planet ); 
+	return 0;
+}
+/* 
+	%c char single character
+	%d (%i) int signed integer
+	%e (%E) float or double exponential format
+	%f float or double signed decimal
+	%g (%G) float or double use %f or %e as required
+	%o int unsigned octal value
+	%p pointer address stored in pointer
+	%s array of char sequence of characters
+	%u int unsigned decimal
+	%x (%X) int unsigned hex value
+*/
+
+// POINTERS
+int Var = 5;	
+int *Pointer = &Var;
+printf( "Value: %d", *Pointer );
+printf( "Address: %d", Pointer );
+
+// TYPES
+char A = 'A';
+int Ten = 10;
+float Tenth = 0.1;
+double Half = 0.5;
+// modifiers
+signed 
+unsigned
+short 
+long
+// changing type / bit manipulation
+char a = (char)42;
+printf( 2*a )
+
+// ARRAYS
+char Variable_AnyLength[];
+char Variable_CappedLength[25];
+char *Constant = "Value";
+
+// INDEXING
+printf( "Indexed string"[1] );
+
+// FUNCTIONS W INPUTS
+
+
+// INPUT
+printf( "What is your name?" );
+int chars = 25;
+char[chars] String;
+fgets(name, chars, stdin) 
+// stdin is standard input (the terminal)
+printf( name )
+
+
+// LOGIC OPERATIONS
+
+#include<iostream>
+int main() { 
+    std::cout << (true & true);  // & --> AND
+    std::cout << (true | false); // | --> OR
+    std::cout << (!false);       // ! --> NOT
+}
+
+// CONTROL FLOW
+
+if (Bool) {}
+
+switch (value) {
+    case possible_value: print("1") break
+	case another_possible_value: print("2") break
+}
+
+// remember to use a semicolon and not a comma
+for ( i=0; i<100; i++ ) {}
+while ( Condition ) {}
+
+// overloading function to support multiple types
+int plusFuncInt(int x, int y) { return x + y; }
+double plusFuncDouble(double x, double y) { return x + y; }
+
+// SHORTHAND
+
+int one, two; // declare variables with shared type 
+y += x 
+y++ // y+=1
+x-- // x-=1
+
+```
+
+
+**C++**
 ```c++
 
 // Hello world
@@ -280,11 +390,6 @@ In = input("optional message")
 int main() {
     std::cout << "Hello world";
 }
-/*
-    before the name of the function is the returned type
-    main() returns an int as returning 0 signals no errors
-    newer compilers return 0 from main implicitly
-*/
 
 // VERSION -----------------------------------
 
@@ -299,9 +404,7 @@ int main() {
 // TYPES -----------------------------------
 
 int main() {
-    short bytes = 5
-    int integers[bytes] = {1, 3, 5} 
-	auto AnyType;
+    auto AnyType;
 }
 
 #include<vector>
@@ -319,12 +422,6 @@ int main() {
 	std::string_view first_name(name.c_str(), 4); // create pointer to string
 }
 
-// POINTERS -----------------------------------
-
-int main() {
-
-}
-
 // NUMERICAL -----------------------------------
 
 #include<iostream>
@@ -338,38 +435,6 @@ int main() {
     std::cout << fmax(1,3);
     std::cout << fmin(1,3);
 }
-
-// LOGIC OPS ----------------------------------- 
-
-#include<iostream>
-int main() { 
-    std::cout << (true & true);  // & --> AND
-    std::cout << (true | false); // | --> OR
-    std::cout << (!false);       // ! --> NOT
-}
-
-// CONTROL FLOW ----------------------------------- 
-
-if (Bool) {}
-
-switch (value) {
-    case possible_value: print("1") break
-	case another_possible_value: print("2") break
-}
-
-for (i=0;i<Int;i++) {} // sep with ;
-while (Condition) {}
-
-// overloading function to support multiple types
-int plusFuncInt(int x, int y) { return x + y; }
-double plusFuncDouble(double x, double y) { return x + y; }
-
-// S H O R T  H A N D -----------------------------------
-
-int one, two; // declare variables with shared type 
-y += x 
-y++ // y+=1
-x-- // x-=1
 
 // INPUT  -----------------------------------
 
@@ -590,6 +655,7 @@ git push -f origin main
 		I -> start insert mode at end of line
 		n { }  —>  up and down blocks 
 		f <character> —> skips to next character
+		t <character> -> skips to behind next character
 
 		DELETE
 
@@ -639,7 +705,19 @@ git push -f origin main
 <br>
 <br>
 
+# Terraform
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 # Math
+
+
 
 <br>
 
