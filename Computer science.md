@@ -8,7 +8,14 @@
 
 https://www.tablesgenerator.com/markdown_tables
 
-Search for definition: "# WordToDefine"
+Note that markdown links cant have capitals  
+[Link with lower](#code)  
+[Link with upper](#Code)  
+
+<br>
+
+Search "???" for unsure  
+Saarch "TODO" for todo  
 
 <br>
 <br>
@@ -19,20 +26,24 @@ Search for definition: "# WordToDefine"
 
 **Python**
 ```python
+#                                                   HELLO WORLD
+print("Hello world")	
 
 #                                                   CONVENTION
 
-b.a() # usually modifies values and returns None
-a(Input) # returns calculated values
-b.a # returns stored value
-
+() # means something is spontaneously calculated, and possibly takes inputs
+ClassInstance.Attribute # Stored
+ClassInstance.Method()
+Function(Input)
 
 #                                                   NUMERICAL
 
 x * y # mul
 x ** y # exp
+x / y # division (converts to float)
 x % y # mod
 x ** 0.5 # sqrt
+
 import math 
 math.sqrt(64)
 math.log(64,2) 
@@ -45,7 +56,6 @@ not 48 # 0 through implicit conversion
 int(Num, Base) # revert to base 10 
 binary = bin(10) # '0b1010'
 1-bit # NOT
-bit^1 # NOT
 not bit # NOT
 & # AND      
 | # OR      
@@ -59,12 +69,50 @@ hexadecimal = hex(10) # '0xa'
 
 dir(type) # find type methods
 
+bool 
+	Bool = True
+	bool(Type) # if the type is the simplest / smallest, then it will eval to False
+	not # to flip
+
+	"""Evaluating bool expressions"""
+	True or True and not True # Not left to right
+	# 1 Conditions 
+	# 2 not
+	# 3 and
+	# 4 or 
+
+	
+	# strings will be evaluated on dictionary order
+
+	>  # Greater than
+	>= # Greater than or equal to
+	<  # Less than
+	<= # Less than or equal to
+	!= # not equal to
+
+3<5<7
+
 float
 	Float = 5.0
 	
 	# Methods
 	bool( Num % 1 ) # test if float has decimals
 	def ceil(x): return int(x+bool(x%1)) # round up without importing
+
+complex 
+
+	Complex = 3+4j 
+	Complex = complex(3, 4)
+	Complex.real # 3
+	Complex.imag # 4
+	Complex.conjugate() # 3-4j
+	abs(Complex) # 5
+
+	import cmath
+	Complex = complex( 1, (3**0.5) )
+	cmath.polar(Complex) 
+
+	
 
 int 
 	Int = 2
@@ -88,7 +136,13 @@ list
 str 
 	# ordered, immutable, iterable
 	string = "123" 
-	string = f"This is an F string which easy add values like {x} into"
+	string = "1234" + "5678" # concatenation
+	fstring = f"This is an F string which easy add values like {x} into"
+	fstring = f"F strings can be formatted with rounded float for example {2**0.5:.10f}"
+
+	# Printing
+	print(1234, "567", "eight", "nine") # , adds a space
+	print(str)	
 
 	# Methods
 
@@ -98,6 +152,7 @@ str
 	ord(Char) - ord('a') + 1 # lower case alphabetic position
 	ord(Char) - ord('A') + 1 # upper case alphabetic position
 
+	# eval
 	string.istitle() # is title capitalization
 	string.isupper()
 	string.islower()
@@ -106,6 +161,10 @@ str
 	string.isalnum() # is alpha numeric 
 	string.upper() # changes all letters in string to upper case
 	string.lower() # changes all letters in string to lower case
+	string.split() # Splits up into list based on string, leave as default to split words
+	string.strip() # default is " ", removes this string at start and end of another
+
+
 
 tuple
 	# ordered, immutable
@@ -167,8 +226,11 @@ Pop = Iterable.pop() # list set dict
 Iterable = sorted(Iterable) 
 Iterable.sort() 
 Iterable.sort(reverse=True)
-Iterable[0:2]
-Iterable[::n] # every nth item
+Iterable[start:end:move] # slicing
+	# second comma is optional if move doesn't need to be changed
+	# Defaults if values aren't entered... 
+	start=0; end=len(string)+1; move=1
+	# start is inclusive, end is exclusive to the character at the index
 Iterable[::-1] # reverse iterable
 Iterable.index(element)
 
@@ -178,12 +240,11 @@ max(Iterable)
 min(Iterable)
 sum(Iterable)
 
-
 #                                                  CONTROL FLOW 
 
 
-
-if Condition: Code ...
+def function(required, Optional=" "): return ... # optional inputs are like declaring values in function, but being able to modify them
+if Condition: Code ... # evaluating a type will be implicitly converted to bool
 if Condition: return # doesn't need else after
 
 while Condition: print("while")
@@ -195,6 +256,13 @@ for a,b in zip(listA,listB): print(a,b) # use zip for multiple lists
 	# Methods
 	break 
 	continue # next i
+
+# for else
+for ... :
+	if ... :
+		break
+else ... : # called if not break
+	...
 
 
 #                                                  FUNCTIONAL
@@ -227,8 +295,8 @@ class Animal():
 
 class Human(Animal):
 	def __init__(self, Age):
-    	super().__init__(Age) # Alternative to below
-		# Animal.__init_(self)
+    	super().__init__() # Alternative to above
+
 
 Tom = Human(20) # instance
 Tom.birthDay()
@@ -248,6 +316,21 @@ def fib(n):
 def expensive_computation(n):
 	...
 
+#                                                  	USING BUILT IN OPERATORS 
+
+class complex:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+ 
+     # adding two objects
+    def __add__(self, other):
+        return self.a + other.a, self.b + other.b
+ 
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+Ob3 = Ob1 + Ob2
+print(Ob3)
 
 #                                                  MISC
 
@@ -261,6 +344,8 @@ __main__ # magic methods
 1_000 # _ makes large numbers easier to read
 In = input("optional message")
 @decorator 
+\ # to split up lines 
+help( Something )	
 
 ```
 
@@ -456,6 +541,7 @@ int main() {
 <br>
 <br>
 
+TODO
 **Java**
 ```Java
 // Hello world
@@ -476,6 +562,7 @@ while (Condition) {}
 <br>
 <br>
 
+TODO
 **Javascript**
 ```Javascript
 console.log('Hello World');
@@ -488,6 +575,7 @@ console.log('Hello World');
 <br>
 <br>
 
+TODO
 **Swift**
 ```swift
 // test
@@ -591,6 +679,33 @@ git push -f origin main
 
 **SQL**
 ```SQL
+-- W R I T E
+
+	CREATE DATABASE databasename; -- create database
+	DROP DATABASE databasename; -- delete database
+	CREATE TABLE table_name ( -- create table and columns
+	column1 type,
+	column2 type constraint, -- column constraints are optional
+	....
+	);
+	DROP TABLE table_name; -- delete table
+	ALTER TABLE table_name ADD column_name datatype; -- add column to table
+	INSERT INTO tbl (clm1, clm2, ...) VALUES (val1, val2...); -- add a row to table
+	DELETE FROM tbl WHERE cond; -- delete rows from table
+	UPDATE tbl SET cml = val, … WHERE cond; -- update data 
+
+	-- Types
+	-- https://en.wikipedia.org/wiki/SQL#SQL_data_types
+
+	-- Constraints
+	NOT NULL;
+	UNIQUE;
+	PRIMARY KEY;
+	FOREIGN KEY;
+	CHECK (inequality);
+	DEFAULT val;
+	CREATE INDEX indexName ON Table (Column);
+
 -- R E A D
 
 	SELECT clm1, clm2 FROM tbl1; 
@@ -618,11 +733,45 @@ git push -f origin main
 	SELECT AVG(clm1, clm2) FROM tbl; -- column averages
 	SELECT SUM(clm1, clm2) FROM tbl; -- column sums
 
--- W R I T E
+-- E X A M P L E
 
-	INSERT INTO tbl (clm1, clm2, ...) VALUES (val1, val2...); 
-	UPDATE tbl SET cml = val, … WHERE cond;
-	DELETE FROM tbl WHERE cond;
+	CREATE TABLE user_details (
+	Email CHAR(25),
+	Phone CHAR(12),
+	Age SMALLINT
+	);
+
+	INSERT INTO user_details (Email, Phone, Age)
+	VALUES ('yes@no.com', '0123456789', 23);
+
+	SELECT * FROM user_details;
+
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**JSON**  
+JavaScript Object Notation is a language independent data format.  
+ - Data is in name/value pairs  
+ - Data is separated by commas ,
+ - Curly braces hold objects {}
+ - Square brackets hold arrays []
+
+```JSON
+{
+	"business_id": "1434729",
+	"postcode": "400",
+	"open": true,
+	"employees":[
+		{"firstName":"John", "lastName":"Doe"},
+		{"firstName":"Anna", "lastName":"Smith"},
+		{"firstName":"Peter", "lastName":"Jones"}
+		]
+}
 ```
 
 <br>
@@ -658,7 +807,7 @@ git push -f origin main
 		t <character> -> skips to behind next character
 
 		DELETE
-
+		
 		n dd  —> cut n lines
        		D -> delete to end of line
 		diw —> delete inner word
@@ -705,7 +854,9 @@ git push -f origin main
 <br>
 <br>
 
-# Terraform
+# Deployment
+
+## Terraform
 
 
 
@@ -1362,6 +1513,62 @@ Hosted (Type 2) hypervisors create an OS inside of another OS as an application,
 
 <br>
 
+## serverless
+
+A term which describes on demand use of servers by a provider which are setup and maintained by them. Serverless is just used to describe that you don't have to use your own physical server
+
+<br>
+
+## SaaS
+
+Software as a Service provides 
+
+- Application hosting 
+
+and everything under [PaaS](#PaaS)
+
+## Faas
+
+Function as a Service provides 
+
+- On demand function computing
+
+and everything under [PaaS](#PaaS)
+
+## PaaS
+Platform as a Service provides 
+
+- Developer tools  
+- Operating systems 
+
+and everything under [IaaS](#IaaS)
+
+## IaaS
+
+Infrastructure as a Service provides  
+
+- Compute 
+- Storage 
+- Physical housing
+- Networking and Security  
+
+## Serverless
+
+Where you rent a server or on demand computing from a provider, rather than buying, setting up and maintaining your own
+
+<br>
+
+## Daemons
+
+From https://en.wikipedia.org/wiki/Daemon_(computing)  
+Name is inspired by Maxwell's demon  
+"We fancifully began to use the word daemon to describe background processes that worked tirelessly to perform system chores"  
+A further characterization of the mythological symbolism is that a daemon is something that is not visible yet is always present and working its will.  
+
+Described a background process which runs in the background without the oversight by the user
+
+<br>
+
 ## Hash 
 A hash maps any input of varied size to an, ideally always, unique value.
 
@@ -1467,12 +1674,55 @@ The index of a unique rows in a database to describe an entry
 
 <br>
 
-## Relation databases
-A database design to to avoid redundant and old data
+## Relational databases
 
-IE A customer ID in a sales table describes the location in another table of up to date customer information
+A database system in which any field can be a component of more than one of the database's tables.
 
-This avoids duplicates of data that can change, like for example, a customers address which could change between sales
+IE 
+
+An order references a customer in another table, rather than having multiple and possible conflicting data entries in the order table, as these details can change over time.
+The customer's country is specified in the customer table by again, a reference to another table.
+
+A relational database avoids duplicating data which takes up more space and can be conflicting
+
+<br>
+
+## NoSQL
+
+https://www.youtube.com/watch?v=0buKQHokLK8  
+https://www.youtube.com/watch?v=W2Z7fbCLSTw
+
+NoSQL databases are not relational
+
+**key–value pair**  
+Uses a [Dictionary](#Dictionary)  
+Used a a cache because you can't store on the disk ???
+
+**wide column**  
+A key-value pair database where each key can point to multiple entries or even groups  
+
+**document**  
+Just a collection of literal documents, which provides complex flexibility
+
+[**Graph**](#graph)  
+Nodes contain data and directional edges are relationships
+
+**Search engine**  
+Where results are linked to 
+
+**Multi model**  
+Uses where applicable, multiple database models to get the best performance
+
+**Column vs Row Oriented Databases**  
+[Operating system blocks](#operating-system-blocks)  
+https://www.youtube.com/watch?v=XNrsRVMfj1c  
+Depending on if a database stores entries or columns together in blocks, the read performance can vary depending on how many blocks need to be read
+
+<br>
+
+## Operating system blocks
+An operating system block is the minimum unit of data that the operating system can read or write.
+Why are there operating system blocks???
 
 <br>
 
@@ -1618,5 +1868,31 @@ A loop invariant is a statement about program variables that is true before and 
 
 ## Function overloading
 A function is defined multiple times with different input types.
+Also called polymorphism
+
 
 <br>
+
+## language syntax
+
+Arrangement and order of symbols of language
+
+<br>
+
+## language semantics
+
+The meaning of the words and phrases in a language
+
+<br>
+
+## Expression
+
+An expression expresses a value and so evaluates to something
+For example, x=5 in python wouldn't be an expression because it wouldn't evaluate to anything, while x==5 would
+
+<br>
+
+## Assembly
+
+In computer programming, assembly language, sometimes abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
+
