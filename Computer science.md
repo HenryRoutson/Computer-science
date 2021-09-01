@@ -14,17 +14,83 @@ Note that markdown links cant have capitals
 
 <br>
 
+When writing code, don't write scalable code straight away, but write code for a small part of the program and get that working first
+
+<br>
+
 Search "???" for unsure  
-Saarch "TODO" for todo  
 
 <br>
 <br>
 
 # Code
 
+### **Shared syntax**  
+
 <br>
 
-**Python**
+###  Increment and decrement operators
+
+	pre
+	x++ and x--
+
+	post
+	++x and ++x
+
+<br>
+
+### Augmented assignment  
+https://en.wikipedia.org/wiki/Augmented_assignment  
+
+	+=, -=, %= ...
+
+<br>
+
+###  Control flow brackets
+	... (...) {...}
+```c
+if ( i>100 ) {...} // i>100 is a Boolean
+
+switch ( i ) {                  // i, a and b are values
+	case a: ... break;
+	case b: ... break;
+}
+
+for (int i=0; i<100; i++) {...}
+
+while ( i>100 ) {...}
+```
+
+<br>
+
+### Iterable bracket indexing
+
+```c
+"string"[1]
+```
+
+<br>
+
+TODO
+### Standard mathematical syntax
+
+```python
+x * y # mul  
+x / y # division
+x % y # mod  
+```
+
+<br>
+<br>
+<br>
+<br>
+
+**Python**  
+[Augmented assignment](#augmented-assignment)  
+[Iterable bracket indexing](#iterable-bracket-indexing)
+[Standard mathematical syntax](#standard-mathematical-syntax)
+
+
 ```python
 #                                                   HELLO WORLD
 print("Hello world")	
@@ -36,16 +102,24 @@ ClassInstance.Attribute # Stored
 ClassInstance.Method()
 Function(Input)
 
-#                                                   NUMERICAL
+CONSTANT = 10
+variable_name = [1,2,3,4]
+def function_name(): ...
+# note that variables are preserved with functions
 
-x * y # mul
+def function():
+    """Demonstrates triple double quotes
+    docstrings and does nothing really."""
+    pass
+
+print(function.__doc__)
+
+#                                                   MATHEMATICAL
+
 x ** y # exp
-x / y # division (converts to float)
-x % y # mod
 x ** 0.5 # sqrt
 
 import math 
-math.sqrt(64)
 math.log(64,2) 
 True + 10 # 11 through implicit conversion
 not 48 # 0 through implicit conversion
@@ -53,11 +127,11 @@ not 48 # 0 through implicit conversion
 
 #                                                   BASE
 
-int(Num, Base) # revert to base 10 
 binary = bin(10) # '0b1010'
+int(Num, Base) # revert to base 10 
 1-bit # NOT
 not bit # NOT
-& # AND      
+& # AND     
 | # OR      
 ^ # XOR ( only either ) 
 decimal << int # SHIFT left
@@ -90,8 +164,6 @@ bool
 	<= # Less than or equal to
 	!= # not equal to
 
-3<5<7
-
 float
 	Float = 5.0
 	
@@ -112,13 +184,11 @@ complex
 	Complex = complex( 1, (3**0.5) )
 	cmath.polar(Complex) 
 
-	
-
 int 
 	Int = 2
 
 list
-	# ordered, iterable
+	# ordered, iterable, mutable 
 	List = [1]
 
 	# Methods
@@ -132,9 +202,13 @@ list
 	from math import prod; prod(NumList)
 
 	*Iterable # *["a","b"] == "a","b"
+
+	# Note that when using = to create a new list this is still points to and modifies the same list
+	# to make a new list to avoid modifying the previous one use
+	New_list = List.copy()
 	
 str 
-	# ordered, immutable, iterable
+	# ordered, iterable
 	string = "123" 
 	string = "1234" + "5678" # concatenation
 	fstring = f"This is an F string which easy add values like {x} into"
@@ -164,10 +238,8 @@ str
 	string.split() # Splits up into list based on string, leave as default to split words
 	string.strip() # default is " ", removes this string at start and end of another
 
-
-
 tuple
-	# ordered, immutable
+	# ordered 
 	Tuple = (1,)
 
 	x,_,z = ('x',2,'z') # _ avoids assigning  
@@ -180,7 +252,7 @@ tuple
 	print(offWhite.red)
 
 set
-	# unique elements, unordered, iterable
+	# unique elements, unordered, iterable, mutable
 	Set = set(List) = {1}
 
 	# Methods
@@ -198,6 +270,10 @@ set
 		Dictionary = {}
 		Dictionary = {1:None} 
 		Dictionary = {x:i for i:x in enumerate(Iterable)}
+
+		# add to dictionary
+		if key not in Dictionary:
+			Dictionary[key] = ...
 
 		from collections import Counter
 		Dictionary = Counter(Iterable)
@@ -240,10 +316,31 @@ max(Iterable)
 min(Iterable)
 sum(Iterable)
 
+def show_index(Iterable):
+  
+	for i in range(len(Iterable)):
+	print(i, end=" ")
+	print("+")
+
+	for i in range(len(Iterable)):
+	print(Iterable[i], end=" ")
+	print(type(Iterable))
+
+	for i in range(len(Iterable)):
+	print(len(Iterable)-i, end=" ")
+	print("-")
+
 #                                                  CONTROL FLOW 
 
+DefaultArg = "squared is"
+def Print_Square(Num, Another, String=DefaultArg): # default arguments need to be the last stated arguments
+	print(Num, String, Num**2, Another) 
+	
 
-def function(required, Optional=" "): return ... # optional inputs are like declaring values in function, but being able to modify them
+Print_Square(10, String="to the power 2 is") # OR
+Print_Square(10, "" ,"to the power 2 is")
+
+	
 if Condition: Code ... # evaluating a type will be implicitly converted to bool
 if Condition: return # doesn't need else after
 
@@ -253,16 +350,18 @@ for i, x in enumerate([13,5,29]): print(i, x) # Use enumerate (i before x)
 for i in range(len(Iterables)-1,-1,-1): print(Iterables[i]) # Use different steps
 for a,b in zip(listA,listB): print(a,b) # use zip for multiple lists
 
-	# Methods
-	break 
-	continue # next i
+break # break out of for loop
+continue # continue to next element or value
+pass # write if nothing happens to avoid an error
 
 # for else
 for ... :
 	if ... :
 		break
-else ... : # called if not break
+else ... : # called if break not called
 	...
+
+(), eval, not, and, or  # order of logical operations
 
 
 #                                                  FUNCTIONAL
@@ -277,7 +376,6 @@ list(map(lambda Element: Element>5, Iterable))
 x = y = 1
 x, y = 9, 3
 Iterable[1], Iterable[0] = Iterable[0], Iterable[1] # no temp
-x += y # works for all operators
 x = x//y # x = int( x/y )
 Assigned = True if Bool else False  # one line if else
 "repeat "*3 # 'repeat repeat repeat '
@@ -286,22 +384,16 @@ Assigned = True if Bool else False  # one line if else
 
 #                                                   OOP
 
-class Animal():
+class Human():
     def __init__(self, Age, ):
         self.Age = Age
 
     def birthDay(self):
         self.Age += 1
 
-class Human(Animal):
-	def __init__(self, Age):
-    	super().__init__() # Alternative to above
-
-
 Tom = Human(20) # instance
 Tom.birthDay()
 print(Tom.Age)
-
 
 #                                                  	MEMOIZATION
 
@@ -316,7 +408,7 @@ def fib(n):
 def expensive_computation(n):
 	...
 
-#                                                  	USING BUILT IN OPERATORS 
+#                                                  	OPERATOR OVERLOADING  
 
 class complex:
     def __init__(self, a, b):
@@ -332,6 +424,44 @@ Ob2 = complex(2, 3)
 Ob3 = Ob1 + Ob2
 print(Ob3)
 
+
+#                                                  FILES
+    
+# Open
+file_object = open(filename)
+...
+file_object.close()
+# OR
+with open(filename) as file_object: ...   # don't need to close
+
+# Read
+number_chars = 10 
+text = file_object.read(number_chars) # optional arg
+new_index = 23
+file_object.seek(new_index) # change next read starting index
+#OR
+line_sep_list = file_object.readlines()
+for line in file_object.readlines(): ... # lower max memory than storing everything at once
+
+# Write text
+file_object = open("a_text_file.txt", "w") # https://docs.python.org/3.6/library/functions.html#open 
+file_object.write("something") # can 
+file_object.close()
+
+# CSV read (comma separated values)
+import csv
+file_object = open(filename)
+header = next(reader)
+non_header_rows = list(reader)
+file_object.close()
+
+# CSV write (comma separated values)
+import csv
+file_object = open(filename, 'w')
+writer.writerow(header)
+writer.writerows(non_header_rows)
+file_object.close()
+
 #                                                  MISC
 
 float('inf') # infinity without importing
@@ -344,8 +474,10 @@ __main__ # magic methods
 1_000 # _ makes large numbers easier to read
 In = input("optional message")
 @decorator 
-\ # to split up lines 
+print("Split lines "
++ "with open brackets")
 help( Something )	
+def var_parameters(*c) return sum(c) # multiple values get converted to a tuple
 
 ```
 
@@ -355,9 +487,14 @@ help( Something )
 <br>
 <br>
 
-**C**
+**C**  
+[Augmented assignment](#augmented-assignment)  
+[Increment and decrement operators](#increment-and-decrement-operators)  
+[Control flow brackets](#control-flow-brackets)
+
 ```c
-// Hello world
+// HELLO WORLD
+
 #include <stdio.h>
 int main() {
 	printf("Hello World!");
@@ -370,7 +507,21 @@ int main() {
     - newer compiler return 0 implicitly
 */
 
+// TYPES
+
+	char A = 'A';
+	int Ten = 10;
+	float Tenth = 0.1;
+	double Half = 0.5;
+
+// TYPE MODIFIERS
+
+	signed or unsigned
+	short or long
+	
+
 // PRINT VARIABLES
+
 #include <stdio.h>
 int main() {
 	char Planet[] = "Mars";
@@ -391,43 +542,60 @@ int main() {
 */
 
 // POINTERS
-int Var = 5;	
-int *Pointer = &Var;
-printf( "Value: %d", *Pointer );
-printf( "Address: %d", Pointer );
 
-// TYPES
-char A = 'A';
-int Ten = 10;
-float Tenth = 0.1;
-double Half = 0.5;
-// modifiers
-signed 
-unsigned
-short 
-long
-// changing type / bit manipulation
-char a = (char)42;
-printf( 2*a )
+#include <stdio.h>
+int main() {
+	int Var = 5;	
+	int *Pointer = &Var;
+	printf( "Address: %d \n", Pointer );
+	printf( "Value: %d \n", *Pointer );
+}
+
+// TYPE CASTING / BIT MANIPULATION
+
+#include <stdio.h>
+int main() {
+	for (int i=0;i<128;i++) {
+		char a = (char)i;
+		printf("%c", a );
+	}
+}
 
 // ARRAYS
-char Variable_AnyLength[];
-char Variable_CappedLength[25];
-char *Constant = "Value";
+TODO below
 
-// INDEXING
-printf( "Indexed string"[1] );
+#include <stdio.h>
+int main() {
+	char Variable_AnyLength[];
+	char Variable_CappedLength[25];
+	char *Constant = "Value";
+	int GridArray[][] = 
+}
 
-// FUNCTIONS W INPUTS
+// FUNCTIONS PARAMETERS
 
+
+#include <stdio.h>
+int main() {
+    
+    int Fib(int n) { 
+        if (n == 0) { return 0; }
+    	if (n == 1) { return 1; }
+    	return Fib(n-1) + Fib(n-2);
+    }
+
+    printf("%i",Fib(4));
+    return 0;
+}
 
 // INPUT
-printf( "What is your name?" );
-int chars = 25;
-char[chars] String;
-fgets(name, chars, stdin) 
-// stdin is standard input (the terminal)
-printf( name )
+
+	printf( "What is your name?" );
+	int chars = 25;
+	char[chars] String;
+	fgets(name, chars, stdin) 
+	// stdin is standard input (the terminal)
+	printf( name )
 
 
 // LOGIC OPERATIONS
@@ -439,34 +607,22 @@ int main() {
     std::cout << (!false);       // ! --> NOT
 }
 
-// CONTROL FLOW
 
-if (Bool) {}
-
-switch (value) {
-    case possible_value: print("1") break
-	case another_possible_value: print("2") break
-}
-
-// remember to use a semicolon and not a comma
-for ( i=0; i<100; i++ ) {}
-while ( Condition ) {}
-
-// overloading function to support multiple types
+// OVERLOADING
 int plusFuncInt(int x, int y) { return x + y; }
 double plusFuncDouble(double x, double y) { return x + y; }
 
 // SHORTHAND
 
 int one, two; // declare variables with shared type 
-y += x 
-y++ // y+=1
-x-- // x-=1
 
 ```
 
+<br>
 
-**C++**
+**C++**  
+Inherits from c 
+
 ```c++
 
 // Hello world
@@ -541,8 +697,50 @@ int main() {
 <br>
 <br>
 
-TODO
-**Java**
+# Arduino
+Inherits from c++
+
+Digital pins have a binary value  
+Analog pins have a float value  
+
+```c++
+// example code
+
+int sensorValue = 0;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+  pinMode(13, OUTPUT);
+  Serial.begin(9600); 
+}
+
+void loop()
+{
+  // read the value from the sensor
+  sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+  // turn the LED on
+  digitalWrite(13, HIGH);
+  delay(sensorValue); // wait for sensorValue milliseconds(s)
+  // turn the LED off
+  digitalWrite(13,LOW);
+  delay(sensorValue); // wait for sensorValue milliseconds(s)
+}
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**Java**  
+[Augmented assignment](#augmented-assignment)  
+[Increment and decrement operators](#increment-and-decrement-operators)  
+[Control flow brackets](#control-flow-brackets)  
+[Iterable bracket indexing](#iterable-bracket-indexing)  
+
 ```Java
 // Hello world
 class HelloWorld {
@@ -550,10 +748,6 @@ class HelloWorld {
         System.out.println("Hello, World!"); 
     }
 }
-
-for (i=0;i<Int;i++) {} // sep with ;
-while (Condition) {}
-
 ```
 
 <br>
@@ -562,11 +756,42 @@ while (Condition) {}
 <br>
 <br>
 
-TODO
 **Javascript**
+[Augmented assignment](#augmented-assignment)  
+[Increment and decrement operators](#increment-and-decrement-operators)  
+[Control flow brackets](#control-flow-brackets)  
+[Iterable bracket indexing](#iterable-bracket-indexing)  
 ```Javascript
+
+// HELLO WORLD
 console.log('Hello World');
 
+// HTML modification
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+// ASSIGNMENT
+
+	var // variable
+	let // constant which can be reassigned
+	const // constant which cannot be reassigned
+
+// FUNCTIONS
+function myFunction(p1, p2) { return p1 * p2; }
+
+// STRING MULTIPLICATION
+"a".repeat(10) // no string multiplication
+
+// objects -- link to JSON
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// accessing
+objectName.propertyName
+objectName["propertyName"]
+
+
+this
+new
+
 ```
 
 <br>
@@ -575,12 +800,9 @@ console.log('Hello World');
 <br>
 <br>
 
-TODO
-**Swift**
-```swift
-// test
-@main
-Bool
+**Prolog**  
+```Prolog
+
 ```
 
 <br>
@@ -1118,6 +1340,7 @@ Ordered means the data is sorted in some way, including by placement.
 
 ## Immutable	
 Cannot be changed
+If at the programming level it looks like it has changed, then the new value is at a different address 
 
 <br>
 
@@ -1471,7 +1694,31 @@ Primitives data types are built into the language, and are not imported or added
 
 ## Operator
 https://en.wikipedia.org/wiki/Operator_(computer_programming)  
-Operators inbuilt constructs which behave like functions, but differ syntactically ( add(x,y) and x+y ) or semantically 
+Operators are constructs defined within programming languages which behave generally like functions, but which differ syntactically or semantically.
+
+Function: add(x,y)  
+Operator: x + y  
+
+**unary** One input  
+**binary** Two inputs  
+**ternary**  Three inputss  
+
+<br>
+
+TODO
+## Relational operators
+
+Constructs a True or False relation between two entities  
+IE 4<8 or 4=4 or 3<1  
+which evaluate to a boolean value
+
+<br>
+
+## Logical operators
+
+operators which map some boolean values to other boolean values
+
+False and (anything) automatically goes to false
 
 <br>
 
@@ -1542,6 +1789,8 @@ Platform as a Service provides
 - Operating systems 
 
 and everything under [IaaS](#IaaS)
+
+Why do you need an operating system without a user, can't you just run machine code???
 
 ## IaaS
 
@@ -1640,6 +1889,8 @@ A container is a software package that consists of all the dependencies required
 Docker is software for distributing software in the same environment it was made in, to avoid configuration issues, and has replaced using  [[Virtual machines]], by  only creating the parts of the OS that an application, not the user, interacts with.
 
 https://stackoverflow.com/questions/30632386/is-docker-a-solution-for-making-application-cross-platform
+
+How is docker faster than virtualisation???
 
 <br>
 
@@ -1869,7 +2120,6 @@ A loop invariant is a statement about program variables that is true before and 
 ## Function overloading
 A function is defined multiple times with different input types.
 Also called polymorphism
-
 
 <br>
 
