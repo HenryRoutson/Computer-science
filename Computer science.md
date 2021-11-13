@@ -1,4 +1,4 @@
-
+w
 
 *Useful but forgettable* 
 
@@ -71,7 +71,6 @@ while ( i>100 ) {...}
 
 <br>
 
-TODO
 ### Standard mathematical syntax
 
 ```python
@@ -225,6 +224,7 @@ str
 	ord(Character) # unicode integer
 	ord(Char) - ord('a') + 1 # lower case alphabetic position
 	ord(Char) - ord('A') + 1 # upper case alphabetic position
+	chr(ord(Character)) # chr is reverse
 
 	# eval
 	string.istitle() # is title capitalization
@@ -237,6 +237,10 @@ str
 	string.lower() # changes all letters in string to lower case
 	string.split() # Splits up into list based on string, leave as default to split words
 	string.strip() # default is " ", removes this string at start and end of another
+	
+	# optimization
+	"".join() # is faster than +
+
 
 tuple
 	# ordered 
@@ -256,10 +260,11 @@ set
 	Set = set(List) = {1}
 
 	# Methods
-	.union(Iterable)
-	.difference(Iterable, Iterable, ...) # in set and not other iterables
-	.symmetric_difference(Iterable, Iterable, ...) # values not shared
-	.intersection(Set2, Set3, ...)  # using & is cleaner
+	A - B # dif, A - (A ∩ B)  
+	A | B # union, A U B
+	A & B # intersection, A ∩ B 
+	A ^ B # symmetric difference, (A U B) - (A ∩ B)
+
 	.add(Element)
 	.update(Iterable)
 	.discard(Element)
@@ -272,7 +277,7 @@ set
 		Dictionary = {x:i for i:x in enumerate(Iterable)}
 
 		# add to dictionary
-		if key not in Dictionary:
+		if not Dictionary.get(Key): # index notation throws error without value
 			Dictionary[key] = ...
 
 		from collections import Counter
@@ -292,11 +297,15 @@ set
 		Dictionary.values()
 		Dictionary.items()
 
+
+
 #                                                   METHODS
 
 Type + Type # string list int float
 del Dict_or_List[Location] # dict list
-Pop = Iterable.pop() # list set dict
+Val = List.pop() # Removes last value, deletes index with argument value
+Val = Set.pop() # Removes last value
+Val = Dict.pop(Arg) # key arg required
 
 # string list
 Iterable = sorted(Iterable) 
@@ -335,6 +344,8 @@ def show_index(Iterable):
 DefaultArg = "squared is"
 def Print_Square(Num, Another, String=DefaultArg): # default arguments need to be the last stated arguments
 	print(Num, String, Num**2, Another) 
+
+Print_Square(String="DefaultArg", Another=2, Num=1) # valid
 	
 
 Print_Square(10, String="to the power 2 is") # OR
@@ -428,11 +439,10 @@ print(Ob3)
 #                                                  FILES
     
 # Open
-file_object = open(filename)
-...
-file_object.close()
-# OR
-with open(filename) as file_object: ...   # don't need to close
+open(...) # https://docs.python.org/3.6/library/functions.html#open 
+
+with open(filename) as file_object # USE
+	...
 
 # Read
 number_chars = 10 
@@ -443,24 +453,28 @@ file_object.seek(new_index) # change next read starting index
 line_sep_list = file_object.readlines()
 for line in file_object.readlines(): ... # lower max memory than storing everything at once
 
-# Write text
-file_object = open("a_text_file.txt", "w") # https://docs.python.org/3.6/library/functions.html#open 
-file_object.write("something") # can 
-file_object.close()
+# JSON - able to write normal python data types
+import json
 
-# CSV read (comma separated values)
-import csv
-file_object = open(filename)
-header = next(reader)
-non_header_rows = list(reader)
-file_object.close()
+with open('path_to_file/person.json') as json_file:
+  Dict = json.load(json_file)
 
-# CSV write (comma separated values)
-import csv
-file_object = open(filename, 'w')
-writer.writerow(header)
-writer.writerows(non_header_rows)
-file_object.close()
+# do something
+
+with open(File_name,'w') as File:
+        File.write(json.dumps(Dict))
+
+#                                                  LIST COMPREHENSION
+
+[x-1 for x in List]
+
+from collections import Counter
+def mode(numlist):
+    counts = Counter(numlist)
+    max_count = max(counts.values())
+    return list(num for num in counts if counts[num] == max_count)
+
+["ODD" if num % 1 else "EVEN" for num in List]
 
 #                                                  MISC
 
@@ -478,6 +492,23 @@ print("Split lines "
 + "with open brackets")
 help( Something )	
 def var_parameters(*c) return sum(c) # multiple values get converted to a tuple
+
+#                                                  DOC STRINGS                                          
+
+# Google Style Python Docstrings
+def manhatan(loctn_a, loctn_b):
+    ''' return distance between location a and b
+    
+    Args: 
+        loctn_a / loctn_b (tuple): locations with integer axis values
+        
+    Returns:
+        integer: manhatan distance, 
+        the sum of the positive difference between axis values
+    
+    '''
+    return sum(abs(a - b) for a, b in zip(loctn_a, loctn_b))
+
 
 ```
 
@@ -1705,7 +1736,6 @@ Operator: x + y
 
 <br>
 
-TODO
 ## Relational operators
 
 Constructs a True or False relation between two entities  
@@ -2146,3 +2176,17 @@ For example, x=5 in python wouldn't be an expression because it wouldn't evaluat
 
 In computer programming, assembly language, sometimes abbreviated asm, is any low-level programming language in which there is a very strong correspondence between the instructions in the language and the architecture's machine code instructions.
 
+<br>
+
+## Function parameters
+Degrees, Range, Abs
+## Function arguments
+180, [-360, 360], 4
+
+<br>
+
+## errors  
+[Programming language](#programming-language)  
+Syntax > The programming language cannot interpret the code you have written
+Run-time > When your code is running, it executes something that the programming language or operating system decides should raise an error, if the operation doesn't make sense or could damage hardware
+Logic > Code doesn't do what it is supposed to do
