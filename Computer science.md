@@ -1107,6 +1107,27 @@ JavaScript Object Notation is a language independent data format.
 <br>
 <br>
 
+## Regex
+
+Type normally for match cases
+
+. Represent any character
+\. Search .
+
+Reversed with capital
+\d Digits
+\w Alpha-numeric characters
+\s Whitespace
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 # Deployment
 
 ## Terraform
