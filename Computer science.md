@@ -1,6 +1,6 @@
-w
 
-*Useful but forgettable* 
+
+*Useful but forgettable*
 
 <br>
 
@@ -55,6 +55,7 @@ switch ( i ) {                  // i, a and b are values
 	case a: ... break;
 	case b: ... break;
 }
+// remember to use a break
 
 for (int i=0; i<100; i++) {...}
 
@@ -92,7 +93,7 @@ x % y # mod
 
 ```python
 #                                                   HELLO WORLD
-print("Hello world")	
+print("Hello world")
 
 #                                                   CONVENTION
 
@@ -118,8 +119,8 @@ print(function.__doc__)
 x ** y # exp
 x ** 0.5 # sqrt
 
-import math 
-math.log(64,2) 
+import math
+math.log(64,2)
 True + 10 # 11 through implicit conversion
 not 48 # 0 through implicit conversion
 
@@ -127,12 +128,12 @@ not 48 # 0 through implicit conversion
 #                                                   BASE
 
 binary = bin(10) # '0b1010'
-int(Num, Base) # revert to base 10 
+int(Num, Base) # revert to base 10
 1-bit # NOT
 not bit # NOT
 & # AND     
 | # OR      
-^ # XOR ( only either ) 
+^ # XOR ( only either )
 decimal << int # SHIFT left
 decimal >> int # SHIFT right
 hexadecimal = hex(10) # '0xa'
@@ -142,19 +143,19 @@ hexadecimal = hex(10) # '0xa'
 
 dir(type) # find type methods
 
-bool 
+bool
 	Bool = True
 	bool(Type) # if the type is the simplest / smallest, then it will eval to False
 	not # to flip
 
 	"""Evaluating bool expressions"""
 	True or True and not True # Not left to right
-	# 1 Conditions 
+	# 1 Conditions
 	# 2 not
 	# 3 and
-	# 4 or 
+	# 4 or
 
-	
+
 	# strings will be evaluated on dictionary order
 
 	>  # Greater than
@@ -165,14 +166,14 @@ bool
 
 float
 	Float = 5.0
-	
+
 	# Methods
 	bool( Num % 1 ) # test if float has decimals
 	def ceil(x): return int(x+bool(x%1)) # round up without importing
 
-complex 
+complex
 
-	Complex = 3+4j 
+	Complex = 3+4j
 	Complex = complex(3, 4)
 	Complex.real # 3
 	Complex.imag # 4
@@ -181,13 +182,13 @@ complex
 
 	import cmath
 	Complex = complex( 1, (3**0.5) )
-	cmath.polar(Complex) 
+	cmath.polar(Complex)
 
-int 
+int
 	Int = 2
 
 list
-	# ordered, iterable, mutable 
+	# ordered, iterable, mutable
 	List = [1]
 
 	# Methods
@@ -205,17 +206,17 @@ list
 	# Note that when using = to create a new list this is still points to and modifies the same list
 	# to make a new list to avoid modifying the previous one use
 	New_list = List.copy()
-	
-str 
+
+str
 	# ordered, iterable
-	string = "123" 
+	string = "123"
 	string = "1234" + "5678" # concatenation
 	fstring = f"This is an F string which easy add values like {x} into"
 	fstring = f"F strings can be formatted with rounded float for example {2**0.5:.10f}"
 
 	# Printing
 	print(1234, "567", "eight", "nine") # , adds a space
-	print(str)	
+	print(str)
 
 	# Methods
 
@@ -232,22 +233,22 @@ str
 	string.islower()
 	string.isalpha() # is all letters
 	string.isnumeric() # is all numbers
-	string.isalnum() # is alpha numeric 
+	string.isalnum() # is alpha numeric
 	string.upper() # changes all letters in string to upper case
 	string.lower() # changes all letters in string to lower case
 	string.split() # Splits up into list based on string, leave as default to split words
 	string.strip() # default is " ", removes this string at start and end of another
-	
+
 	# optimization
 	"".join() # is faster than +
 
 
 tuple
-	# ordered 
+	# ordered
 	Tuple = (1,)
 
 	x,_,z = ('x',2,'z') # _ avoids assigning  
-	x,*_,z = ('x',2,2,3,2,'z') # *_ is any number of values 
+	x,*_,z = ('x',2,2,3,2,'z') # *_ is any number of values
 
 	# https://www.youtube.com/watch?v=GfxJYp9_nJA
 	from collections import namedtuple
@@ -262,7 +263,7 @@ set
 	# Methods
 	A - B # dif, A - (A ∩ B)  
 	A | B # union, A U B
-	A & B # intersection, A ∩ B 
+	A & B # intersection, A ∩ B
 	A ^ B # symmetric difference, (A U B) - (A ∩ B)
 
 	.add(Element)
@@ -270,10 +271,10 @@ set
 	.discard(Element)
 	.remove(Element) # throws error if not present
 
-	dict 
+	dict
 		# unique elements, unordered, iterable
 		Dictionary = {}
-		Dictionary = {1:None} 
+		Dictionary = {1:None}
 		Dictionary = {x:i for i:x in enumerate(Iterable)}
 
 		# add to dictionary
@@ -282,9 +283,9 @@ set
 
 		from collections import Counter
 		Dictionary = Counter(Iterable)
-		Dictionary.most_common(n_most_common) 
+		Dictionary.most_common(n_most_common)
 
-		from collections import defaultdict 
+		from collections import defaultdict
 		Dictionary = defaultdict(int)
 
 		# Methods
@@ -308,12 +309,12 @@ Val = Set.pop() # Removes last value
 Val = Dict.pop(Arg) # key arg required
 
 # string list
-Iterable = sorted(Iterable) 
-Iterable.sort() 
+Iterable = sorted(Iterable)
+Iterable.sort()
 Iterable.sort(reverse=True)
 Iterable[start:end:move] # slicing
 	# second comma is optional if move doesn't need to be changed
-	# Defaults if values aren't entered... 
+	# Defaults if values aren't entered...
 	start=0; end=len(string)+1; move=1
 	# start is inclusive, end is exclusive to the character at the index
 Iterable[::-1] # reverse iterable
@@ -321,12 +322,12 @@ Iterable.index(element)
 
 # generators string list set dict
 reversed(Iterable)
-max(Iterable) 
+max(Iterable)
 min(Iterable)
 sum(Iterable)
 
 def show_index(Iterable):
-  
+
 	for i in range(len(Iterable)):
 	print(i, end=" ")
 	print("+")
@@ -339,19 +340,19 @@ def show_index(Iterable):
 	print(len(Iterable)-i, end=" ")
 	print("-")
 
-#                                                  CONTROL FLOW 
+#                                                  CONTROL FLOW
 
 DefaultArg = "squared is"
 def Print_Square(Num, Another, String=DefaultArg): # default arguments need to be the last stated arguments
-	print(Num, String, Num**2, Another) 
+	print(Num, String, Num**2, Another)
 
 Print_Square(String="DefaultArg", Another=2, Num=1) # valid
-	
+
 
 Print_Square(10, String="to the power 2 is") # OR
 Print_Square(10, "" ,"to the power 2 is")
 
-	
+
 if Condition: Code ... # evaluating a type will be implicitly converted to bool
 if Condition: return # doesn't need else after
 
@@ -378,8 +379,8 @@ else ... : # called if break not called
 #                                                  FUNCTIONAL
 
 def Bool_function(Element): return Element>5
-list(map(Bool_function, Iterable)) 
-list(map(lambda Element: Element>5, Iterable)) 
+list(map(Bool_function, Iterable))
+list(map(lambda Element: Element>5, Iterable))
 
 
 #                                                   SHORTHAND
@@ -425,11 +426,11 @@ class complex:
     def __init__(self, a, b):
         self.a = a
         self.b = b
- 
+
      # adding two objects
     def __add__(self, other):
         return self.a + other.a, self.b + other.b
- 
+
 Ob1 = complex(1, 2)
 Ob2 = complex(2, 3)
 Ob3 = Ob1 + Ob2
@@ -437,15 +438,15 @@ print(Ob3)
 
 
 #                                                  FILES
-    
+
 # Open
-open(...) # https://docs.python.org/3.6/library/functions.html#open 
+open(...) # https://www.tutorialspoint.com/python/python_files_io.htm
 
 with open(filename) as file_object # USE
 	...
 
 # Read
-number_chars = 10 
+number_chars = 10
 text = file_object.read(number_chars) # optional arg
 new_index = 23
 file_object.seek(new_index) # change next read starting index
@@ -487,10 +488,10 @@ plus_plus = lambda x: x+1 # lambda just defines a function; plus_plus(2) = 3
 __main__ # magic methods   
 1_000 # _ makes large numbers easier to read
 In = input("optional message")
-@decorator 
+@decorator
 print("Split lines "
 + "with open brackets")
-help( Something )	
+help( Something )
 def var_parameters(*c) return sum(c) # multiple values get converted to a tuple
 
 #                                                  DOC STRINGS                                          
@@ -498,14 +499,14 @@ def var_parameters(*c) return sum(c) # multiple values get converted to a tuple
 # Google Style Python Docstrings
 def manhatan(loctn_a, loctn_b):
     ''' return distance between location a and b
-    
-    Args: 
+
+    Args:
         loctn_a / loctn_b (tuple): locations with integer axis values
-        
+
     Returns:
-        integer: manhatan distance, 
+        integer: manhatan distance,
         the sum of the positive difference between axis values
-    
+
     '''
     return sum(abs(a - b) for a, b in zip(loctn_a, loctn_b))
 
@@ -523,43 +524,254 @@ def manhatan(loctn_a, loctn_b):
 [Increment and decrement operators](#increment-and-decrement-operators)  
 [Control flow brackets](#control-flow-brackets)
 
-```c
-// HELLO WORLD
+CLANG
+```C
+// HELLO WORLD / output
 
 #include <stdio.h>
 int main() {
 	printf("Hello World!");
 	return 0;
 }
-/*	
-    - stdio is short for standard input output 
+/*
+    - stdio is short for standard input output
     - the type before the name of the function is the returned type
-    - int main() returning 0 signals no errors, 
+    - int main() returning 0 signals no errors,
     - newer compiler return 0 implicitly
+*/
+
+
+// SHELL
+
+/*
+COMPILE
+gcc -Wall -std=c11 -o program program.c
+
+gcc
+	the compiler, could use clang or other
+-Wall
+	tells the compiler to show all Warnings.
+-std=c11
+	specifies the compiler version
+-o program
+	change default name of compiled file
+	from a.out
+program.c
+	name of program to run
+-lnameoflibrary
+	import library
+	IE -lm is the math library
+*/
+
+/*
+REDIRECT OUTPUT
+./cprogram < programinput > programoutput
+// pipe operator
+     ________
+    |        V
+runfirst | runnext | ...
+
+*/
+
+
+
+#include <stdio.h>
+int main() {
+    putchar('a');
+    return (0);
+}
+
+// MAIN() PARAMS
+
+// cd desktop
+// nvim test.c
+
+#include <stdio.h>
+int main(int argc, char **argv) {
+	// argc is the integer number of arguements
+	// argv is the array of arguements
+
+	for(int i = 0; i < argc; i++) {
+			printf("%s\n",argv[i]);
+	}
+
+	return 0;
+}
+
+// gcc -Wall -std=c11 -o test test.c
+// ./test '1' "2" 3
+
+
+// VOID
+/*
+Used to indicate that
+	a function
+		does not return a value
+	  does not accept parameters
+	a pointer does not have a specific type and could point to different types.
+
+*/
+
+
+// INPUT
+
+#include <stdio.h>
+int main() {
+    int number; // or other type
+    printf("type a number\n");
+    scanf("%d", &number); // returns num chars and assigns to number
+    printf("%d is a number", number);
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+    int a;
+    float b;
+    printf("Enter integer and then a float: ");
+    scanf("%d%f", &a, &b);
+    printf("You entered %d and %f", a, b);  
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+    char input[100];
+    printf("Enter a string below\n");
+    scanf("%s", input); // scan f terminates at whitespace
+    printf("%s", input);  
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+    char input[100];
+    printf("Enter a string below\n");
+    fgets(input, sizeof(input), stdin); //
+    printf("%s", input);
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+    int c = getchar();
+		// EOF cannot fit in char, so use int
+    printf("%c", c);
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+
+    printf("Enter text:\n");
+
+    int chars = 0, lines = 0;
+    char input;
+
+    while ((input = getchar()) != EOF) {
+        if (input == '\n') { lines++; }
+        chars++;
+    }
+
+    printf("Lines:    %3i\n", lines);
+    printf("Chars:    %3i\n", chars);
+
+    return 0;
+}
+
+#include <stdio.h>
+int main(int argc, char *argv[]) {
+
+    printf("Enter numbers: ");
+
+    int i;
+    while (scanf("%i", &i) == 1) {
+
+        printf("%2i |", i);
+        for (int i = 0; i < i; i++) { printf("*"); }
+        printf("\n");
+
+    }    
+}
+
+/*
+scanf() returns at a space
+getchar() gets a single character
+fgets() gets a specified number of chars
+*/
+
+// STRINGS
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    printf("%i", strlen("strlen"));
+}
+
+// ARRAY
+int 1D[];
+int 2D[][];
+//...
+
+// CONVERT STRING TO INT
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int num = atoi("12342");
+    printf("%i", num);
+}
+
+// CONVERT STRING TO FLOAT
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    double num = atof("1.2342");
+    printf("%lf", num);
+}
+
+
+
+// OPERATION ORDER
+/*
+postincrement, postdecrement
+unary not, unary negation, type casting
+multiplication
+addition
+comparison
+equality
+and
+or
+assignment
 */
 
 // TYPES
 
-	char A = 'A';
-	int Ten = 10;
-	float Tenth = 0.1;
-	double Half = 0.5;
+char A = 'A';
+int Ten = 10;
+float Tenth = 0.1;
+double Half = 0.5;
 
 // TYPE MODIFIERS
 
-	signed or unsigned
-	short or long
-	
+signed or unsigned
+short or long
+
 
 // PRINT VARIABLES
 
 #include <stdio.h>
 int main() {
 	char Planet[] = "Mars";
-	printf( "Hello %s!", Planet ); 
+	printf( "Hello %s!", Planet );
 	return 0;
 }
-/* 
+
+/*
 	%c char single character
 	%d (%i) int signed integer
 	%e (%E) float or double exponential format
@@ -570,156 +782,227 @@ int main() {
 	%s array of char sequence of characters
 	%u int unsigned decimal
 	%x (%X) int unsigned hex value
+	%e scientific notation
+
+	%10i	10 digit int signed integer (right aligned)
+	(lower limit, extends otherwise)
+	%-10i	10 digit int signed integer (left aligned)
+	%010i	10 digit int signed integer (0 filled)
+	%8.4i 	10 digit int signed integer (4 decimal places)
+
 */
 
 // POINTERS
+/*
+Void pointers
+void is not a great name, a better name would be universal pointer
+while an int pointer only points to ints, a void pointer points to anything
+to print a pointer you actually need to convert it if it isn't already to this generic pointer form
+
+When using typed pointers you don't use the ampersand
+int* p = int_type;
+When using void you do need to use ampersand
+void* p = &any_type;
+
+void pointers do not have pointer arithmatic in certin versions of c
+when you do p += 1 with typed pointers, it actually adds the size of the type to get to the next value
+
+int A[];
+A is the pointer to the first element
+
+
+
+
+*/
 
 #include <stdio.h>
+
 int main() {
-	int Var = 5;	
-	int *Pointer = &Var;
-	printf( "Address: %d \n", Pointer );
-	printf( "Value: %d \n", *Pointer );
-}
 
-// TYPE CASTING / BIT MANIPULATION
+    int A[] = {1, 2, 3};
+    int *p = A;  
 
-#include <stdio.h>
-int main() {
-	for (int i=0;i<128;i++) {
-		char a = (char)i;
-		printf("%c", a );
-	}
-}
+    // A is a pointer to the first element in the array
+    // so is p
 
-// ARRAYS
-TODO below
-
-#include <stdio.h>
-int main() {
-	char Variable_AnyLength[];
-	char Variable_CappedLength[25];
-	char *Constant = "Value";
-	int GridArray[][] = 
-}
-
-// FUNCTIONS PARAMETERS
-
-
-#include <stdio.h>
-int main() {
-    
-    int Fib(int n) { 
-        if (n == 0) { return 0; }
-    	if (n == 1) { return 1; }
-    	return Fib(n-1) + Fib(n-2);
-    }
-
-    printf("%i",Fib(4));
+    printf("\n");
+    printf("%p\n", (void*)p);
+    printf("%p\n", (void*)(p + 2));
+    printf("\n");
+    printf("%i\n", *p);
+    printf("%i\n", *A);
+    printf("\n");
+    printf("%i\n", *(p + 2));
+    printf("%i\n", *(A + 2));
+    printf("%i\n", A[2]);
     return 0;
 }
 
-// INPUT
 
-	printf( "What is your name?" );
-	int chars = 25;
-	char[chars] String;
-	fgets(name, chars, stdin) 
-	// stdin is standard input (the terminal)
-	printf( name )
+#include <stdio.h>
+int main() {
 
+    int i = 1;
+    printf("%i\n", i);
 
-// LOGIC OPERATIONS
+    int *p = &i; // pointer
+    printf("%p\n", (void*) p);
 
-#include<iostream>
-int main() { 
-    std::cout << (true & true);  // & --> AND
-    std::cout << (true | false); // | --> OR
-    std::cout << (!false);       // ! --> NOT
+    int **p2 = &p; // pointer to a pointer
+  	printf("%p\n", (void*) p2);
+
+    // ...
+
+    return 0;
 }
 
 
-// OVERLOADING
-int plusFuncInt(int x, int y) { return x + y; }
-double plusFuncDouble(double x, double y) { return x + y; }
+
+
+#include <stdio.h>
+int main() {
+  int var = 5;
+  void *p = &var; // you need & to find pointers to types which are not arrays
+  printf("var: %d\n", var);
+  printf("address of var: %p", p);   
+  return 0;
+}
+
+
+#include <stdio.h>
+int main() {
+    int alphabet[] = {'A', 'B', 'C', 'D'};
+    int* letter_pointer = alphabet;
+    letter_pointer += 2; // pointers work the same way as indexes
+    printf("%c", *letter_pointer);
+    return 0;
+}
+
+#include <stdio.h>
+int main() {
+    int a = 1, *b; // shorthand
+    b = &a;
+    printf("%p", (void*) b);
+}
+
+
+void intswap(int *a, int *b) {
+    // a_val <b       b_val <a
+
+    int ast_a = *a;
+    *a = *b;
+    *b = ast_a;
+}
+
+
+// FUNCTIONS PARAMETERS
+
+#include <stdio.h>
+
+int Fib(int n) {
+	if (n == 0) { return 0; }
+	if (n == 1) { return 1; }
+	return Fib(n-1) + Fib(n-2);
+}
+
+int main() {
+
+    printf("%i",Fib(10));
+    return 0;
+}
+
+// ASSERT
+assert(a >= 10);
+
+// RETURNING
+// c returns pointer values
+// and local values inside function are freed after the function finishes
+// meaning returning in c can be less than straightforward
+// https://www.geeksforgeeks.org/return-local-array-c-function/
 
 // SHORTHAND
 
-int one, two; // declare variables with shared type 
+int one, two; // declare variables with shared type
+int column = 0, row = 0, index = 0;
 
-```
 
-<br>
+// TYPES
 
-**C++**  
-Inherits from c 
+// NEW TYPES
 
-```c++
+#define ARRAYSIZE 10
+typedef long D1[ARRAYSIZE];
+typedef D1 D2[ARRAYSIZE];
 
-// Hello world
+// D2 is converted to D1[ARRAYSIZE]
+// D1 is converted to long[ARRAYSIZE][ARRAYSIZE]
 
-#include<iostream>
+
+// TYPE CASTING
+
+#include <stdio.h>
 int main() {
-    std::cout << "Hello world";
+    for (int i = '!'; i <= '~'; i++) {
+        printf("%4c\n", i);
+    }
 }
 
-// VERSION -----------------------------------
+// STATIC
+// retains variable value for next function call
+
+#include<stdio.h>
+
+int fun() {
+  static int count = 0;
+  count++;
+  return count;
+}
 
 int main() {
-	if (__cplusplus == 201703L) std::cout << "C++17\n";
-	else if (__cplusplus == 201402L) std::cout << "C++14\n";
-	else if (__cplusplus == 201103L) std::cout << "C++11\n";
-	else if (__cplusplus == 199711L) std::cout << "C++98\n";
-	else 							 std::cout << "pre-standard C++\n";
+  printf("%d ", fun());
+  printf("%d ", fun());
+  return 0;
 }
 
-// TYPES -----------------------------------
+
+// MISC
+
+#define MIN_PER_HOUR 60 // constant (no ;)
+'A' // character literal '
+"String literals" // string literal "
+printf("c", );
+
+printf("\\");	// backslash
+printf("\t");	// horizontal tab
+printf("\r");	// carriage return
+printf("\'");	// quotation mark '
+printf("\"");	// double quotation mark "
+printf("%%");	// percent %
+
+// Common errors
+
+#include <stdio.h>
+int main() {
+    // without brackets, if statements in c
+    // only determine if the immediate next line runs
+    // so if you really want to do this, it's best to use a one liner
+    if (0)
+        printf("The first line runs on condition");
+        printf("This line is always printed without brackets");
+}
+
+
+// Assert
+
+#define NDEBUG 1 // define to disable asserts
+#include <assert.h>
 
 int main() {
-    auto AnyType;
+	assert(1!=2);
+  assert(1==2);
 }
 
-#include<vector>
-int main() {
-    vector<int> = {1,2,3}
-    vector<vector<int>> = {{1,3}{2,4}}
-}
 
-#include <string> 
-int main() {
-    const char* name = "John Smith"; // save static string
-	std::string name = "John Smith"; // save static string	
-	std::short = name.length(); // number of characters
-	std::string = name.substring(0,4); // save part of a string
-	std::string_view first_name(name.c_str(), 4); // create pointer to string
-}
-
-// NUMERICAL -----------------------------------
-
-#include<iostream>
-#include<cmath>
-int main() { 
-    std::cout << sqrt(2) << std::endl; 
-    std::cout << pow(2,8) << std::endl; 
-    std::cout << round(-3.7) << std::endl; // closest integer
-    std::cout << floor(-3.4) << std::endl; // integer towards neg inf 
-    std::cout << int(-3.4) << std::endl; // integer towards zero 
-    std::cout << fmax(1,3);
-    std::cout << fmin(1,3);
-}
-
-// INPUT  -----------------------------------
-
-#include<iostream>
-int main() { 
-    std::cin >> character;
-    std::cout << character;
-
-    getline(cin, string)
-    std::cout << string;
-}
-
-// -----------------------------------
 ```
 
 <br>
@@ -743,7 +1026,7 @@ void setup()
 {
   pinMode(A0, INPUT);
   pinMode(13, OUTPUT);
-  Serial.begin(9600); 
+  Serial.begin(9600);
 }
 
 void loop()
@@ -776,7 +1059,7 @@ void loop()
 // Hello world
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!"); 
+        System.out.println("Hello, World!");
     }
 }
 ```
@@ -853,7 +1136,7 @@ new
 	.. —> previous directory
 
 	CLEAR —> clears terminal
- 
+
 	MKDIR —> make directory
 
 	MV —> move or rename
@@ -861,7 +1144,7 @@ new
 	OPEN —> open file
 	CAT —> concatenate, read code in terminal
 	RM —> remove
-	CP —> copy 
+	CP —> copy
 
 	Tab key —> autocomplete
 ```
@@ -880,8 +1163,8 @@ https://www.youtube.com/watch?v=mJ-qvsxPHpY
 git —> start of every command
 
 status
-	shows changes with added files 
-log 
+	shows changes with added files
+log
 	shows commits
 
 add <filename>
@@ -892,20 +1175,20 @@ restore --staged <filename>
 
 commit -m “<message>”
 
-checkout <Commit hash> 
+checkout <Commit hash>
 	change commit position
-	add n~ to move to the parent n times 
+	add n~ to move to the parent n times
 
 branch <new branch name>
 	(doesn't checkout)
-checkout -b <new branch name>	
+checkout -b <new branch name>
 
-merge <chain> 
+merge <chain>
 	merge checkout and specified chain into new commit
 rebase <chain>
 	checked out chain is moved onto specified
 
-reset <head> 
+reset <head>
 	moves head to new position to effectively remove a commit
 revert
 	creates a commit that reverses the previous commit
@@ -945,7 +1228,7 @@ git push -f origin main
 	ALTER TABLE table_name ADD column_name datatype; -- add column to table
 	INSERT INTO tbl (clm1, clm2, ...) VALUES (val1, val2...); -- add a row to table
 	DELETE FROM tbl WHERE cond; -- delete rows from table
-	UPDATE tbl SET cml = val, … WHERE cond; -- update data 
+	UPDATE tbl SET cml = val, … WHERE cond; -- update data
 
 	-- Types
 	-- https://en.wikipedia.org/wiki/SQL#SQL_data_types
@@ -961,7 +1244,7 @@ git push -f origin main
 
 -- R E A D
 
-	SELECT clm1, clm2 FROM tbl1; 
+	SELECT clm1, clm2 FROM tbl1;
 		-- * can be used to select all columns
 
 	-- DISTINCT > a column needs a unique value to be shown
@@ -977,12 +1260,12 @@ git push -f origin main
 	SELECT clm1, clm2 FROM tbl1 WHERE clm1 BETWEEN num AND num;
 		-- condition operators (don't need brackets)
 		AND OR NOT
-			
-	SELECT clm1, clm2 FROM tbl1 ORDER BY colm2 ASC; -- ascending 
+
+	SELECT clm1, clm2 FROM tbl1 ORDER BY colm2 ASC; -- ascending
 	SELECT clm1, clm2 FROM tbl1 ORDER BY colm1 DESC; -- or descending order
 
 	SELECT MIN(clm1, clm2) FROM tbl; -- column mins
-	SELECT MAX(clm1, clm2) FROM tbl; -- column maximums	
+	SELECT MAX(clm1, clm2) FROM tbl; -- column maximums
 	SELECT AVG(clm1, clm2) FROM tbl; -- column averages
 	SELECT SUM(clm1, clm2) FROM tbl; -- column sums
 
@@ -1033,6 +1316,159 @@ JavaScript Object Notation is a language independent data format.
 <br>
 <br>
 
+**PANDAS**  
+``` python
+
+cd desktop
+python3
+
+# axis 0 is down
+# axis 1 is across
+
+import pandas as pd
+
+# create a series
+
+# create a larger matrix
+# lists form columns
+data = {'Country': ['Belgium', 'India', 'Brazil'],
+'Capital': ['Brussels', 'New Delhi', 'Brasília'],
+'Population': [11190846, 1303171035, 207847528]}
+df = pd.DataFrame(data)
+df = df.set_index(['Country'])
+
+
+pip install pandas
+pip install sklearn
+pip install numpy
+pip install sqlalchemy
+python3
+
+#
+
+import pandas as pd
+import numpy as np
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+
+# iloc uses indexes
+# [rows, columns]
+
+print(df.iloc[2]) # whole row
+print(df.loc[:, "sepal width (cm)"]) # whole column
+
+print(df.loc[0, ["sepal width (cm)", "petal length (cm)"]])
+print(df.loc[0, "sepal length (cm)":"petal length (cm)"])
+
+
+# boolean indexing
+df[df['sepal length (cm)']>5] # rows
+df[[col for col in df.columns if ("length" in col)]] # columns
+
+# dates
+dates = pd.date_range("20130101", periods=6) # 2013/01/01
+df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
+
+
+# creating custom data frames
+# can support multiple data types
+df = pd.DataFrame({
+	'A': [0, ord('A')],
+	'B': [1, ord('B')],
+	'C': [2, ord('C')]
+	})
+
+df.to_numpy() # convert to numpy
+df.describe() # statistics sum
+df.T # transpose
+
+
+# sorting - can use key
+df.sort_index(axis=1, ascending=False) # by row
+df.sort_values(by=['A'], ascending=False) # by column
+
+# sort
+df.sort_index() # Sort by labels along index
+df = df.set_index(['Country'])
+df.sort_values(by=['Country'])
+
+# misc
+df.shape
+df.index
+df.columns
+df.info()
+df.count()
+df.sum()
+df.cumsum() # cummulative
+df.max()
+df.idxmax()
+df.min()
+df.idxmin()
+df.mean()
+df.median()
+
+# applying functions
+f = lambda x: x*2
+def f(): return x*2
+df.apply(f)
+df.applymap(f) # element wise
+
+# NaN (empty) data points
+df = pd.DataFrame([np.arange(1,4)],index=['a','b','c'], columns=["X","Y","Z"])
+df.reindex(index=['a','b','c','d'])
+pd.isna(df)
+pd.notna(df)
+df1.fillna(value=5)
+
+
+# interpolate
+arr=np.array([1,2,3])
+idx=np.array([
+pd.Timestamp('20211225'),
+pd.Timestamp('20211227'),
+pd.Timestamp('20211229')])
+df = pd.DataFrame(arr,index=idx)
+idx=[
+pd.Timestamp('20211225'),
+pd.Timestamp('20211226'),
+pd.Timestamp('20211227'),
+pd.Timestamp('20211228'),
+pd.Timestamp('20211229')]
+df=df.reindex(index=idx)
+
+df=df.interpolate() #
+
+# concatenate (combine)
+df = pd.DataFrame(np.random.randn(10, 4))
+pieces = [df[:3], df[3:7], df[7:]]
+pd.concat(pieces)
+
+
+```
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**MATPLOTLIB**  
+``` python
+
+
+
+
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
 **Vim**
 
 	i —> insert mode to the left of cursor
@@ -1049,18 +1485,18 @@ JavaScript Object Notation is a language independent data format.
 		H —> top of screen
 		M —> middle of screen
 		L —> bottom of screen
-		gg —> top of file 
+		gg —> top of file
 		G  —> bottom of file
 		{ —> move up a block
 		} —> move down a block
 		A —> start insert mode at end of line
 		I -> start insert mode at end of line
-		n { }  —>  up and down blocks 
+		n { }  —>  up and down blocks
 		f <character> —> skips to next character
 		t <character> -> skips to behind next character
 
 		DELETE
-		
+
 		n dd  —> cut n lines
        		D -> delete to end of line
 		diw —> delete inner word
@@ -1070,7 +1506,7 @@ JavaScript Object Notation is a language independent data format.
 		UNDO REDO
 
 		u —> undo
-		ctrl r (not command) —>  redo 
+		ctrl r (not command) —>  redo
 
 		COPY PASTE
 
@@ -1083,19 +1519,19 @@ JavaScript Object Notation is a language independent data format.
 
 		r<char> -> replace cursor character with new character
 		/<chars> -> find characters
-		/ term —> highlights terms 
-		:s/ <replaced> / <replace with> -> substitute 1 word on a line 
+		/ term —> highlights terms
+		:s/ <replaced> / <replace with> -> substitute 1 word on a line
 		:%s/<init>/<fin>/gc —> substitute all (%) words globally (g) with confirmation (c)
-		
+
 		MISC
 
-		o (lower)   —> add a new line below current and switch to insert mode 
-		O (capital) -> add a new line above current and switch to insert mode 
+		o (lower)   —> add a new line below current and switch to insert mode
+		O (capital) -> add a new line above current and switch to insert mode
 		V —> visual mode, move up and down to highlight lines
 			Shift < > —> indent
-		
+
 		FILE OPS
-		
+
 		:q —> quits
 		:w —>writes
 		:wq —> writes and quits
@@ -1111,15 +1547,65 @@ JavaScript Object Notation is a language independent data format.
 
 Type normally for match cases
 
-. Represent any character
-\. Search .
+.  Any character
+.* Any characters
+x Search string x
 
-Reversed with capital
+^linestart
+lineend$
+
+
+
+(reversed with capital)
 \d Digits
 \w Alpha-numeric characters
 \s Whitespace
 
+[a-zA-Z] Alphabet
+[0-9] Numeric
+[a-zA-Z0-9] Alphanumeric
+[^a-zA-Z] Not Alphabetic
 
+Capturing group
+By placing part of a regular expression inside round brackets or parentheses, you can group that part of the regular expression together and use operators on larger patterns.
+
+
+matches a string that has ab followed by . . .
+c?        zero or one c
+c*        zero or more c
+c+        one or more c
+c{2}      2 c
+c{2,}     2 or more c
+c{2,5}    2 up to 5 c
+(bc)*     zero or more copies of the sequence bc
+(bc){2,5} 2 up to 5 copies of the sequence bc
+
+
+matches a string
+a(b|c)     captures b or c
+a[bc]      captures whole string ab or ac
+
+Search for literal characters
+[\[]
+[\.]
+
+Apply in python
+```python
+
+import re
+
+text = "Go ahead and watch the trailers for Avengers: Endgame, they won't give anything major away. It's amazing for a huge movie to be so self-aware of itself, as well as, the movie genres that they're overtly borrowing from."
+
+text = text.lower()
+pattern = r"[a-zA-Z']"
+sub = ''
+
+re.findall(pattern, text) # returns list of matches
+re.search(pattern, text) # returns struct if in, use as bool
+re.sub(pattern, sub, text) # returns string with matches swapped for sub
+
+
+```
 
 <br>
 <br>
@@ -1159,7 +1645,7 @@ The rectangle above is equal to
         n
     2 x Σ i   
   	   i=1
-  
+
 which equal to length by width, or
 
 	n(n+1)
@@ -1183,7 +1669,7 @@ https://www.youtube.com/watch?v=aXbT37IlyZQ
 
 **Sum of cubes**  
 ( Sum of integers squared )
-https://www.youtube.com/watch?v=X_6LLmj4_5I 
+https://www.youtube.com/watch?v=X_6LLmj4_5I
 
 	 n
 	 Σ i^3 = n^2 (n+1)^2 / 4
@@ -1225,7 +1711,7 @@ And for factors to a power, that there could be any number
 
 <br>
 
-**Two square theorem** 
+**Two square theorem**
 An integer greater than one can be written as a sum of two squares, if and only if,
 its prime decomposition contains no prime congruent to 3 modulo 4 raised to an odd power. ( Just use brute force checking for this at O( √n ) rather than the theorem )
 
@@ -1236,12 +1722,12 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 	 n
 	 Σ r^i = (1 - r^(n+1)) / (1-r)
 	i=0
-	 
+
 1 + 3 + 9
 
 	 2
 	 Σ 3^i = (1 - 3^(2+1)) / (1-3) = -26 / -2 = 13
-	i=0	
+	i=0
 
 <br>
 <br>
@@ -1253,6 +1739,15 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 
 <br>
 
+## De morgan's laws
+```Python
+not (a or b) # is the same as
+(not a) or (not b)
+
+not (a and b) # is the same as
+(not a) and (not b)
+```
+
 ## Complexity
 
 A function describing algorithm resource use dependent on the number of inputs, with a specific input.
@@ -1261,7 +1756,7 @@ This measure is better than running tests, because
 
 - it is hardware independent
 - it creates a continuous comparable functions, rather than error prone data points
-- it can compare run times with inputs numbers that might not be feasible to test 
+- it can compare run times with inputs numbers that might not be feasible to test
 
 Depending on specific inputs to the algorithm this complexity can change.
 
@@ -1281,13 +1776,13 @@ The most common functions, in higher order, are
 	n log(n) <
 	n^x <
 	x^n <
-	n! 
+	n!
 
 (Remember that n is an integer, so n^2 is never smaller than n as it would be on a continuous graph)
 
 Any complexity graph has lower, exact and upper bounding functions, and in asymptotic analysis we find functions that tightly bound the complexity graph, as a way to compare growth to other functions.
 
-- O is upper bounding function 
+- O is upper bounding function
 - Θ exists if the same function with different constants can be the lower and upper bound
 - Ω is the lower bounding function  
 
@@ -1295,6 +1790,13 @@ Any complexity graph has lower, exact and upper bounding functions, and in asymp
 
 ## Best, worst and average case
 Depending on the inputs to a function, the complexity of an algorithm can change, such as when a sorting algorithm has to sort an already sorted list.
+
+<br>
+
+## Amortized time
+Average time
+Amortized analysis is used for algo­rithms that have expensive opera­tions that happen only rarely. Say when appending to a list with no space, that means you need to create a new list.
+
 
 <br>
 
@@ -1331,7 +1833,7 @@ a subset of edges in a graph, which connect all nodes with the minimum weighted 
 <br>
 
 **Prim's Algorithm**
-From a random starting node, while not all nodes have been reached, pick the shortest connection from any of the joined nodes which leads to a new node. 
+From a random starting node, while not all nodes have been reached, pick the shortest connection from any of the joined nodes which leads to a new node.
 https://www.youtube.com/watch?v=cplfcGZmX7I
 
 <br>
@@ -1364,13 +1866,14 @@ https://www.youtube.com/watch?v=-L-WgKMFuhE
 
 ## Sort
 
-**Bubble sort** 
-Items bubble to the top  
+**Bubble sort**
+Largest Items bubble to the top  
 
-**Selection sort** 
-Smallest items sink to the bottom 
 
-**Insertion sort** 
+**Selection sort**
+Smallest items sink to the bottom
+
+**Insertion sort**
 Inserts each element into a sorted area in the list, in the right position  
 
 **Merge sort**
@@ -1385,14 +1888,14 @@ Like binary search, this algorithm splits everything up
 
 <br>
 
-## Ordered and unordered 
+## Ordered and unordered
 Ordered means the data is sorted in some way, including by placement.
 
 <br>
 
-## Immutable	
+## Immutable
 Cannot be changed
-If at the programming level it looks like it has changed, then the new value is at a different address 
+If at the programming level it looks like it has changed, then the new value is at a different address
 
 <br>
 
@@ -1402,8 +1905,8 @@ A data structure is a particular way of organizing data in a computer so that it
 <br>
 
 ## Implicit data structure
-A [Data structure](#Data-structure) which uses positioning as a way to carry information about a values position in the underlying representation. 
-Formally, an implicit data structure is one with constant O(1) space overhead 
+A [Data structure](#Data-structure) which uses positioning as a way to carry information about a values position in the underlying representation.
+Formally, an implicit data structure is one with constant O(1) space overhead
 An example is a list representing a binary tree.
 
 <br>
@@ -1456,11 +1959,11 @@ Perfect > Full and complete.
 
 <br>
 
-## Binary Search Tree 
+## Binary Search Tree
 A BST is a [Binary Tree](#Binary-Tree) where each node is greater than its left child and less then its right.
 
 https://www.youtube.com/watch?v=LU4fGD-fgJQ  
-A tree is balanced if the maximum difference between the number of subtree child nodes is 1 or 0. 
+A tree is balanced if the maximum difference between the number of subtree child nodes is 1 or 0.
 
 |        | unsorted array | sorted array | linked list | balanced BST |
 |--------|----------------|--------------|-------------|--------------|
@@ -1474,10 +1977,10 @@ A tree is balanced if the maximum difference between the number of subtree child
 https://www.youtube.com/watch?v=qvZGUFHWChY  
 A balanced [Binary search tree](#Binary-search-tree) with a guaranteed height of O ( log n ) for n nodes.  
 - A node is either red or black
-- The root node is black 
-- Nil nodes are black 
+- The root node is black
+- Nil nodes are black
 -  If a node is red, its children are black
--  All paths from Root to Nil contain the same number of black nodes 
+-  All paths from Root to Nil contain the same number of black nodes
 
 <br>
 
@@ -1491,7 +1994,7 @@ Implemented include using a [Linked list](#linked-list). )
 ## Queue
 [Abstract Data Types](#Abstract-Data-Types)  
 First in First out.  
-Implemented include using a [Linked list](#linked-list). 
+Implemented include using a [Linked list](#linked-list).
 
 <br>
 
@@ -1508,7 +2011,7 @@ Either last or first in can be first out
 
 <br>
 
-## Segment Tree 
+## Segment Tree
 A [Binary Tree](#binary-tree) for finding the minimum or maximum values in a range. A max tree is below and shows each node represents the maximum for its children.
 
 
@@ -1520,7 +2023,7 @@ A [Binary Tree](#binary-tree) for finding the minimum or maximum values in a ran
 
 <br>
 
-## Trie 
+## Trie
 Strings stored as [Tree](#**tree**) character paths
 
 <br>
@@ -1545,12 +2048,12 @@ Sequential elements represented by value pointer pairs, where pointers point to 
 Variations
 - singly linked lists have one way directed pointers
 - doubly linked lists have two way directed pointers.
-- circular linked list, tail next points to head 
+- circular linked list, tail next points to head
 - Skip list, multiple links to allow for O(log n) read
 
 <br>
 
-## Heap 
+## Heap
 [Data structure](#Data-structure)  
 https://www.youtube.com/watch?v=AE5I0xACpZs  
 
@@ -1558,7 +2061,7 @@ A complete [Binary Tree](#Binary-Tree) stored as an array where for max heaps, n
 
 For Insertion new nodes are placed in the next available position, and then swapped with their parents until they are less in value than them, retaining the node value requirement.
 
-For deletion you delete the root, 
+For deletion you delete the root,
 and move it down by swapping it with the greatest child element greater than itself.
 
 A min heap is the reverse of this
@@ -1577,7 +2080,7 @@ Open addressing > placing an item at a position different than the hash
 
 	Linear probing > The value goes to the next available position in the set length array
 
-Closed addressing 
+Closed addressing
 
 	Linked list collisions > If there is a collision, then the array index will be set as the first link in a linked list.
 
@@ -1612,7 +2115,7 @@ A style of programming
 
 <br>
 
-## Object Oriented Programming 
+## Object Oriented Programming
 [Paradigm](#Paradigm)
 
 OOP is writing code around the idea of object properties and actions.
@@ -1627,19 +2130,19 @@ Abstraction > A simplification of a mental model IE going from logic gates to an
 
 Static methods > Don't require a class instance
 
-Class methods > Operate on every instance of a class 
+Class methods > Operate on every instance of a class
 
 Abstract class > A class only used for child classes to inherit from, and which is not instantiated.
 
 <br>
 
-## Functional programming 
+## Functional programming
 [Paradigm](#Paradigm)  
 Create Pure functions where the output should only depend on its inputs and not effect outside variables. This allows for parallelization, as functions can run at the same time without affecting each other.  
 
 <br>
 
-## Declarative programming 
+## Declarative programming
 [Paradigm](#Paradigm)  
 Code which focuses on the end product rather than how it is created. A description rather than a recipe.
 
@@ -1665,6 +2168,15 @@ Programming based on formal logic, including languages such as Prolog.
 
 ## Programming language
 A human readable syntax used to write code which is converted to machine readable code to run.
+
+<br>
+
+## Pass by value
+Copies of values are made when they are used as the inputs to a function
+
+## Pass by reference
+Pointers to values are passed as the inputs to a function, and inside of a function modifies the value if it used outside of that scope
+
 
 <br>
 
@@ -1712,7 +2224,7 @@ When a type is converted explicitly in code.
 <br>
 
 ## Implicit conversion
-When a type is converted by the compiler without explicit instruction in code. This conversion retains information and so the new type takes more memory than the previous type. 
+When a type is converted by the compiler without explicit instruction in code. This conversion retains information and so the new type takes more memory than the previous type.
 
 	2+"3" = "23"
 
@@ -1728,7 +2240,7 @@ Dynamic typed programming languages check for types during run time, "on the fly
 
 <br>
 
-## Call stack 
+## Call stack
 https://en.wikipedia.org/wiki/Call_stack  
 A [Stack](#Stack) implemented to store values in the order a program will use them.
 
@@ -1778,11 +2290,12 @@ Code directly applicable to the user.
 
 <br>
 
-## OS 
+## OS
 Operating System  
-Code to run other 1st or 3rd party applications. 
-With multiple applications it consequentially needs the ability to switch between them, and manage shared resource use if they run at the same time. 
+Code to run other 1st or 3rd party applications.
+With multiple applications it consequentially needs the ability to switch between them, and manage shared resource use if they run at the same time.
 With 3rd party applications it likely enforces proper hardware use and provide common services to 3rd party developers.
+
 
 <br>
 
@@ -1792,7 +2305,7 @@ Software that interfaces directly with hardware
 Kernels are responsible for creating an environment for applications that abstracts from the hardware by implements standardization in networking, drivers and storage for example, and allocates limited hardware resources.
 
 Kernel mode software is code executed with unrestricted access to hardware
-User Mode software has limited hardware access, so an application can't just use all the device resources for example. 
+User Mode software has limited hardware access, so an application can't just use all the device resources for example.
 
 **Micro kernels** have different programs for each aspect of importance running at user level, which are all controlled by a central authority at the kernel level, which is kept to a minimal size. This has the advantage of not crashing the kernel if one aspect crashes.
 
@@ -1801,7 +2314,7 @@ User Mode software has limited hardware access, so an application can't just use
 <br>
 
 ## Virtual machines
-Software that emulates dedicated hardware. 
+Software that emulates dedicated hardware.
 
 Created using Hypervisors
 
@@ -1819,25 +2332,25 @@ A term which describes on demand use of servers by a provider which are setup an
 
 ## SaaS
 
-Software as a Service provides 
+Software as a Service provides
 
-- Application hosting 
+- Application hosting
 
 and everything under [PaaS](#PaaS)
 
 ## Faas
 
-Function as a Service provides 
+Function as a Service provides
 
 - On demand function computing
 
 and everything under [PaaS](#PaaS)
 
 ## PaaS
-Platform as a Service provides 
+Platform as a Service provides
 
 - Developer tools  
-- Operating systems 
+- Operating systems
 
 and everything under [IaaS](#IaaS)
 
@@ -1847,8 +2360,8 @@ Why do you need an operating system without a user, can't you just run machine c
 
 Infrastructure as a Service provides  
 
-- Compute 
-- Storage 
+- Compute
+- Storage
 - Physical housing
 - Networking and Security  
 
@@ -1869,7 +2382,7 @@ Described a background process which runs in the background without the oversigh
 
 <br>
 
-## Hash 
+## Hash
 A hash maps any input of varied size to an, ideally always, unique value.
 
 A hash function such as SHA256 will take a key and output a hash code.
@@ -1890,7 +2403,7 @@ Where the message is encrypted and decrypted with the same key, and so needs to 
 <br>
 
 ## Asymmetric Encryption
-Also called Public key Encryption 
+Also called Public key Encryption
 
 https://www.youtube.com/watch?v=AQDCe585Lnc  
 https://www.youtube.com/watch?v=vsXMMT2CqqE  
@@ -1920,12 +2433,12 @@ A 51% attack is when a majority of computational power is being used to verify t
 The basis for all cryptocurrencies is a distributed ledger which tracks the positive account balance of a set of users, by tracking a list of payments for which each user sending money has to sign with a digital signature.
 This solves the double spending problem.
 
-A balance is defined by the ledger, you can't change your balance without adding to the ledger and either taking or giving money to someone else. 
+A balance is defined by the ledger, you can't change your balance without adding to the ledger and either taking or giving money to someone else.
 This is in contrast to banking systems where the balance is stored as a Integer number of cents, that can easily be changed with no clear sign of wrongdoing.
 
 But there can be willful ignorance of payments, that can divide the ledger, so we need proof of which ledger is legitimate.
 
-https://www.youtube.com/watch?v=bBC-nXj3Ng4 
+https://www.youtube.com/watch?v=bBC-nXj3Ng4
 
 <br>
 
@@ -1935,7 +2448,7 @@ Chooses a user based on their balance, to create a security deposit sum greater 
 <br>
 
 ## Containers
-A container is a software package that consists of all the dependencies required to run an application 
+A container is a software package that consists of all the dependencies required to run an application
 
 Docker is software for distributing software in the same environment it was made in, to avoid configuration issues, and has replaced using  [[Virtual machines]], by  only creating the parts of the OS that an application, not the user, interacts with.
 
@@ -1980,7 +2493,7 @@ The index of a unique rows in a database to describe an entry
 
 A database system in which any field can be a component of more than one of the database's tables.
 
-IE 
+IE
 
 An order references a customer in another table, rather than having multiple and possible conflicting data entries in the order table, as these details can change over time.
 The customer's country is specified in the customer table by again, a reference to another table.
@@ -2010,7 +2523,7 @@ Just a collection of literal documents, which provides complex flexibility
 Nodes contain data and directional edges are relationships
 
 **Search engine**  
-Where results are linked to 
+Where results are linked to
 
 **Multi model**  
 Uses where applicable, multiple database models to get the best performance
@@ -2043,7 +2556,7 @@ A network of real or digital neurons which learn to respond to stimuli or data.
 
 <br>
 
-## Moravec's paradox 
+## Moravec's paradox
 Moravec's paradox is the observation by artificial intelligence and robotics researchers that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor skills require enormous computational resources
 
 <br>
@@ -2096,7 +2609,7 @@ To convolute is to blur, which is intuitively is mapping a number of values to l
 
 ## Auto encoder
 Unsupervised  
-An autoencoder is an architecture to train one [neural network](#Neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data. 
+An autoencoder is an architecture to train one [neural network](#Neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data.
 
 <br>
 
@@ -2130,7 +2643,7 @@ This means the modified and hence base computer which solves the halting problem
 <br>
 
 ## Recursion
-A function calling itself 
+A function calling itself
 
 <br>
 
@@ -2150,20 +2663,20 @@ https://www.youtube.com/watch?v=u2DLlNQiPB4
 <br>
 
 ## Premature optimization
-Optimizing that delays finishing a working product, as when the optimization... 
+Optimizing that delays finishing a working product, as when the optimization...
 
-- will become deleted code as the program changes, and will go unused in the program 
+- will become deleted code as the program changes, and will go unused in the program
 - won't be a bottleneck to needed performance, and will go unnoticed by the user
 - makes it slower to write more code, and will be a hindrance to development
 
 <br>
 
-## Invariant 
+## Invariant
 Something that doesn't vary and which is always true.
 
 <br>
 
-## Loop Invariant 
+## Loop Invariant
 A loop invariant is a statement about program variables that is true before and after each iteration of a loop.
 
 <br>
