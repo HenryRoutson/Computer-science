@@ -8,1636 +8,27 @@
 
 https://www.tablesgenerator.com/markdown_tables
 
-Note that markdown links cant have capitals  
-[Link with lower](#code)  
-[Link with upper](#Code)  
+Note that markdown links cant have capitals   
 
-<br>
+Mark with TODO
 
-When writing code, don't write scalable code straight away, but write code for a small part of the program and get that working first
+[Math](#math)  
+[Software](#software)  
+[Hardware](#hardware)  
 
-<br>
 
-Search "???" for unsure  
-
-<br>
-<br>
-
-# Code
-
-### **Shared syntax**  
-
-<br>
-
-###  Increment and decrement operators
-
-	pre
-	x++ and x--
-
-	post
-	++x and ++x
-
-<br>
-
-### Augmented assignment  
-https://en.wikipedia.org/wiki/Augmented_assignment  
-
-	+=, -=, %= ...
-
-<br>
-
-###  Control flow brackets
-	... (...) {...}
-```c
-if ( i>100 ) {...} // i>100 is a Boolean
-
-switch ( i ) {                  // i, a and b are values
-	case a: ... break;
-	case b: ... break;
-}
-// remember to use a break
-
-for (int i=0; i<100; i++) {...}
-
-while ( i>100 ) {...}
-```
-
-<br>
-
-### Iterable bracket indexing
-
-```c
-"string"[1]
-```
-
-<br>
-
-### Standard mathematical syntax
-
-```python
-x * y # mul  
-x / y # division
-x % y # mod  
-```
-
-<br>
-<br>
-<br>
-<br>
-
-**Python**  
-[Augmented assignment](#augmented-assignment)  
-[Iterable bracket indexing](#iterable-bracket-indexing)
-[Standard mathematical syntax](#standard-mathematical-syntax)
-
-
-```python
-#                                                   HELLO WORLD
-print("Hello world")
-
-#                                                   CONVENTION
-
-() # means something is spontaneously calculated, and possibly takes inputs
-ClassInstance.Attribute # Stored
-ClassInstance.Method()
-Function(Input)
-
-CONSTANT = 10
-variable_name = [1,2,3,4]
-def function_name(): ...
-# note that variables are preserved with functions
-
-def function():
-    """Demonstrates triple double quotes
-    docstrings and does nothing really."""
-    pass
-
-print(function.__doc__)
-
-#                                                   MATHEMATICAL
-
-x ** y # exp
-x ** 0.5 # sqrt
-
-import math
-math.log(64,2)
-True + 10 # 11 through implicit conversion
-not 48 # 0 through implicit conversion
-
-
-#                                                   BASE
-
-binary = bin(10) # '0b1010'
-int(Num, Base) # revert to base 10
-1-bit # NOT
-not bit # NOT
-& # AND     
-| # OR      
-^ # XOR ( only either )
-decimal << int # SHIFT left
-decimal >> int # SHIFT right
-hexadecimal = hex(10) # '0xa'
-
-
-#                                                   TYPES
-
-dir(type) # find type methods
-
-bool
-	Bool = True
-	bool(Type) # if the type is the simplest / smallest, then it will eval to False
-	not # to flip
-
-	"""Evaluating bool expressions"""
-	True or True and not True # Not left to right
-	# 1 Conditions
-	# 2 not
-	# 3 and
-	# 4 or
-
-
-	# strings will be evaluated on dictionary order
-
-	>  # Greater than
-	>= # Greater than or equal to
-	<  # Less than
-	<= # Less than or equal to
-	!= # not equal to
-
-float
-	Float = 5.0
-
-	# Methods
-	bool( Num % 1 ) # test if float has decimals
-	def ceil(x): return int(x+bool(x%1)) # round up without importing
-
-complex
-
-	Complex = 3+4j
-	Complex = complex(3, 4)
-	Complex.real # 3
-	Complex.imag # 4
-	Complex.conjugate() # 3-4j
-	abs(Complex) # 5
-
-	import cmath
-	Complex = complex( 1, (3**0.5) )
-	cmath.polar(Complex)
-
-int
-	Int = 2
-
-list
-	# ordered, iterable, mutable
-	List = [1]
-
-	# Methods
-
-	List.append(Element)
-	List.insert(index,Element)
-	List.extend(Iterable)
-	List = zip(List) # [1,2],[3,4] > [(1, 3), (2, 4)]
-
-	from numpy import prod; prod(NumList)
-	from math import prod; prod(NumList)
-
-	*Iterable # *["a","b"] == "a","b"
-
-	# Note that when using = to create a new list this is still points to and modifies the same list
-	# to make a new list to avoid modifying the previous one use
-	New_list = List.copy()
-
-str
-	# ordered, iterable
-	string = "123"
-	string = "1234" + "5678" # concatenation
-	fstring = f"This is an F string which easy add values like {x} into"
-	fstring = f"F strings can be formatted with rounded float for example {2**0.5:.10f}"
-
-	# Printing
-	print(1234, "567", "eight", "nine") # , adds a space
-	print(str)
-
-	# Methods
-
-	eval("1+2") # 3
-
-	ord(Character) # unicode integer
-	ord(Char) - ord('a') + 1 # lower case alphabetic position
-	ord(Char) - ord('A') + 1 # upper case alphabetic position
-	chr(ord(Character)) # chr is reverse
-
-	# eval
-	string.istitle() # is title capitalization
-	string.isupper()
-	string.islower()
-	string.isalpha() # is all letters
-	string.isnumeric() # is all numbers
-	string.isalnum() # is alpha numeric
-	string.upper() # changes all letters in string to upper case
-	string.lower() # changes all letters in string to lower case
-	string.split() # Splits up into list based on string, leave as default to split words
-	string.strip() # default is " ", removes this string at start and end of another
-
-	# optimization
-	"".join() # is faster than +
-
-
-tuple
-	# ordered
-	Tuple = (1,)
-
-	x,_,z = ('x',2,'z') # _ avoids assigning  
-	x,*_,z = ('x',2,2,3,2,'z') # *_ is any number of values
-
-	# https://www.youtube.com/watch?v=GfxJYp9_nJA
-	from collections import namedtuple
-	rgb = namedtuple('color', ['red','green','blue'])
-	offWhite = rgb(183, 185, 167)
-	print(offWhite.red)
-
-set
-	# unique elements, unordered, iterable, mutable
-	Set = set(List) = {1}
-
-	# Methods
-	A - B # dif, A - (A ∩ B)  
-	A | B # union, A U B
-	A & B # intersection, A ∩ B
-	A ^ B # symmetric difference, (A U B) - (A ∩ B)
-
-	.add(Element)
-	.update(Iterable)
-	.discard(Element)
-	.remove(Element) # throws error if not present
-
-	dict
-		# unique elements, unordered, iterable
-		Dictionary = {}
-		Dictionary = {1:None}
-		Dictionary = {x:i for i:x in enumerate(Iterable)}
-
-		# add to dictionary
-		if not Dictionary.get(Key): # index notation throws error without value
-			Dictionary[key] = ...
-
-		from collections import Counter
-		Dictionary = Counter(Iterable)
-		Dictionary.most_common(n_most_common)
-
-		from collections import defaultdict
-		Dictionary = defaultdict(int)
-
-		# Methods
-
-		dic["key"] = 31
-		dic["key2"] +=1
-		dic.popitem()
-
-		Dictionary.keys()
-		Dictionary.values()
-		Dictionary.items()
-
-
-
-#                                                   METHODS
-
-Type + Type # string list int float
-del Dict_or_List[Location] # dict list
-Val = List.pop() # Removes last value, deletes index with argument value
-Val = Set.pop() # Removes last value
-Val = Dict.pop(Arg) # key arg required
-
-# string list
-Iterable = sorted(Iterable)
-Iterable.sort()
-Iterable.sort(reverse=True)
-Iterable[start:end:move] # slicing
-	# second comma is optional if move doesn't need to be changed
-	# Defaults if values aren't entered...
-	start=0; end=len(string)+1; move=1
-	# start is inclusive, end is exclusive to the character at the index
-Iterable[::-1] # reverse iterable
-Iterable.index(element)
-
-# generators string list set dict
-reversed(Iterable)
-max(Iterable)
-min(Iterable)
-sum(Iterable)
-
-def show_index(Iterable):
-
-	for i in range(len(Iterable)):
-	print(i, end=" ")
-	print("+")
-
-	for i in range(len(Iterable)):
-	print(Iterable[i], end=" ")
-	print(type(Iterable))
-
-	for i in range(len(Iterable)):
-	print(len(Iterable)-i, end=" ")
-	print("-")
-
-#                                                  CONTROL FLOW
-
-DefaultArg = "squared is"
-def Print_Square(Num, Another, String=DefaultArg): # default arguments need to be the last stated arguments
-	print(Num, String, Num**2, Another)
-
-Print_Square(String="DefaultArg", Another=2, Num=1) # valid
-
-
-Print_Square(10, String="to the power 2 is") # OR
-Print_Square(10, "" ,"to the power 2 is")
-
-
-if Condition: Code ... # evaluating a type will be implicitly converted to bool
-if Condition: return # doesn't need else after
-
-while Condition: print("while")
-for i in range(5, 10): print(i) # Use start
-for i, x in enumerate([13,5,29]): print(i, x) # Use enumerate (i before x)
-for i in range(len(Iterables)-1,-1,-1): print(Iterables[i]) # Use different steps
-for a,b in zip(listA,listB): print(a,b) # use zip for multiple lists
-
-break # break out of for loop
-continue # continue to next element or value
-pass # write if nothing happens to avoid an error
-
-# for else
-for ... :
-	if ... :
-		break
-else ... : # called if break not called
-	...
-
-(), eval, not, and, or  # order of logical operations
-
-
-#                                                  FUNCTIONAL
-
-def Bool_function(Element): return Element>5
-list(map(Bool_function, Iterable))
-list(map(lambda Element: Element>5, Iterable))
-
-
-#                                                   SHORTHAND
-
-x = y = 1
-x, y = 9, 3
-Iterable[1], Iterable[0] = Iterable[0], Iterable[1] # no temp
-x = x//y # x = int( x/y )
-Assigned = True if Bool else False  # one line if else
-"repeat "*3 # 'repeat repeat repeat '
-[0]*3 # [0,0,0]
-
-
-#                                                   OOP
-
-class Human():
-    def __init__(self, Age, ):
-        self.Age = Age
-
-    def birthDay(self):
-        self.Age += 1
-
-Tom = Human(20) # instance
-Tom.birthDay()
-print(Tom.Age)
-
-#                                                  	MEMOIZATION
-
-from functools import cache, lrucache     
-
-@lrucache(maxsize=2)
-def fib(n):
-	if n <= 1: return n
-	return fib(n-1)+fib(n-2)
-
-@cache
-def expensive_computation(n):
-	...
-
-#                                                  	OPERATOR OVERLOADING  
-
-class complex:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-
-     # adding two objects
-    def __add__(self, other):
-        return self.a + other.a, self.b + other.b
-
-Ob1 = complex(1, 2)
-Ob2 = complex(2, 3)
-Ob3 = Ob1 + Ob2
-print(Ob3)
-
-
-#                                                  FILES
-
-# Open
-open(...) # https://www.tutorialspoint.com/python/python_files_io.htm
-
-with open(filename) as file_object # USE
-	...
-
-# Read
-number_chars = 10
-text = file_object.read(number_chars) # optional arg
-new_index = 23
-file_object.seek(new_index) # change next read starting index
-#OR
-line_sep_list = file_object.readlines()
-for line in file_object.readlines(): ... # lower max memory than storing everything at once
-
-# JSON - able to write normal python data types
-import json
-
-with open('path_to_file/person.json') as json_file:
-  Dict = json.load(json_file)
-
-# do something
-
-with open(File_name,'w') as File:
-        File.write(json.dumps(Dict))
-
-#                                                  LIST COMPREHENSION
-
-[x-1 for x in List]
-
-from collections import Counter
-def mode(numlist):
-    counts = Counter(numlist)
-    max_count = max(counts.values())
-    return list(num for num in counts if counts[num] == max_count)
-
-["ODD" if num % 1 else "EVEN" for num in List]
-
-#                                                  MISC
-
-float('inf') # infinity without importing
-sorted( arr, key=lambda Num: (abs(Num), Num, ...) ) # sort with multiple conditions in the same iterable
-[x for _, x in sorted(zip(Y, X), key=lambda pair: pair[0])] # sort based on other iterables
-sorted(List)[:n_largest] # better than repeated min and max
-"".join(Str_Iterable) # ["a","b"] --> "ab"
-plus_plus = lambda x: x+1 # lambda just defines a function; plus_plus(2) = 3
-__main__ # magic methods   
-1_000 # _ makes large numbers easier to read
-In = input("optional message")
-@decorator
-print("Split lines "
-+ "with open brackets")
-help( Something )
-def var_parameters(*c) return sum(c) # multiple values get converted to a tuple
-
-#                                                  DOC STRINGS                                          
-
-# Google Style Python Docstrings
-def manhatan(loctn_a, loctn_b):
-    ''' return distance between location a and b
-
-    Args:
-        loctn_a / loctn_b (tuple): locations with integer axis values
-
-    Returns:
-        integer: manhatan distance,
-        the sum of the positive difference between axis values
-
-    '''
-    return sum(abs(a - b) for a, b in zip(loctn_a, loctn_b))
-
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**C**  
-[Augmented assignment](#augmented-assignment)  
-[Increment and decrement operators](#increment-and-decrement-operators)  
-[Control flow brackets](#control-flow-brackets)
-
-CLANG
-```C
-// HELLO WORLD / output
-
-#include <stdio.h>
-int main() {
-	printf("Hello World!");
-	return 0;
-}
-/*
-    - stdio is short for standard input output
-    - the type before the name of the function is the returned type
-    - int main() returning 0 signals no errors,
-    - newer compiler return 0 implicitly
-*/
-
-
-// SHELL
-
-/*
-COMPILE
-gcc -Wall -std=c11 -o program program.c
-
-gcc
-	the compiler, could use clang or other
--Wall
-	tells the compiler to show all Warnings.
--std=c11
-	specifies the compiler version
--o program
-	change default name of compiled file
-	from a.out
-program.c
-	name of program to run
--lnameoflibrary
-	import library
-	IE -lm is the math library
-*/
-
-/*
-REDIRECT OUTPUT
-./cprogram < programinput > programoutput
-// pipe operator
-     ________
-    |        V
-runfirst | runnext | ...
-
-*/
-
-
-
-#include <stdio.h>
-int main() {
-    putchar('a');
-    return (0);
-}
-
-// MAIN() PARAMS
-
-// cd desktop
-// nvim test.c
-
-#include <stdio.h>
-int main(int argc, char **argv) {
-	// argc is the integer number of arguements
-	// argv is the array of arguements
-
-	for(int i = 0; i < argc; i++) {
-			printf("%s\n",argv[i]);
-	}
-
-	return 0;
-}
-
-// gcc -Wall -std=c11 -o test test.c
-// ./test '1' "2" 3
-
-
-// VOID
-/*
-Used to indicate that
-	a function
-		does not return a value
-	  does not accept parameters
-	a pointer does not have a specific type and could point to different types.
-
-*/
-
-
-// INPUT
-
-#include <stdio.h>
-int main() {
-    int number; // or other type
-    printf("type a number\n");
-    scanf("%d", &number); // returns num chars and assigns to number
-    printf("%d is a number", number);
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-    int a;
-    float b;
-    printf("Enter integer and then a float: ");
-    scanf("%d%f", &a, &b);
-    printf("You entered %d and %f", a, b);  
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-    char input[100];
-    printf("Enter a string below\n");
-    scanf("%s", input); // scan f terminates at whitespace
-    printf("%s", input);  
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-    char input[100];
-    printf("Enter a string below\n");
-    fgets(input, sizeof(input), stdin); //
-    printf("%s", input);
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-    int c = getchar();
-		// EOF cannot fit in char, so use int
-    printf("%c", c);
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-
-    printf("Enter text:\n");
-
-    int chars = 0, lines = 0;
-    char input;
-
-    while ((input = getchar()) != EOF) {
-        if (input == '\n') { lines++; }
-        chars++;
-    }
-
-    printf("Lines:    %3i\n", lines);
-    printf("Chars:    %3i\n", chars);
-
-    return 0;
-}
-
-#include <stdio.h>
-int main(int argc, char *argv[]) {
-
-    printf("Enter numbers: ");
-
-    int i;
-    while (scanf("%i", &i) == 1) {
-
-        printf("%2i |", i);
-        for (int i = 0; i < i; i++) { printf("*"); }
-        printf("\n");
-
-    }    
-}
-
-/*
-scanf() returns at a space
-getchar() gets a single character
-fgets() gets a specified number of chars
-*/
-
-// STRINGS
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    printf("%i", strlen("strlen"));
-}
-
-// ARRAY
-int 1D[];
-int 2D[][];
-//...
-
-// CONVERT STRING TO INT
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    int num = atoi("12342");
-    printf("%i", num);
-}
-
-// CONVERT STRING TO FLOAT
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    double num = atof("1.2342");
-    printf("%lf", num);
-}
-
-
-
-// OPERATION ORDER
-/*
-postincrement, postdecrement
-unary not, unary negation, type casting
-multiplication
-addition
-comparison
-equality
-and
-or
-assignment
-*/
-
-// TYPES
-
-char A = 'A';
-int Ten = 10;
-float Tenth = 0.1;
-double Half = 0.5;
-
-// TYPE MODIFIERS
-
-signed or unsigned
-short or long
-
-
-// PRINT VARIABLES
-
-#include <stdio.h>
-int main() {
-	char Planet[] = "Mars";
-	printf( "Hello %s!", Planet );
-	return 0;
-}
-
-/*
-	%c char single character
-	%d (%i) int signed integer
-	%e (%E) float or double exponential format
-	%f float or double signed decimal
-	%g (%G) float or double use %f or %e as required
-	%o int unsigned octal value
-	%p pointer address stored in pointer
-	%s array of char sequence of characters
-	%u int unsigned decimal
-	%x (%X) int unsigned hex value
-	%e scientific notation
-
-	%10i	10 digit int signed integer (right aligned)
-	(lower limit, extends otherwise)
-	%-10i	10 digit int signed integer (left aligned)
-	%010i	10 digit int signed integer (0 filled)
-	%8.4i 	10 digit int signed integer (4 decimal places)
-
-*/
-
-// POINTERS
-/*
-Void pointers
-void is not a great name, a better name would be universal pointer
-while an int pointer only points to ints, a void pointer points to anything
-to print a pointer you actually need to convert it if it isn't already to this generic pointer form
-
-When using typed pointers you don't use the ampersand
-int* p = int_type;
-When using void you do need to use ampersand
-void* p = &any_type;
-
-void pointers do not have pointer arithmatic in certin versions of c
-when you do p += 1 with typed pointers, it actually adds the size of the type to get to the next value
-
-int A[];
-A is the pointer to the first element
-
-
-
-
-*/
-
-#include <stdio.h>
-
-int main() {
-
-    int A[] = {1, 2, 3};
-    int *p = A;  
-
-    // A is a pointer to the first element in the array
-    // so is p
-
-    printf("\n");
-    printf("%p\n", (void*)p);
-    printf("%p\n", (void*)(p + 2));
-    printf("\n");
-    printf("%i\n", *p);
-    printf("%i\n", *A);
-    printf("\n");
-    printf("%i\n", *(p + 2));
-    printf("%i\n", *(A + 2));
-    printf("%i\n", A[2]);
-    return 0;
-}
-
-
-#include <stdio.h>
-int main() {
-
-    int i = 1;
-    printf("%i\n", i);
-
-    int *p = &i; // pointer
-    printf("%p\n", (void*) p);
-
-    int **p2 = &p; // pointer to a pointer
-  	printf("%p\n", (void*) p2);
-
-    // ...
-
-    return 0;
-}
-
-
-
-
-#include <stdio.h>
-int main() {
-  int var = 5;
-  void *p = &var; // you need & to find pointers to types which are not arrays
-  printf("var: %d\n", var);
-  printf("address of var: %p", p);   
-  return 0;
-}
-
-
-#include <stdio.h>
-int main() {
-    int alphabet[] = {'A', 'B', 'C', 'D'};
-    int* letter_pointer = alphabet;
-    letter_pointer += 2; // pointers work the same way as indexes
-    printf("%c", *letter_pointer);
-    return 0;
-}
-
-#include <stdio.h>
-int main() {
-    int a = 1, *b; // shorthand
-    b = &a;
-    printf("%p", (void*) b);
-}
-
-
-void intswap(int *a, int *b) {
-    // a_val <b       b_val <a
-
-    int ast_a = *a;
-    *a = *b;
-    *b = ast_a;
-}
-
-
-// FUNCTIONS PARAMETERS
-
-#include <stdio.h>
-
-int Fib(int n) {
-	if (n == 0) { return 0; }
-	if (n == 1) { return 1; }
-	return Fib(n-1) + Fib(n-2);
-}
-
-int main() {
-
-    printf("%i",Fib(10));
-    return 0;
-}
-
-// ASSERT
-assert(a >= 10);
-
-// RETURNING
-// c returns pointer values
-// and local values inside function are freed after the function finishes
-// meaning returning in c can be less than straightforward
-// https://www.geeksforgeeks.org/return-local-array-c-function/
-
-// SHORTHAND
-
-int one, two; // declare variables with shared type
-int column = 0, row = 0, index = 0;
-
-
-// TYPES
-
-// NEW TYPES
-
-#define ARRAYSIZE 10
-typedef long D1[ARRAYSIZE];
-typedef D1 D2[ARRAYSIZE];
-
-// D2 is converted to D1[ARRAYSIZE]
-// D1 is converted to long[ARRAYSIZE][ARRAYSIZE]
-
-
-// TYPE CASTING
-
-#include <stdio.h>
-int main() {
-    for (int i = '!'; i <= '~'; i++) {
-        printf("%4c\n", i);
-    }
-}
-
-// STATIC
-// retains variable value for next function call
-
-#include<stdio.h>
-
-int fun() {
-  static int count = 0;
-  count++;
-  return count;
-}
-
-int main() {
-  printf("%d ", fun());
-  printf("%d ", fun());
-  return 0;
-}
-
-
-// MISC
-
-#define MIN_PER_HOUR 60 // constant (no ;)
-'A' // character literal '
-"String literals" // string literal "
-printf("c", );
-
-printf("\\");	// backslash
-printf("\t");	// horizontal tab
-printf("\r");	// carriage return
-printf("\'");	// quotation mark '
-printf("\"");	// double quotation mark "
-printf("%%");	// percent %
-
-// Common errors
-
-#include <stdio.h>
-int main() {
-    // without brackets, if statements in c
-    // only determine if the immediate next line runs
-    // so if you really want to do this, it's best to use a one liner
-    if (0)
-        printf("The first line runs on condition");
-        printf("This line is always printed without brackets");
-}
-
-
-// Assert
-
-#define NDEBUG 1 // define to disable asserts
-#include <assert.h>
-
-int main() {
-	assert(1!=2);
-  assert(1==2);
-}
-
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-# Arduino
-Inherits from c++
-
-Digital pins have a binary value  
-Analog pins have a float value  
-
-```c++
-// example code
-
-int sensorValue = 0;
-
-void setup()
-{
-  pinMode(A0, INPUT);
-  pinMode(13, OUTPUT);
-  Serial.begin(9600);
-}
-
-void loop()
-{
-  // read the value from the sensor
-  sensorValue = analogRead(A0);
-  Serial.println(sensorValue);
-  // turn the LED on
-  digitalWrite(13, HIGH);
-  delay(sensorValue); // wait for sensorValue milliseconds(s)
-  // turn the LED off
-  digitalWrite(13,LOW);
-  delay(sensorValue); // wait for sensorValue milliseconds(s)
-}
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Java**  
-[Augmented assignment](#augmented-assignment)  
-[Increment and decrement operators](#increment-and-decrement-operators)  
-[Control flow brackets](#control-flow-brackets)  
-[Iterable bracket indexing](#iterable-bracket-indexing)  
-
-```Java
-// Hello world
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Javascript**
-[Augmented assignment](#augmented-assignment)  
-[Increment and decrement operators](#increment-and-decrement-operators)  
-[Control flow brackets](#control-flow-brackets)  
-[Iterable bracket indexing](#iterable-bracket-indexing)  
-```Javascript
-
-// HELLO WORLD
-console.log('Hello World');
-
-// HTML modification
-document.getElementById("demo").innerHTML = "Hello JavaScript";
-
-// ASSIGNMENT
-
-	var // variable
-	let // constant which can be reassigned
-	const // constant which cannot be reassigned
-
-// FUNCTIONS
-function myFunction(p1, p2) { return p1 * p2; }
-
-// STRING MULTIPLICATION
-"a".repeat(10) // no string multiplication
-
-// objects -- link to JSON
-const car = {type:"Fiat", model:"500", color:"white"};
-
-// accessing
-objectName.propertyName
-objectName["propertyName"]
-
-
-this
-new
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Prolog**  
-```Prolog
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Bash**
-```console
-	*not caps sensitive*
-	https://www.youtube.com/watch?v=41LdR8kuLDs
-
-	PWD —> print working directory
-	LS —> list directories
-	CD —> change directory
-	.. —> previous directory
-
-	CLEAR —> clears terminal
-
-	MKDIR —> make directory
-
-	MV —> move or rename
-	TOUCH —> create file
-	OPEN —> open file
-	CAT —> concatenate, read code in terminal
-	RM —> remove
-	CP —> copy
-
-	Tab key —> autocomplete
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Git**
-```
-https://learngitbranching.js.org/
-https://www.youtube.com/watch?v=mJ-qvsxPHpY
-
-git —> start of every command
-
-status
-	shows changes with added files
-log
-	shows commits
-
-add <filename>
-	add files to commit, none by default
-	. —> all files
-restore --staged <filename>
-	Remove files after being added
-
-commit -m “<message>”
-
-checkout <Commit hash>
-	change commit position
-	add n~ to move to the parent n times
-
-branch <new branch name>
-	(doesn't checkout)
-checkout -b <new branch name>
-
-merge <chain>
-	merge checkout and specified chain into new commit
-rebase <chain>
-	checked out chain is moved onto specified
-
-reset <head>
-	moves head to new position to effectively remove a commit
-revert
-	creates a commit that reverses the previous commit
-
-GITHUB
-
-git push origin <branch name>
-git pull origin <branch name>
-
-REMOVE GITHUB HISTORY
-git checkout --orphan latest_branch
-git add -A
-git commit -am "rm history"
-git branch -D main
-git branch -m main
-git push -f origin main
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**SQL**
-```SQL
--- W R I T E
-
-	CREATE DATABASE databasename; -- create database
-	DROP DATABASE databasename; -- delete database
-	CREATE TABLE table_name ( -- create table and columns
-	column1 type,
-	column2 type constraint, -- column constraints are optional
-	....
-	);
-	DROP TABLE table_name; -- delete table
-	ALTER TABLE table_name ADD column_name datatype; -- add column to table
-	INSERT INTO tbl (clm1, clm2, ...) VALUES (val1, val2...); -- add a row to table
-	DELETE FROM tbl WHERE cond; -- delete rows from table
-	UPDATE tbl SET cml = val, … WHERE cond; -- update data
-
-	-- Types
-	-- https://en.wikipedia.org/wiki/SQL#SQL_data_types
-
-	-- Constraints
-	NOT NULL;
-	UNIQUE;
-	PRIMARY KEY;
-	FOREIGN KEY;
-	CHECK (inequality);
-	DEFAULT val;
-	CREATE INDEX indexName ON Table (Column);
-
--- R E A D
-
-	SELECT clm1, clm2 FROM tbl1;
-		-- * can be used to select all columns
-
-	-- DISTINCT > a column needs a unique value to be shown
-	SELECT DISTINCT columns FROM tbl1;  
-
-	-- Conditions
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 = ‘String’;
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 % 2 = 1;
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 IN ('String','Str');
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 IS NULL;
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 IS NOT NULL;
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 LIKE ''; -- % > any characters, _ > char
-	SELECT clm1, clm2 FROM tbl1 WHERE clm1 BETWEEN num AND num;
-		-- condition operators (don't need brackets)
-		AND OR NOT
-
-	SELECT clm1, clm2 FROM tbl1 ORDER BY colm2 ASC; -- ascending
-	SELECT clm1, clm2 FROM tbl1 ORDER BY colm1 DESC; -- or descending order
-
-	SELECT MIN(clm1, clm2) FROM tbl; -- column mins
-	SELECT MAX(clm1, clm2) FROM tbl; -- column maximums
-	SELECT AVG(clm1, clm2) FROM tbl; -- column averages
-	SELECT SUM(clm1, clm2) FROM tbl; -- column sums
-
--- E X A M P L E
-
-	CREATE TABLE user_details (
-	Email CHAR(25),
-	Phone CHAR(12),
-	Age SMALLINT
-	);
-
-	INSERT INTO user_details (Email, Phone, Age)
-	VALUES ('yes@no.com', '0123456789', 23);
-
-	SELECT * FROM user_details;
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**JSON**  
-JavaScript Object Notation is a language independent data format.  
- - Data is in name/value pairs  
- - Data is separated by commas ,
- - Curly braces hold objects {}
- - Square brackets hold arrays []
-
-```JSON
-{
-	"business_id": "1434729",
-	"postcode": "400",
-	"open": true,
-	"employees":[
-		{"firstName":"John", "lastName":"Doe"},
-		{"firstName":"Anna", "lastName":"Smith"},
-		{"firstName":"Peter", "lastName":"Jones"}
-		]
-}
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**PANDAS**  
-``` python
-
-cd desktop
-python3
-
-# axis 0 is down
-# axis 1 is across
-
-import pandas as pd
-
-# create a series
-
-# create a larger matrix
-# lists form columns
-data = {'Country': ['Belgium', 'India', 'Brazil'],
-'Capital': ['Brussels', 'New Delhi', 'Brasília'],
-'Population': [11190846, 1303171035, 207847528]}
-df = pd.DataFrame(data)
-df = df.set_index(['Country'])
-
-
-pip install pandas
-pip install sklearn
-pip install numpy
-pip install sqlalchemy
-python3
-
-#
-
-import pandas as pd
-import numpy as np
-from sklearn.datasets import load_iris
-
-iris = load_iris()
-df = pd.DataFrame(iris.data, columns=iris.feature_names)
-
-# iloc uses indexes
-# [rows, columns]
-
-print(df.iloc[2]) # whole row
-print(df.loc[:, "sepal width (cm)"]) # whole column
-
-print(df.loc[0, ["sepal width (cm)", "petal length (cm)"]])
-print(df.loc[0, "sepal length (cm)":"petal length (cm)"])
-
-
-# boolean indexing
-df[df['sepal length (cm)']>5] # rows
-df[[col for col in df.columns if ("length" in col)]] # columns
-
-# dates
-dates = pd.date_range("20130101", periods=6) # 2013/01/01
-df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
-
-
-# creating custom data frames
-# can support multiple data types
-df = pd.DataFrame({
-	'A': [0, ord('A')],
-	'B': [1, ord('B')],
-	'C': [2, ord('C')]
-	})
-
-df.to_numpy() # convert to numpy
-df.describe() # statistics sum
-df.T # transpose
-
-
-# sorting - can use key
-df.sort_index(axis=1, ascending=False) # by row
-df.sort_values(by=['A'], ascending=False) # by column
-
-# sort
-df.sort_index() # Sort by labels along index
-df = df.set_index(['Country'])
-df.sort_values(by=['Country'])
-
-# misc
-df.shape
-df.index
-df.columns
-df.info()
-df.count()
-df.sum()
-df.cumsum() # cummulative
-df.max()
-df.idxmax()
-df.min()
-df.idxmin()
-df.mean()
-df.median()
-
-# applying functions
-f = lambda x: x*2
-def f(): return x*2
-df.apply(f)
-df.applymap(f) # element wise
-
-# NaN (empty) data points
-df = pd.DataFrame([np.arange(1,4)],index=['a','b','c'], columns=["X","Y","Z"])
-df.reindex(index=['a','b','c','d'])
-pd.isna(df)
-pd.notna(df)
-df1.fillna(value=5)
-
-
-# interpolate
-arr=np.array([1,2,3])
-idx=np.array([
-pd.Timestamp('20211225'),
-pd.Timestamp('20211227'),
-pd.Timestamp('20211229')])
-df = pd.DataFrame(arr,index=idx)
-idx=[
-pd.Timestamp('20211225'),
-pd.Timestamp('20211226'),
-pd.Timestamp('20211227'),
-pd.Timestamp('20211228'),
-pd.Timestamp('20211229')]
-df=df.reindex(index=idx)
-
-df=df.interpolate() #
-
-# concatenate (combine)
-df = pd.DataFrame(np.random.randn(10, 4))
-pieces = [df[:3], df[3:7], df[7:]]
-pd.concat(pieces)
-
-
-```
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**MATPLOTLIB**  
-``` python
-
-
-
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-**Vim**
-
-	i —> insert mode to the left of cursor
-	a -> (append) insert mode the right of the cursor
-
-	esc key -> command mode
-
-		MOVE
-
-		e -> end of a word
-		b -> back one word
-		w -> forward one word
-		n —> do next command n times
-		H —> top of screen
-		M —> middle of screen
-		L —> bottom of screen
-		gg —> top of file
-		G  —> bottom of file
-		{ —> move up a block
-		} —> move down a block
-		A —> start insert mode at end of line
-		I -> start insert mode at end of line
-		n { }  —>  up and down blocks
-		f <character> —> skips to next character
-		t <character> -> skips to behind next character
-
-		DELETE
-
-		n dd  —> cut n lines
-       		D -> delete to end of line
-		diw —> delete inner word
-		dt —> delete until the character next typed is found
-		x -> delete cursor character
-
-		UNDO REDO
-
-		u —> undo
-		ctrl r (not command) —>  redo
-
-		COPY PASTE
-
-		yy —> yank current line
-		n yy —> yank the next n lines
-		yt {}—> yank (copy) blocks of code
-		p —> paste
-
-		SEARCH AND REPLACE
-
-		r<char> -> replace cursor character with new character
-		/<chars> -> find characters
-		/ term —> highlights terms
-		:s/ <replaced> / <replace with> -> substitute 1 word on a line
-		:%s/<init>/<fin>/gc —> substitute all (%) words globally (g) with confirmation (c)
-
-		MISC
-
-		o (lower)   —> add a new line below current and switch to insert mode
-		O (capital) -> add a new line above current and switch to insert mode
-		V —> visual mode, move up and down to highlight lines
-			Shift < > —> indent
-
-		FILE OPS
-
-		:q —> quits
-		:w —>writes
-		:wq —> writes and quits
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-## Regex
-
-Type normally for match cases
-
-.  Any character
-.* Any characters
-x Search string x
-
-^linestart
-lineend$
-
-
-
-(reversed with capital)
-\d Digits
-\w Alpha-numeric characters
-\s Whitespace
-
-[a-zA-Z] Alphabet
-[0-9] Numeric
-[a-zA-Z0-9] Alphanumeric
-[^a-zA-Z] Not Alphabetic
-
-Capturing group
-By placing part of a regular expression inside round brackets or parentheses, you can group that part of the regular expression together and use operators on larger patterns.
-
-
-matches a string that has ab followed by . . .
-c?        zero or one c
-c*        zero or more c
-c+        one or more c
-c{2}      2 c
-c{2,}     2 or more c
-c{2,5}    2 up to 5 c
-(bc)*     zero or more copies of the sequence bc
-(bc){2,5} 2 up to 5 copies of the sequence bc
-
-
-matches a string
-a(b|c)     captures b or c
-a[bc]      captures whole string ab or ac
-
-Search for literal characters
-[\[]
-[\.]
-
-Apply in python
-```python
-
-import re
-
-text = "Go ahead and watch the trailers for Avengers: Endgame, they won't give anything major away. It's amazing for a huge movie to be so self-aware of itself, as well as, the movie genres that they're overtly borrowing from."
-
-text = text.lower()
-pattern = r"[a-zA-Z']"
-sub = ''
-
-re.findall(pattern, text) # returns list of matches
-re.search(pattern, text) # returns struct if in, use as bool
-re.sub(pattern, sub, text) # returns string with matches swapped for sub
-
-
-```
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-# Deployment
-
-## Terraform
-
-
-
-<br>
-<br>
-<br>
-<br>
 <br>
 
 # Math
-
-
 
 <br>
 
 **Sum of Integers**  
 https://youtu.be/6kvfvpatnn8?t=271
 
-	x   x   x                      
+	x   x   x
 	x   x   o
-	x   o   o                     
+	x   o   o
 	o   o   o
 
 The rectangle above is equal to
@@ -1735,8 +126,296 @@ its prime decomposition contains no prime congruent to 3 modulo 4 raised to an o
 <br>
 <br>
 
-# CS concepts
+# Software
 
+**Notes for writing code**
+
+Use git to save recent versions for large projects
+
+Name functions starting with lower case
+
+Name variables starting with upper case
+
+Consider 
+
+- Caching
+- Reversing the problem
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+**Bash**
+```console
+
+PWD —> print working directory
+LS —> list directories
+CD —> change directory
+. —> current directory
+.. —> previous directory
+... -> and so on
+
+CLEAR —> clears terminal
+
+MKDIR —> make directory
+
+MV —> move or rename
+TOUCH —> create file
+OPEN —> open file
+CAT —> concatenate, read code in terminal
+RM —> remove
+CP —> copy
+
+Tab key —> autocomplete
+
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**Git**
+
+Use Git Graph in VSCode
+
+```
+
+git —> start of every command
+
+status
+	shows changes with added files
+log
+	shows commits
+
+add <filename>
+	add files to commit, none by default
+	. —> all files
+restore --staged <filename>
+	Remove files after being added
+
+commit -m “<message>”
+
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**SQL**
+```SQL
+-- W R I T E
+
+CREATE DATABASE databasename; -- create database
+DROP DATABASE databasename; -- delete database
+CREATE TABLE table_name ( -- create table and columns
+column1 type,
+column2 type constraint, -- column constraints are optional
+....
+);
+DROP TABLE table_name; -- delete table
+ALTER TABLE table_name ADD column_name datatype; -- add column to table
+INSERT INTO tbl (clm1, clm2, ...) VALUES (val1, val2...); -- add a row to table
+DELETE FROM tbl WHERE cond; -- delete rows from table
+UPDATE tbl SET cml = val, … WHERE cond; -- update data
+
+-- Types
+-- https://en.wikipedia.org/wiki/SQL#SQL_data_types
+
+-- Constraints
+NOT NULL;
+UNIQUE;
+PRIMARY KEY;
+FOREIGN KEY;
+CHECK (inequality);
+DEFAULT val;
+CREATE INDEX indexName ON Table (Column);
+
+-- R E A D
+
+SELECT clm1, clm2 FROM tbl1;
+	-- * can be used to select all columns
+
+-- DISTINCT > a column needs a unique value to be shown
+SELECT DISTINCT columns FROM tbl1;  
+
+-- Conditions
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 = ‘String’;
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 % 2 = 1;
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 IN ('String','Str');
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 IS NULL;
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 IS NOT NULL;
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 LIKE ''; -- % > any characters, _ > char
+SELECT clm1, clm2 FROM tbl1 WHERE clm1 BETWEEN num AND num;
+	-- condition operators (don't need brackets)
+	AND OR NOT
+
+SELECT clm1, clm2 FROM tbl1 ORDER BY colm2 ASC; -- ascending
+SELECT clm1, clm2 FROM tbl1 ORDER BY colm1 DESC; -- or descending order
+
+SELECT MIN(clm1, clm2) FROM tbl; -- column mins
+SELECT MAX(clm1, clm2) FROM tbl; -- column maximums
+SELECT AVG(clm1, clm2) FROM tbl; -- column averages
+SELECT SUM(clm1, clm2) FROM tbl; -- column sums
+
+-- E X A M P L E
+
+CREATE TABLE user_details (
+	Email CHAR(25),
+	Phone CHAR(12),
+	Age SMALLINT
+);
+
+INSERT INTO user_details (Email, Phone, Age)
+VALUES ('yes@no.com', '0123456789', 23);
+
+SELECT * FROM user_details;
+
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+**Vim**
+
+	i —> insert mode to the left of cursor
+	a -> (append) insert mode the right of the cursor
+
+	esc key -> command mode
+
+		MOVE
+
+		e -> end of a word
+		b -> back one word
+		w -> forward one word
+		n —> do next command n times
+		H —> top of screen
+		M —> middle of screen
+		L —> bottom of screen
+		gg —> top of file
+		G  —> bottom of file
+		{ —> move up a block
+		} —> move down a block
+		A —> start insert mode at end of line
+		I -> start insert mode at end of line
+		n { }  —>  up and down blocks
+		f <character> —> skips to next character
+		t <character> -> skips to behind next character
+
+		DELETE
+
+		n dd  —> cut n lines
+       		D -> delete to end of line
+		diw —> delete inner word
+		dt —> delete until the character next typed is found
+		x -> delete cursor character
+
+		UNDO REDO
+
+		u —> undo
+		ctrl r (not command) —>  redo
+
+		COPY PASTE
+
+		yy —> yank current line
+		n yy —> yank the next n lines
+		yt {}—> yank (copy) blocks of code
+		p —> paste
+
+		SEARCH AND REPLACE
+
+		r<char> -> replace cursor character with new character
+		/<chars> -> find characters
+		/ term —> highlights terms
+		:s/ <replaced> / <replace with> -> substitute 1 word on a line
+		:%s/<init>/<fin>/gc —> substitute all (%) words globally (g) with confirmation (c)
+
+		MISC
+
+		o (lower)   —> add a new line below current and switch to insert mode
+		O (capital) -> add a new line above current and switch to insert mode
+		V —> visual mode, move up and down to highlight lines
+			Shift < > —> indent
+
+		FILE OPS
+
+		:q —> quits
+		:w —>writes
+		:wq —> writes and quits
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Regex
+
+	https://regexone.com/
+
+	abc…	Letters
+	123…	Digits
+	\d	Any Digit
+	\D	Any Non-digit character
+	.	Any Character
+	\.	Period
+	[abc]	Only a, b, or c
+	[^abc]	Not a, b, nor c
+	[a-z]	Characters a to z
+	[0-9]	Numbers 0 to 9
+	\w	Any Alphanumeric character
+	\W	Any Non-alphanumeric character
+	{m}	m Repetitions
+	{m,n}	m to n Repetitions
+	*	Zero or more repetitions
+	+	One or more repetitions
+	?	Optional character
+	\s	Any Whitespace
+	\S	Any Non-whitespace character
+	^…$	Starts and ends
+	(…)	Capture Group
+	(a(bc))	Capture Sub-group
+	(.*)	Capture all
+	(abc|def)	Matches abc or def
+	\1      Back reference, matches what was in 1st capture group 
+	match(?=a)    Positive lookahead, only matches if immediately followed by pattern a
+	match(?=.*a)  Positive lookahead, only matches if followed by pattern a
+	match(!=a)    Negative lookahead, matches if not immediately followed by pattern a
+	match(!=.*a)    Negative lookahead, matches if not followed by pattern a
+	(?<=a)match      Lookbehind
+
+Apply in python
+```python
+
+import re
+
+text = "Go ahead and watch the trailers for Avengers: Endgame, they won't give anything major away. It's amazing for a huge movie to be so self-aware of itself, as well as, the movie genres that they're overtly borrowing from."
+
+text = text.lower()
+pattern = r"[a-zA-Z']"
+sub = ''
+
+re.findall(pattern, text) # returns list of matches
+re.search(pattern, text) # returns struct if in, use as bool
+re.sub(pattern, sub, text) # returns string with matches swapped for sub
+
+
+```
+
+<br>
+<br>
+<br>
+<br>
 <br>
 
 ## De morgan's laws
@@ -1800,13 +479,28 @@ Amortized analysis is used for algo­rithms that have expensive opera­tions tha
 
 <br>
 
-## Algorithms
+## Algorithm
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
+
+<br>
+
+## Divide and conquer
+Splitting and Base case
+
+<br> 
+
+## Decrease and conquer
+Removing and Base case
 
 <br>
 
 ## Greedy algorithm
 Algorithms which always take the best short term solution, which in many cases will still results in the global minimum
+
+<br>
+
+## Memoization
+Storing the results of expensive function calls and returning the cached result when the same inputs occur again.
 
 <br>
 
@@ -1816,13 +510,13 @@ Searching one after another until an match is found
 <br>
 
 ## Binary search
-A recurrent search algorithm that works on sorted sets by halving sorted elements with  < >  comparison operators. Implemented with a [Binary search tree](#Binary-search-tree).
+A recurrent search algorithm that works on sorted sets by halving sorted elements with  < >  comparison operators. Implemented with a [Binary search tree](#binary-search-tree).
 
 <br>
 
 ## Depth & Breadth first search
-Depth uses a [Stack](#Stack), where the search starts from the newest node, and so goes deep.
-Breadth uses a [Queue](#Queue), where the search starts from the unearthed node found first, and so goes broad, one link away from the origin at a time.
+Depth uses a [Stack](#stack), where the search starts from the newest node, and so goes deep.
+Breadth uses a [Queue](#queue), where the search starts from the unearthed node found first, and so goes broad, one link away from the origin at a time.
 
 <br>
 
@@ -1845,7 +539,7 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&list=PL9xmBV_5YoZObEi3Hf6lmyW-CBfs7n
 <br>
 
 ## Dijkstra's algorithm
-Finds the shortest path between two vertices in a graph  
+Finds the shortest path between two vertices in a [Graph](#graph)  
 
 - The start vertex takes 0 time and you start by assuming every other vertex takes infinite time to get to it ( This is the same as saying you don't know how long it will take, but this is easier when updating to the shortest time )
 
@@ -1858,7 +552,7 @@ The path can be kept track of by having an arrow pointing to the where the short
 <br>
 
 ## A* graph search
-An improvement of [Dijkstra's algorithm](#Dijkstra's-algorithm) which takes into account general direction by taking into account the distance to the end node, alongside to the start node.
+An improvement of [Dijkstra's algorithm](#dijkstra's-algorithm) which takes into account general direction by taking into account the distance to the end node, alongside to the start node.
 Usually used on grids rather than the traditional graph.  
 https://www.youtube.com/watch?v=-L-WgKMFuhE
 
@@ -1868,7 +562,6 @@ https://www.youtube.com/watch?v=-L-WgKMFuhE
 
 **Bubble sort**
 Largest Items bubble to the top  
-
 
 **Selection sort**
 Smallest items sink to the bottom
@@ -1888,26 +581,16 @@ Like binary search, this algorithm splits everything up
 
 <br>
 
-## Ordered and unordered
-Ordered means the data is sorted in some way, including by placement.
-
-<br>
-
-## Immutable
-Cannot be changed
-If at the programming level it looks like it has changed, then the new value is at a different address
-
-<br>
-
 ## 	Data structure
+
 A data structure is a particular way of organizing data in a computer so that it can be used effectively.
 
 <br>
 
 ## Implicit data structure
-A [Data structure](#Data-structure) which uses positioning as a way to carry information about a values position in the underlying representation.
+A [Data structure](#data-structure) which uses positioning as a way to carry information about a values position in the underlying representation.
 Formally, an implicit data structure is one with constant O(1) space overhead
-An example is a list representing a binary tree.
+An example is a list representing a [Binary Search Tree](#binary-search-tree)
 
 <br>
 
@@ -1917,19 +600,19 @@ An attribute of data which tells a compiler how to interpret and process it.
 <br>
 
 ## 	Abstract Data type
-A data model which provides only a limited interface to the underlying implemented [Data structure](#Data-structure).
+A data model which provides only a limited interface to the underlying implemented [Data structure](#data-structure).
 https://en.wikipedia.org/wiki/Abstract_data_type
 
 <br>
 
 ## List
-[Abstract data type](#Abstract-data-type)  
+[Abstract data type](#abstract-data-type)  
 Sequential elements represented by sequential memory addresses
 
 <br>
 
 ## Graph
-[Abstract data type](#Abstract-data-type)  
+[Abstract data type](#abstract-data-type)  
 A set of nodes possibly joined with edges
 
 Represented in memory with...
@@ -1952,61 +635,199 @@ An acyclic [Graph](#graph) where all nodes are connected to a root leading out t
 <br>
 
 ## Binary Tree
-A [Tree](#tree) with at most two edges connected to each node.  
-Full > Each node has 2 or no children.  
-Complete > Nodes are filled in top to bottom, left to right.  
-Perfect > Full and complete.
+A [Tree](#tree) with at most two edges connected to each node.
+
+	Full      >  Each node has either 0 or 2 children.
+	Complete  >  Nodes are filled in top to bottom, left to right.
+	Perfect   >  Full and complete.
 
 <br>
 
 ## Binary Search Tree
-A BST is a [Binary Tree](#Binary-Tree) where each node is greater than its left child and less then its right.
+A BST is a [binary Tree](#binary-tree) where each node is greater than its left child and less then its right.
 
 https://www.youtube.com/watch?v=LU4fGD-fgJQ  
 A tree is balanced if the maximum difference between the number of subtree child nodes is 1 or 0.
 
-|        | unsorted array | sorted array | linked list | balanced BST |
-|--------|----------------|--------------|-------------|--------------|
-| Read   | O(n)           | O(log n)     | O(n)        | O(log n)     |
-| Write  | O(1)           | O(n)         | O(1)        | O(log n)     |
-| Remove | O(n)           | O(n)         | O(n)        | O(log n)     |
+	Binary search trees draw correctly are in order from left to right
+
+	     4
+	   /   \
+	  2     6
+	 / \   / \
+	1   3 5   7
+
+<br>
+
+## Binary tree traversal
+[Binary Tree](#binary-tree)
+
+http://yt.dudzik.co/watch/?v=9Kjn_5Wc69M
+
+Left is always before right
+
+
+1: Breadth first traversal (level order)
+
+2: Depth first traversal - including...
+
+	Preorder  - Root Left Right > OLR
+	Inorder   - Left Root Right > LOR
+	Postorder - Left Right Root > LRO
+
+	Each of these can be described by just the order placement of the root
+
+
+
+Different orders are used for different things
+
+- Tree copies are made using Preorder (OLR) traversal
+- Reading a sorted array out of a [binary search tree](#binary-search-tree) uses Inorder traversal
+- Freeing a tree uses Postorder traversal
+
+
+<br>
+
+## AVL tree
+[Binary Search Tree](#binary-search-tree)
+
+http://yt.dudzik.co/watch/?v=5C8bLQBjcDI
+
+http://yt.dudzik.co/watch/?v=u3OVSkuOdqI
+
+
+A balanced [Binary search tree](#binary-search-tree)
+
+To keep the tree balanaces a balance factor is stored for each node where
+
+BF(node) = HeightOf(node.right) - HeightOf(node.left)
+
+such that HeightOf is the number of edges to the furthest leaf
+
+For each node, the magnitude of the balance factor is kept <= 1
+through a series of rotation operations
+
+Rotations can work on either 2 or 3 nodes
+
+Rotations are visually similar to draging the nodes as a rope around the head node as a pivot point
+
+Left rotations go counter-clockwise
+
+Right rotations go clockwise
+
+
+	LR imbalance > 2-node left rotation on 1 ( turns into LL )
+	   3
+	 /
+	1
+	 \
+	  2
+
+	LL imbalance > 3-node right rotation on head
+	    3
+	   /
+	  2   
+	 /
+	1
+
+.
+
+	RL imbalance > 2-node right rotation on 3 ( turns into RR )
+	1
+	  \
+	   3
+	  /
+	 2
+
+
+	RR imbalance > 3-node right rotation on head
+	1
+	 \
+	  2
+	   \
+	    3
 
 <br>
 
 ## Red black Tree
+[Binary Search Tree](#binary-search-tree)
+
 https://www.youtube.com/watch?v=qvZGUFHWChY  
-A balanced [Binary search tree](#Binary-search-tree) with a guaranteed height of O ( log n ) for n nodes.  
+A balanced [Binary search tree](#binary-search-tree) with a guaranteed height of O ( log n ) for n nodes.  
 - A node is either red or black
 - The root node is black
 - Nil nodes are black
--  If a node is red, its children are black
--  All paths from Root to Nil contain the same number of black nodes
+- If a node is red, its children are black
+- All paths from Root to Nil contain the same number of black nodes
+
+<br>
+
+
+## 2 3 4 Tree
+[Tree](#tree)
+
+A node has either 2 3 or 4 elements
+
+TODO
+
+<br>
+
+
+## B Tree
+[Tree](#tree)
+
+https://www.cs.usfca.edu/~galles/visualization/BTree.html
+
+Optimized for systems that read and write large blocks of data. It is most commonly used in database and file systems.
+
+A B-tree of order m has at most m children and m - 1 keys,
+and all root nodes have to be at the same level
+
+They have the same property as [Binary Search Trees](#binary-search-tree) where they are in order looking from left to right
+
+	    | 2   4 |
+	   /    |    \
+	|1|   | 3 | | 5 6 |
+
+If a node has too many elements, the middle value is shifted up
+
+<br>
+
+
+## B+ Tree
+Derived from [B trees](#b-tree)
+
+TODO
+
+https://dichchankinh.com/~galles/visualization/BPlusTree.html
+
+
 
 <br>
 
 ## Stack
-[Abstract data type](#Abstract-data-type)  
+[Abstract data type](#abstract-data-type)  
 Last in First out  
 Implemented include using a [Linked list](#linked-list). )
 
 <br>
 
 ## Queue
-[Abstract Data Types](#Abstract-Data-Types)  
+[Abstract Data Types](#abstract-Data-Types)  
 First in First out.  
 Implemented include using a [Linked list](#linked-list).
 
 <br>
 
 ## Priority queue
-[Abstract data type](#Abstract-data-type)  
+[Abstract data type](#abstract-data-type)  
 important first out  
 Implemented include using a [heap](#heap)
 
 <br>
 
 ## Double ended queue
-[Abstract data type](#Abstract-data-type)  
+[Abstract data type](#abstract-data-type)  
 Either last or first in can be first out
 
 <br>
@@ -2016,7 +837,7 @@ A [Binary Tree](#binary-tree) for finding the minimum or maximum values in a ran
 
 
 	    9
-       /  \
+	   /  \
 	   8  9
 	 / |  | \
 	3  8  9  0
@@ -2029,7 +850,7 @@ Strings stored as [Tree](#**tree**) character paths
 <br>
 
 ## Prefix sum
-A running sum [Arrays](#Array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
+A running sum [Arrays](#array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
 
 O(N) to update
 
@@ -2039,10 +860,10 @@ In a flat array of numbers, you can either store the elements, or the prefix sum
 <br>
 
 ## Array
-[Implicit data structure](#Implicit-data-structure).   
+[Implicit data structure](#implicit-data-structure).   
 Sequential elements in memory with a single data type and which can represent multidimensional data by storing extra data on the shape of the array..
 ## Linked List
-[Data structure](#Data-structure)  
+[Data structure](#data-structure)  
 Sequential elements represented by value pointer pairs, where pointers point to the next value in the list.  
 
 Variations
@@ -2054,10 +875,10 @@ Variations
 <br>
 
 ## Heap
-[Data structure](#Data-structure)  
+[Data structure](#data-structure)  
 https://www.youtube.com/watch?v=AE5I0xACpZs  
 
-A complete [Binary Tree](#Binary-Tree) stored as an array where for max heaps, no child is greater than its parent.  
+A complete [Binary Tree](#binary-Tree) stored as an array where for max heaps, no child is greater than its parent.  
 
 For Insertion new nodes are placed in the next available position, and then swapped with their parents until they are less in value than them, retaining the node value requirement.
 
@@ -2069,7 +890,9 @@ A min heap is the reverse of this
 <br>
 
 ## Dictionary
-[Hash](#Hash)  
+
+[Hash](#hash)  
+
 Also called hash tables.  
 A key is hashed and the using modulus the remainder of the a division by the length of the array becomes an array index where the value is stored.
 Allows for O( 1 ) retrieval time.
@@ -2078,16 +901,17 @@ Some of the ways of addressing collisions include
 
 Open addressing > placing an item at a position different than the hash
 
-	Linear probing > The value goes to the next available position in the set length array
+Linear probing > The value goes to the next available position in the set length array
 
 Closed addressing
 
-	Linked list collisions > If there is a collision, then the array index will be set as the first link in a linked list.
+Linked list collisions > If there is a collision, then the array index will be set as the first link in a linked list.
+
 
 <br>
 
 ## Prefix sum
-A running sum [Arrays](#Array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
+A running sum [Arrays](#array) or Lists of floats or integers in a corresponding list, which allows for the sum of values from index a to b in that list to be achieved in constant times
 
 O(N) to update
 
@@ -2097,7 +921,7 @@ In a flat array of numbers, you can either store the elements, or the prefix sum
 <br>
 
 ## Fenwick tree
-[Binary tree](#Binary-tree)  
+[Binary tree](#binary-tree)  
 Also called a Binary indexed Tree
 
 https://en.wikipedia.org/wiki/Fenwick_tree
@@ -2116,7 +940,7 @@ A style of programming
 <br>
 
 ## Object Oriented Programming
-[Paradigm](#Paradigm)
+[Paradigm](#paradigm)
 
 OOP is writing code around the idea of object properties and actions.
 
@@ -2137,31 +961,31 @@ Abstract class > A class only used for child classes to inherit from, and which 
 <br>
 
 ## Functional programming
-[Paradigm](#Paradigm)  
+[Paradigm](#paradigm)  
 Create Pure functions where the output should only depend on its inputs and not effect outside variables. This allows for parallelization, as functions can run at the same time without affecting each other.  
 
 <br>
 
 ## Declarative programming
-[Paradigm](#Paradigm)  
+[Paradigm](#paradigm)  
 Code which focuses on the end product rather than how it is created. A description rather than a recipe.
 
 <br>
 
 ## Imperative
-[Paradigm](#Paradigm)  
+[Paradigm](#paradigm)  
 Describing the steps
 
 <br>
 
 ## Procedural programming
-[Paradigm](#Paradigm)  
+[Paradigm](#paradigm)  
 Steps, one after the other in logical order.
 
 <br>
 
 ## Logic programming
-[Paradigm](#Paradigm)  
+[Paradigm](#paradigm)  
 Programming based on formal logic, including languages such as Prolog.
 
 <br>
@@ -2186,7 +1010,7 @@ Human readable which represents machine code
 <br>
 
 ## Byte code
-Compressed [Source code](#Source-code) which can be optimized for a specific machine before being executed
+Compressed [Source code](#source-code) which can be optimized for a specific machine before being executed
 
 <br>
 
@@ -2196,37 +1020,37 @@ Binary that can execute on a computer’s physical processor without further tra
 <br>
 
 ## Interpreter
-Interpreting a [Programming language](#Programming-language) is executed code with each line.
+Interpreting a [Programming language](#programming-language) is executed code with each line.
 
 <br>
 
 ## Compiler
-A Compiler converts the [Programming language](#Programming-language)  Human to OS machine code as a whole and  then executed
+A Compiler converts the [Programming language](#programming-language)  Human to OS machine code as a whole and  then executed
 
 <br>
 
 ## AOT
-[Compiler](#Compiler)  
+[Compiler](#compiler)  
 Ahead Of Time compilers convert from human to machine readable before run time are the most common and intuitive compiler implementation.
 
 <br>
 
 ## JIT
-A Just in time [Compiler](#Compiler) converts from human readable code to byte code for distribution, and then is converted to machine code with each computer for better optimization.
+A Just in time [Compiler](#compiler) converts from human readable code to byte code for distribution, and then is converted to machine code with each computer for better optimization.
 
 <br>
 
 ## Explicit conversion
 When a type is converted explicitly in code.
 
-	int( "1234" )
+int( "1234" )
 
 <br>
 
 ## Implicit conversion
 When a type is converted by the compiler without explicit instruction in code. This conversion retains information and so the new type takes more memory than the previous type.
 
-	2+"3" = "23"
+2+"3" = "23"
 
 <br>
 
@@ -2242,7 +1066,7 @@ Dynamic typed programming languages check for types during run time, "on the fly
 
 ## Call stack
 https://en.wikipedia.org/wiki/Call_stack  
-A [Stack](#Stack) implemented to store values in the order a program will use them.
+A [Stack](#stack) implemented to store values in the order a program will use them.
 
 <br>
 
@@ -2336,7 +1160,7 @@ Software as a Service provides
 
 - Application hosting
 
-and everything under [PaaS](#PaaS)
+and everything under [PaaS](#paas)
 
 ## Faas
 
@@ -2344,7 +1168,7 @@ Function as a Service provides
 
 - On demand function computing
 
-and everything under [PaaS](#PaaS)
+and everything under [PaaS](#paas)
 
 ## PaaS
 Platform as a Service provides
@@ -2352,7 +1176,7 @@ Platform as a Service provides
 - Developer tools  
 - Operating systems
 
-and everything under [IaaS](#IaaS)
+and everything under [IaaS](#iaas)
 
 Why do you need an operating system without a user, can't you just run machine code???
 
@@ -2398,7 +1222,7 @@ A process that converts text into nonsensical cipher-text, which can only be dec
 <br>
 
 ## Symmetric Encryption
-Where the message is encrypted and decrypted with the same key, and so needs to be transferred between parties. The key needs to be securely shared, but this method is faster than [Asymmetric Encryption](#Asymmetric-Encryption)
+Where the message is encrypted and decrypted with the same key, and so needs to be transferred between parties. The key needs to be securely shared, but this method is faster than [Asymmetric Encryption](#asymmetric-Encryption)
 
 <br>
 
@@ -2459,19 +1283,18 @@ How is docker faster than virtualisation???
 <br>
 
 ## Container orchestration
-A way to scale and maintain [Containers](#Containers) automatically
+A way to scale and maintain [Containers](#containers) automatically
 
 <br>
 
 ## Microservices
-Splitting up cloud services between [Containers](#Containers) to them scale for their different workloads
+Splitting up cloud services between [Containers](#containers) to them scale for their different workloads
 This also isolates one service from crashing others
 
 <br>
 
 ## CI CD
 Continuous Integration and Deployment or Delivery
-
 
 CI > Merge continuously and avoid merge conflicts.
 
@@ -2510,7 +1333,7 @@ https://www.youtube.com/watch?v=W2Z7fbCLSTw
 NoSQL databases are not relational
 
 **key–value pair**  
-Uses a [Dictionary](#Dictionary)  
+Uses a [Dictionary](#dictionary)  
 Used a a cache because you can't store on the disk ???
 
 **wide column**  
@@ -2562,7 +1385,7 @@ Moravec's paradox is the observation by artificial intelligence and robotics res
 <br>
 
 ## Backpropagation
-A process of changing weights in a [Neural network](#Neural-network) based on how much each contributed to a wrong answer, which is calculated using derivatives.
+A process of changing weights in a [Neural network](#neural-network) based on how much each contributed to a wrong answer, which is calculated using derivatives.
 
 <br>
 
@@ -2580,36 +1403,36 @@ https://www.desmos.com/calculator/ya2muxcbq3
 <br>
 
 ## RNN
-A Recurrent neural network is a [Neural network](#Neural-network) whose outputs feed into future inputs, and which so are able to process variable size time series data.
+A Recurrent neural network is a [Neural network](#neural-network) whose outputs feed into future inputs, and which so are able to process variable size time series data.
 
 <br>
 
 ## LSTM
-A long / short term memory neural network is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
+A long / short term memory neural network is a [RNN](#rnn) which mitigates the [Vanishing gradient problem](#vanishing-gradient-problem).
 An LSTM has a continuous memory which is processed by the 'forget' multiplication and 'remember' addition operations. This memory always continues to the next time step, but is also duplicated to and processed by a 'relevant' multiplication operation to be added to only the next time step. Each of these operation is decided by trained neural networks and some parts of the network are normalized.
 
 <br>
 
 ## GRU
-A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem).
-Similar to an [LSTM](#LSTM), only without the hidden state, making them simpler and faster to train, although they are both suited to different cases.
+A Gated recurrent unit is a [RNN](#rnn) which mitigates the [Vanishing gradient problem](#vanishing-gradient-problem).
+Similar to an [LSTM](#lstm), only without the hidden state, making them simpler and faster to train, although they are both suited to different cases.
 
 <br>
 
 ## Transformer
-A Gated recurrent unit is a [RNN](#RNN) which mitigates the [Vanishing gradient problem](#Vanishing-gradient-problem) and memory loss through weighted focused as introduced in the 'Attention is all you need' paper.
+A Gated recurrent unit is a [RNN](#rnn) which mitigates the [Vanishing gradient problem](#vanishing-gradient-problem) and memory loss through weighted focused as introduced in the 'Attention is all you need' paper.
 
 <br>
 
 ## CNN
-Convolutional [neural network](#Neural-network)  
+Convolutional [neural network](#neural-network)  
 To convolute is to blur, which is intuitively is mapping a number of values to less. Doing this repeatedly, with trained feature detectors, will allow machine to complete tasks including image content identification or depth perception.
 
 <br>
 
 ## Auto encoder
 Unsupervised  
-An autoencoder is an architecture to train one [neural network](#Neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data.
+An autoencoder is an architecture to train one [neural network](#neural-network) to encode data into characteristics (a lower dimensional representation) and another to decompress the characteristics into the original data.
 
 <br>
 
@@ -2620,8 +1443,16 @@ Consists of a Generative network, which creates model data from random or releva
 <br>
 
 ## Hopfield net
-[neural network](#Neural-network)  
+[neural network](#neural-network)  
 A neural network which retrieves data with part of that data fed into the network.
+
+<br>
+
+## Finite State machines
+A system of states and transitions
+IE 
+A pen nib can be in the retracted or out states and pressing a button is a transition between these
+You can represent this and more complex systems with state transition diagrams
 
 <br>
 
@@ -2648,17 +1479,20 @@ A function calling itself
 <br>
 
 ## Dynamic programming
-- 1 [Recursion](#Recursion)
+[Recursion](#recursion)
+[Memoization](#memoization)
+
+- 1 Recursion
 - 2 Memoize (store computed values)
 - 3 Top down or Bottom up
 
-**Bottom up**  Base case and work up  
-**Top Down** Memoization and Recursion to work down
+**Bottom up** > Base case and work up  
+**Top Down**  > Memoization and Recursion to work down
 
 <br>
 
 ## P vs NP
-https://www.youtube.com/watch?v=u2DLlNQiPB4
+http://yt.dudzik.co/watch?v=u2DLlNQiPB4
 
 <br>
 
@@ -2695,6 +1529,8 @@ Arrangement and order of symbols of language
 
 ## language semantics
 
+
+
 The meaning of the words and phrases in a language
 
 <br>
@@ -2721,6 +1557,31 @@ Degrees, Range, Abs
 
 ## errors  
 [Programming language](#programming-language)  
+
 Syntax > The programming language cannot interpret the code you have written
+
 Run-time > When your code is running, it executes something that the programming language or operating system decides should raise an error, if the operation doesn't make sense or could damage hardware
+
 Logic > Code doesn't do what it is supposed to do
+
+
+
+<br>
+<br>
+<br>
+
+# Hardware
+
+## Sequential access memory
+
+Where the basic method of accessing data is sequential, 
+usually due to the physical design of the storage which has a single reader. Examples include
+
+- Magnetic Tape
+- CDs
+- Hard disk
+
+
+
+## RAM
+Random access memory - Can be read in any order
